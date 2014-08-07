@@ -15,7 +15,7 @@ public class ETL {
 	private static final Logger log = Logger.getLogger(ETL.class);
 
 	public static void main(String[] args) {
-		log.debug("ETL started......"+new Date());
+		log.debug("ETL started...."+new Date());
 		Poller poller = new Poller();
 		ExecutorService threads = null;
 		try {
@@ -23,7 +23,7 @@ public class ETL {
 			threads = Executors.newSingleThreadExecutor();
 			Future<?> ft = threads.submit(poller);
 			ft.get();
-			log.debug("ETL DONE......"+new Date());
+			log.debug("ETL DONE...."+new Date());
 		} catch (IOException e) {
 			log.error(e.getMessage(), e);
 		} catch (InterruptedException e) {
