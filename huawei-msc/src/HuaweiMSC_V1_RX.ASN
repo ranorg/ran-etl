@@ -1,0 +1,2206 @@
+-- ASN.1 Formal Description
+HMSC DEFINITIONS IMPLICIT TAGS ::=
+BEGIN
+Chargingdatarecord ::= SEQUENCE
+{
+	header [0] Header,
+	sequenceCDR [1] SequenceCDR,
+	trailer [2] Trailer,
+	extension [3] Extension
+}
+
+Header ::= SET
+{
+	headerTimeStamp [0] HeaderTimeStamp,
+	recordingEntity [1] RecordingEntity,
+	extensions [2] Extensions
+}
+
+HeaderTimeStamp ::= TimeStamp
+
+SequenceCDR ::= SEQUENCE OF CDR
+
+CDR ::= CHOICE
+{
+	mobileOriginated	    [0]   	     MobileOriginated	,
+	callForwarding		    [100] 	     CallForwarding		,
+	mobileTerminated	    [1]   	     MobileTerminated	,
+	roamingRecord		    [2]   	     RoamingRecord		,
+	incomingGatewayRecord	    [3]   	     IncomingGatewayRecord	,
+	outgoingGatewayRecord	    [4]   	     OutgoingGatewayRecord	,
+	transit			    [5]   	     Transit			,
+	sMSMobileOriginated	    [6]   	     SMSMobileOriginated	,
+	sMSMobileTerminated	    [7]   	     SMSMobileTerminated	,
+	lCSMTRecord		    [17]  	     LCSMTRecord		,
+	lCSMORecord		    [18]  	     LCSMORecord		,
+	lCSNIRecord		    [19]  	     LCSNIRecord		,
+	supplementaryService	    [10]  	     SupplementaryService	,
+	hLRInterrogation	    [11]  	     HLRInterrogation	,
+	commonEquipmentUsageRecord  [14]  	     CommonEquipmentUsageRecord		,
+	terminatingCAMEL	    [16]  	     TerminatingCAMEL	,
+	locationUpdate		    [13]  	     LocationUpdate	
+}
+
+MobileOriginated ::= SET
+{
+	recordType			[0]    RecordType                              ,
+	servedIMSI			[1]    ServedIMSI                              ,
+	servedIMEI  			[2]    ServedIMEI                     OPTIONAL ,
+	servedMSISDN			[3]    ServedMSISDN                            ,
+	callingNumber			[4]    CallingNumber                           ,
+	calledNumber			[5]    CalledNumber                            ,
+	translatedNumber		[6]    TranslatedNumber               OPTIONAL ,
+	connectedNumber			[7]    ConnectedNumber                OPTIONAL ,
+	roamingNumber			[8]    RoamingNumber                  OPTIONAL ,
+	recordingEntity			[9]    RecordingEntity                         ,
+	mscIncomingROUTE		[10]   MscIncomingROUTE                        ,
+	mscOutgoingROUTE		[11]   MscOutgoingROUTE                        ,
+	location			[12]   Location                                ,
+	changeOfLocation		[13]   ChangeOfLocation               OPTIONAL ,
+	basicService			[14]   BasicService                            ,
+	transparencyIndicator		[15]   TransparencyIndicator          OPTIONAL ,
+	changeOfService			[16]   ChangeOfService                OPTIONAL ,
+	supplServicesUsed		[17]   SupplServicesUsed              OPTIONAL ,
+	aocParameters			[18]   AocParameters                  OPTIONAL ,
+	changeOfAOCParms		[19]   ChangeOfAOCParms               OPTIONAL ,
+	msClassmark			[20]   MsClassmark                             ,
+	changeOfClassmark		[21]   ChangeOfClassmark              OPTIONAL ,
+	setupTime			[201]  SetupTime                     OPTIONAL ,
+	seizureTime			[22]   SeizureTime                   OPTIONAL ,
+	alertingTime			[202]  AlertingTime                  OPTIONAL ,
+	answerTime			[23]   AnswerTime                             ,
+	releaseTime			[24]   ReleaseTime                            ,
+	callDuration			[25]   CallDuration                            ,
+	radioChanRequested		[27]   RadioChanRequested             OPTIONAL ,
+	radioChanUsed			[28]   RadioChanUsed                  OPTIONAL ,
+	changeOfRadioChan		[29]   ChangeOfRadioChan              OPTIONAL ,
+	causeForTerm			[30]   CauseForTerm                            ,
+	diagnostics			[31]   Diagnostics                             ,
+	callReference  			[32]   CallReference                           ,
+	sequenceNumber			[33]   SequenceNumber                 OPTIONAL ,
+	additionalChgInfo		[34]   AdditionalChgInfo                       ,
+	recordExtensions		[35]   RecordExtensions               OPTIONAL ,
+	gsmSCFAddress			[36]   GsmSCFAddress                 OPTIONAL ,
+	serviceKey			[37]   ServiceKey                     OPTIONAL ,
+	networkCallReference		[38]   NetworkCallReference                    ,
+	mSCAddress			[39]   MSCAddress                              ,
+	cAMELInitCFIndicator		[40]   CAMELInitCFIndicator           OPTIONAL ,
+	defaultCallHandling		[41]   DefaultCallHandling            OPTIONAL ,
+	fnur				[45]   Fnur                           OPTIONAL ,
+	aiurRequested			[46]   AiurRequested                  OPTIONAL ,
+	speechVersionSupported		[49]   SpeechVersionSupported         OPTIONAL ,
+	speechVersionUsed		[50]   SpeechVersionUsed              OPTIONAL ,
+	numberOfDPEncountered		[51]   NumberOfDPEncountered          OPTIONAL ,
+	levelOfCAMELService		[52]   LevelOfCAMELService            OPTIONAL ,
+	freeFormatData			[53]   FreeFormatData                 OPTIONAL ,
+	cAMELCallLegInformation		[54]   CAMELCallLegInformation        OPTIONAL ,
+	freeFormatDataAppend		[55]   FreeFormatDataAppend           OPTIONAL ,
+	defaultCallHandling2		[56]   DefaultCallHandling2          OPTIONAL ,
+	gsmSCFAddress2			[57]   GsmSCFAddress2               OPTIONAL ,
+	serviceKey2			[58]   ServiceKey2                   OPTIONAL ,
+	freeFormatData2			[59]   FreeFormatData2               OPTIONAL ,
+	freeFormatDataAppend2		[60]   FreeFormatDataAppend2         OPTIONAL ,
+	systemType			[61]   SystemType                              ,
+	rateIndication			[62]   RateIndication                 OPTIONAL ,
+	partialRecordType		[69]   PartialRecordType              OPTIONAL ,
+	guaranteedBitRate		[70]   GuaranteedBitRate              OPTIONAL ,
+	maximumBitRate			[71]   MaximumBitRate               OPTIONAL ,
+	modemType			[139]  ModemType                      OPTIONAL ,
+	classmark3			[140]  Classmark3                     OPTIONAL ,
+	chargedParty			[141]  ChargedParty                            ,
+	originalCalledNumber		[142]  OriginalCalledNumber           OPTIONAL ,
+	chargeAreaCode			[145]  ChargeAreaCode                 OPTIONAL ,
+	calledChargeAreaCode		[146]  CalledChargeAreaCode           OPTIONAL ,
+	mscOutgoingCircuit		[166]  MscOutgoingCircuit             OPTIONAL ,
+	orgRNCorBSCId			[167]  OrgRNCorBSCId                           ,
+	orgMSCId			[168]  OrgMSCId                                ,
+	callEmlppPriority		[170]  CallEmlppPriority              OPTIONAL ,
+	callerDefaultEmlppPriority	[171]  CallerDefaultEmlppPriority     OPTIONAL ,
+	eaSubscriberInfo		[174]  EaSubscriberInfo               OPTIONAL ,
+	selectedCIC			[175]  SelectedCIC                    OPTIONAL ,
+	optimalRoutingFlag		[177]  OptimalRoutingFlag             OPTIONAL ,
+	optimalRoutingLateForwardFlag	[178]  OptimalRoutingLateForwardFlag  OPTIONAL ,
+	optimalRoutingEarlyForwardFlag	[179]  OptimalRoutingEarlyForwardFlag  OPTIONAL ,
+	portedflag			[180]  Portedflag                     OPTIONAL ,
+	calledIMSI			[181]  CalledIMSI                     OPTIONAL ,
+	globalAreaID			[188]  GlobalAreaID                            ,
+	changeOfglobalAreaID		[189]  ChangeOfglobalAreaID           OPTIONAL ,
+	subscriberCategory		[190]  SubscriberCategory                      ,
+	firstmccmnc				[192]  Firstmccmnc                             ,
+	intermediatemccmnc	[193]  Intermediatemccmnc             OPTIONAL ,
+	lastmccmnc				[194]  Lastmccmnc                     OPTIONAL ,
+	cUGOutgoingAccessIndicator	[195]  CUGOutgoingAccessIndicator     OPTIONAL ,
+	cUGInterlockCode				[196]  CUGInterlockCode               OPTIONAL ,
+	cUGOutgoingAccessUsed		[197]  CUGOutgoingAccessUsed          OPTIONAL ,
+	cUGIndex					[198]  CUGIndex                       OPTIONAL ,
+	interactionWithIP		[199]  InteractionWithIP              OPTIONAL ,
+	hotBillingTag			[200]  HotBillingTag                  OPTIONAL ,
+	voiceIndicator			[203]  VoiceIndicator                 OPTIONAL ,
+	bCategory				[204]  BCategory                      OPTIONAL ,
+	callType					[205]  CallType                       OPTIONAL ,
+	resourceChargeIPnumber	[206]  ResourceChargeIPnumber         OPTIONAL ,
+	cAMELDestinationNumber	[207]	 CAMELDestinationNumber	OPTIONAL,
+	groupCallType				[208]  GroupCallType                  OPTIONAL ,
+	groupCallReference		[209]  GroupCallReference             OPTIONAL ,
+	uus1Type				[210]  Uus1Type                       OPTIONAL ,
+	eCategory			[215]  ECategory                      OPTIONAL ,
+	tariffCode			[217]  TariffCode                     OPTIONAL ,
+	disconnectparty	[218]  Disconnectparty                OPTIONAL ,
+	chargePulseNum		[219]		ChargePulseNumber					OPTIONAL,
+	csReference			[220]  CsReference                    OPTIONAL ,
+	csaReference		[221]  CsaReference                   OPTIONAL ,
+	camelphase			[222]  CAMELVPHASE                     OPTIONAL ,
+	networkOperatorId		[223]  NetworkOperatorId              OPTIONAL ,
+	typeOfSubscribers		[224]  TypeOfSubscribers              OPTIONAL ,
+	audioDataType			[225]  AudioDataType                  OPTIONAL ,
+	usertype			[227]  Usertype                       OPTIONAL ,
+	recordNumber			[232]  RecordNumber                   OPTIONAL ,
+	osssServicesUsed	[235]	OsssServicesUsed	OPTIONAL,	
+	partyRelCause	[236]	PartyRelCause OPTIONAL,
+	chargeLevel		[237] ChargeLevel			OPTIONAL,
+	locationNum				[239]	LocationNumber OPTIONAL,
+	translatedNumber		[245]		TranslatedNumber           	OPTIONAL,
+	zoneCode					[240]		ZoneCode                   	OPTIONAL,
+	locationNumberNai		[241]	LocationNumberNai OPTIONAL,
+	dtmfIndicator			[242]	DtmfIndicator OPTIONAL,
+	bchNumber				[243]	BchNumber OPTIONAL,
+	ncnpFlag					[244]	Cap4UcbNcnpType OPTIONAL,
+	mctType					[245]	MCTType OPTIONAL,
+	cARP						[246] CARP OPTIONAL,
+	accountcode				[248]	AccountCode OPTIONAL,
+	channelmode				[249]	ChannelMode OPTIONAL,
+	channel					[250]	Channel OPTIONAL,
+	specialBillPrefix		[252]	SpecialBillPrefix OPTIONAL,
+	calledportedflag		[255]	PortedFlag OPTIONAL,
+	locationroutingnumber	[256]	LocationRoutingNumber OPTIONAL,
+	routingcategory			[257]	RoutingCategory OPTIONAL,
+	intermediateChargingInd	[258] IntermediateChargingInd OPTIONAL,
+	calledIMEI					[260]	IMEI OPTIONAL,
+	mscOutgoingROUTENumber	[261] MscOutgoingROUTENumber OPTIONAL,
+	mscIncomingROUTENumber	[262]	MscIncomingROUTENumber OPTIONAL,
+	roDefaultCallHandling 	[263]	DefaultCallHandling OPTIONAL,
+	roLinkFailureTime		[264]	RoLinkFailureTime OPTIONAL,
+	lastSuccCCRTime		[265]	LastSuccCCRTime 	OPTIONAL,
+	drcCallId					[266]	DrcCallNumber	OPTIONAL,
+	drcCallRN			[267]	DrcCallNumber	OPTIONAL,
+	nPDipIndicator		[268]	NPDipIndicator	OPTIONAL,
+	aNSIRoutingNumber	[269]	ANSIRoutingNumber	OPTIONAL,
+	lRNSource			[270]	LRNOBTAINFROM OPTIONAL,
+	wpsCallFlag			[271]	WPSCallFlag	OPTIONAL,
+	voBBUserFlag	[277]	VoBBUserFlag	OPTIONAL,
+	chargePulses	[278]	ChargePulses OPTIONAL,
+	vasType				[283]	VASTYPE	OPTIONAL,
+	inapFciBillingInfo	[279]	InapFciBillingInfo	OPTIONAL,
+	invokeOfLCLS			[282]	InvokeOfLCLS	OPTIONAL,
+	callRedirectionFlag	[284]	CallRedirectionFlag	OPTIONAL,
+	officeName			[285]	OfficeName OPTIONAL,
+	scpConnection		[286]	ScpConnection OPTIONAL,
+	chargeClass			[287]	ChargeClass OPTIONAL,
+	npaNxx					[289]	NPANXX 	OPTIONAL,
+	globalCallReference	[290]	GlobalCallReference 	OPTIONAL,
+	callerIPInformation	[291]	IPInformationEvent	OPTIONAL
+}
+
+
+CallForwarding ::= SET
+{
+	recordType			 [0]   	  RecordType				,
+	servedIMSI			 [1]   	  ServedIMSI				,
+	servedIMEI			 [2]   	  ServedIMEI			   OPTIONAL ,
+	servedMSISDN   			 [3]   	  ServedMSISDN				,
+	callingNumber   		 [4]   	  CallingNumber				,
+	calledNumber       		 [5]   	  CalledNumber				,
+	translatedNumber 		 [6]   	  TranslatedNumber 		   OPTIONAL ,
+	connectedNumber    		 [7]   	  ConnectedNumber    		   OPTIONAL ,
+	roamingNumber  			 [8]   	  RoamingNumber  		   OPTIONAL ,
+	recordingEntity    		 [9]   	  RecordingEntity			,
+	mscIncomingROUTE   		 [10]  	  MscIncomingROUTE			,
+	mscOutgoingROUTE      		 [11]  	  MscOutgoingROUTE			,
+	location   			 [12]  	  Location   			   OPTIONAL ,
+	changeOfLocation                 [13]  	  ChangeOfLocation                 OPTIONAL ,
+	basicService			 [14]  	  BasicService				,
+	transparencyIndicator   	 [15]  	  TransparencyIndicator   	   OPTIONAL ,
+	changeOfService  		 [16]  	  ChangeOfService  		   OPTIONAL ,
+	supplServicesUsed		 [17]  	  SupplServicesUsed		   OPTIONAL ,
+	aocParameters  			 [18]  	  AocParameters  		   OPTIONAL ,
+	changeOfAOCParms  		 [19]  	  ChangeOfAOCParms  		   OPTIONAL ,
+	msClassmark			 [20]  	  MsClassmark			   OPTIONAL ,
+	changeOfClassmark		 [21]  	  ChangeOfClassmark		   OPTIONAL ,
+	setupTime			 [201] 	  SetupTime			   OPTIONAL ,
+	seizureTime			 [22]  	  SeizureTime			   OPTIONAL ,
+	alertingTime			 [202] 	  AlertingTime			   OPTIONAL ,
+	answerTime			 [23]  	  AnswerTime				,
+	releaseTime			 [24]  	  ReleaseTime				,
+	callDuration			 [25]  	  CallDuration				,
+	radioChanRequested		 [27]  	  RadioChanRequested		   OPTIONAL ,
+	radioChanUsed  			 [28]  	  RadioChanUsed  		   OPTIONAL ,
+	changeOfRadioChan		 [29]  	  ChangeOfRadioChan		   OPTIONAL ,
+	causeForTerm			 [30]  	  CauseForTerm				,
+	diagnostics			 [31]  	  Diagnostics				,
+	callReference  			 [32]  	  CallReference				,
+	sequenceNumber			 [33]  	  SequenceNumber		   OPTIONAL ,
+	additionalChgInfo   		 [34]  	  AdditionalChgInfo			,
+	recordExtensions		 [35]  	  RecordExtensions		   OPTIONAL ,
+	gsmSCFAddress			 [36]  	  GsmSCFAddress		   OPTIONAL ,
+	serviceKey     			 [37]  	  ServiceKey     		   OPTIONAL ,
+	networkCallReference		 [38]  	  NetworkCallReference			,
+	mSCAddress  			 [39]  	  MSCAddress				,
+	cAMELInitCFIndicator    	 [40]  	  CAMELInitCFIndicator    	   OPTIONAL ,
+	defaultCallHandling  		 [41]  	  DefaultCallHandling  		   OPTIONAL ,
+	fnur   				 [45]  	  Fnur   			   OPTIONAL ,
+	aiurRequested   		 [46]  	  AiurRequested   		   OPTIONAL ,
+	speechVersionSupported		 [49]  	  SpeechVersionSupported	   OPTIONAL ,
+	speechVersionUsed		 [50]  	  SpeechVersionUsed		   OPTIONAL ,
+	numberOfDPEncountered		 [51]  	  NumberOfDPEncountered		   OPTIONAL ,
+	levelOfCAMELService		 [52]  	  LevelOfCAMELService		   OPTIONAL ,
+	freeFormatData			 [53]  	  FreeFormatData		   OPTIONAL ,
+	cAMELCallLegInformation		 [54]  	  CAMELCallLegInformation	   OPTIONAL ,
+	freeFormatDataAppend		 [55]  	  FreeFormatDataAppend		   OPTIONAL ,
+	defaultCallHandling2  		 [56]  	  DefaultCallHandling2  	   OPTIONAL ,
+	gsmSCFAddress2			[57]  	  GsmSCFAddress2		   OPTIONAL ,
+	serviceKey2			 [58]  	  ServiceKey2			   OPTIONAL ,
+	freeFormatData2    		 [59]  	  FreeFormatData2    		   OPTIONAL ,
+	freeFormatDataAppend2     	 [60]  	  FreeFormatDataAppend2     	   OPTIONAL ,
+	systemType			 [61]  	  SystemType			   OPTIONAL ,
+	rateIndication			 [62]  	  RateIndication		   OPTIONAL ,
+	partialRecordType		 [69]  	  PartialRecordType		   OPTIONAL ,
+	guaranteedBitRate		 [70]  	  GuaranteedBitRate		OPTIONAL	,
+	maximumBitRate			 [71]  	  MaximumBitRate		OPTIONAL	,
+	modemType			 [139] 	  ModemType			   OPTIONAL ,
+	classmark3			 [140] 	  Classmark3			   OPTIONAL ,
+	chargedParty			 [141] 	  ChargedParty				,
+	originalCalledNumber		 [142] 	  OriginalCalledNumber			,
+	chargeAreaCode			 [145] 	  ChargeAreaCode		   OPTIONAL ,
+	calledChargeAreaCode   		 [146] 	  CalledChargeAreaCode   	   OPTIONAL ,
+	mscOutgoingCircuit  		 [166] 	  MscOutgoingCircuit  		   OPTIONAL ,
+	orgRNCorBSCId   		 [167] 	  OrgRNCorBSCId   		   OPTIONAL ,
+	orgMSCId    			 [168] 	  OrgMSCId				,
+	callEmlppPriority		 [170] 	  CallEmlppPriority		   OPTIONAL ,
+	callerDefaultEmlppPriority	 [171] 	  CallerDefaultEmlppPriority	   OPTIONAL ,
+	eaSubscriberInfo   		 [174] 	  EaSubscriberInfo   		   OPTIONAL ,
+	selectedCIC			 [175] 	  SelectedCIC			   OPTIONAL ,
+	optimalRoutingFlag  		 [177] 	  OptimalRoutingFlag  		   OPTIONAL ,
+	optimalRoutingLateForwardFlag	 [178] 	  OptimalRoutingLateForwardFlag	   OPTIONAL ,
+	optimalRoutingEarlyForwardFlag	 [179] 	  OptimalRoutingEarlyForwardFlag   OPTIONAL ,
+	portedflag			 [180] 	  Portedflag			   OPTIONAL ,
+	calledIMSI			 [181] 	  CalledIMSI			   OPTIONAL ,
+	globalAreaID  			 [188] 	  GlobalAreaID  		   OPTIONAL ,
+	changeOfglobalAreaID		 [189] 	  ChangeOfglobalAreaID		   OPTIONAL ,
+	subscriberCategory		 [190] 	  SubscriberCategory			,
+	firstmccmnc			 [192] 	  Firstmccmnc			   OPTIONAL ,
+	intermediatemccmnc  		 [193] 	  Intermediatemccmnc  		   OPTIONAL ,
+	lastmccmnc  			 [194] 	  Lastmccmnc  			   OPTIONAL ,
+	cUGOutgoingAccessIndicator	 [195] 	  CUGOutgoingAccessIndicator	   OPTIONAL ,
+	cUGInterlockCode		 [196] 	  CUGInterlockCode		   OPTIONAL ,
+	cUGOutgoingAccessUsed		 [197] 	  CUGOutgoingAccessUsed		   OPTIONAL ,
+	cUGIndex  			 [198] 	  CUGIndex  			   OPTIONAL ,
+	interactionWithIP  		 [199] 	  InteractionWithIP  		   OPTIONAL ,
+	hotBillingTag			 [200] 	  HotBillingTag			   OPTIONAL ,
+	voiceIndicator			 [203] 	  VoiceIndicator		   OPTIONAL ,
+	bCategory			 [204] 	  BCategory			   OPTIONAL ,
+	callType			 [205] 	  CallType			   OPTIONAL ,
+	groupCallType			 [208] 	  GroupCallType			   OPTIONAL ,
+	groupCallReference		 [209] 	  GroupCallReference		   OPTIONAL ,
+	uus1Type			 [210] 	  Uus1Type			   OPTIONAL ,
+	eCategory			 [215] 	  ECategory			   OPTIONAL ,
+	disconnectparty			 [218] 	  Disconnectparty		   OPTIONAL ,
+	csReference			 [220] 	  CsReference			   OPTIONAL ,
+	csaReference			 [221] 	  CsaReference			   OPTIONAL ,
+	camelphase			 [222] 	  CAMELVPHASE			   OPTIONAL ,
+	networkOperatorId		 [223] 	  NetworkOperatorId		   OPTIONAL ,
+	typeOfSubscribers		 [224] 	  TypeOfSubscribers		   OPTIONAL ,
+	audioDataType			 [225] 	  AudioDataType			   OPTIONAL ,
+	usertype			 		[227] 	  Usertype			   OPTIONAL ,
+	recordNumber			 [232] 	  RecordNumber			   OPTIONAL,
+	partyRelCause		[236]		PartyRelCause	   OPTIONAL,
+	chargeLevel			[237]			ChargeLevel	   OPTIONAL,
+	locationNum			[238]		LocationNumber	   OPTIONAL,
+	zoneCode					[240]		ZoneCode	   OPTIONAL,
+	locationNumberNai			[241]		LocationNumberNai	   OPTIONAL,
+	dtmfIndicator				[242]		DtmfIndicator   OPTIONAL,
+	bchnumber				[243]		BchNumber	   OPTIONAL,
+	cARP					[246]		CARP   OPTIONAL,
+	channelmode				[249]		ChannelMode OPTIONAL,
+	channel					[250]		 Channel  OPTIONAL,
+	specialBillPrefix		[252]			SpecialBillPrefix	   OPTIONAL,
+	calledportedflag		[255]	PortedFlag OPTIONAL,
+	locationroutingnumber	[256]	LocationRoutingNumber OPTIONAL,
+	routingcategory			[257]	RoutingCategory OPTIONAL,
+	intermediateChargingInd	[258]		IntermediateChargingInd   OPTIONAL,
+	calledIMEI		[260]		IMEI  OPTIONAL,
+	mscOutgoingROUTENumber	[261]		MscOutgoingROUTENumber   OPTIONAL,
+	mscIncomingROUTENumber	[262]		MscIncomingROUTENumber   OPTIONAL,
+	roDefaultCallHandling 	[263]		RoDefaultCallHandling   OPTIONAL,
+	roLinkFailureTime			[264]		RoLinkFailureTime   OPTIONAL,
+	lastSuccCCRTime			[265]		LastSuccCCRTime   OPTIONAL,
+	drcCallId				[266]		DrcCallId   OPTIONAL,
+	drcCallRN				[267]		DrcCallRN   OPTIONAL,
+	nPDipIndicator			[268]		NPDipIndicator   OPTIONAL,
+	aNSIRoutingNumber		[269]		ANSIRoutingNumber   OPTIONAL,
+	lRNSource			[270]		 LRNSource  OPTIONAL,
+	wpsCallFlag			[271]		WpsCallFlag   OPTIONAL,
+	redirectingCounter	[273]		 RedirectingCounter  OPTIONAL,
+	voBBUserFlag	[277]		 VoBBUserFlag  OPTIONAL,
+	chargePulses	[278]		  ChargePulses OPTIONAL,
+	vasType				[283]		VasType   OPTIONAL,
+	inapFciBillingInfo	[279]		InapFciBillingInfo   OPTIONAL,
+	followMeInd				[281]		FollowMeInd   OPTIONAL,
+	invokeOfLCLS			[282]		InvokeOfLCLS   OPTIONAL,
+	callRedirectionFlag	[284]		CallRedirectionFlag   OPTIONAL,
+	officeName				[285]		OfficeName   OPTIONAL,
+	scpConnection			[286]		ScpConnection   OPTIONAL,
+	chargeClass				[287]		ChargeClass   OPTIONAL,
+	npaNxx					[288]		NPANXX   OPTIONAL,
+	globalCallReference	[289]		GlobalCallReference   OPTIONAL,
+	callerIPInformation	[290]		 CallerIPInformation  OPTIONAL
+}
+
+
+MobileTerminated ::= SET
+{
+	recordType			[0]  		RecordType			,
+	servedIMSI   			[1]  		ServedIMSI                 	,
+	servedIMEI  			[2]  		ServedIMEI                 	OPTIONAL,
+	servedMSISDN          		[3]  		ServedMSISDN               	,
+	callingNumber  			[4]  		CallingNumber              	OPTIONAL,
+	connectedNumber      		[5]  		ConnectedNumber            	OPTIONAL,
+	recordingEntity       		[6]  		RecordingEntity            	,
+	mscIncomingROUTE		[7]  		MscIncomingROUTE           	OPTIONAL,
+	mscOutgoingROUTE     		[8]  		MscOutgoingROUTE           	OPTIONAL,
+	location   			[9]  		Location                   	,
+	changeOfLocation		[10] 		ChangeOfLocation           	OPTIONAL,
+	basicService   			[11] 		BasicService               	,
+	transparencyIndicator  		[12] 		TransparencyIndicator      	OPTIONAL,
+	changeOfService			[13] 		ChangeOfService            	OPTIONAL,
+	supplServicesUsed		[14] 		SupplServicesUsed          	OPTIONAL,
+	aocParameters			[15] 		AocParameters              	OPTIONAL,
+	changeOfAOCParms		[16] 		ChangeOfAOCParms           	OPTIONAL,
+	msClassmark      		[17] 		MsClassmark                	,
+	changeOfClassmark		[18] 		ChangeOfClassmark          	OPTIONAL,
+	setupTime			[203]		SetupTime                  	OPTIONAL,
+	seizureTime			[19] 		SeizureTime                	OPTIONAL,
+	alertingTime			[204]		AlertingTime               	OPTIONAL,
+	answerTime			[20] 		AnswerTime                 	,
+	releaseTime 			[21] 		ReleaseTime                	,
+	callDuration         		[22] 		CallDuration               	,
+	radioChanRequested   		[24] 		RadioChanRequested         	OPTIONAL,
+	radioChanUsed   		[25] 		RadioChanUsed              	OPTIONAL,
+	changeOfRadioChan		[26] 		ChangeOfRadioChan          	OPTIONAL,
+	causeForTerm			[27] 		CauseForTerm               	,
+	diagnostics			[28] 		Diagnostics                	,
+	callReference			[29] 		CallReference              	,
+	sequenceNumber  		[30] 		SequenceNumber             	OPTIONAL,
+	additionalChgInfo		[31] 		AdditionalChgInfo          	,
+	recordExtensions  		[32] 		RecordExtensions           	OPTIONAL,
+	networkCallReference		[33] 		NetworkCallReference       	,
+	mSCAddress  			[34] 		MSCAddress                 	,
+	fnur				[38] 		Fnur                       	OPTIONAL,
+	aiurRequested			[39] 		AiurRequested              	OPTIONAL,
+	speechVersionSupported		[42] 		SpeechVersionSupported     	OPTIONAL,
+	speechVersionUsed		[43] 		SpeechVersionUsed          	OPTIONAL,
+	gsmSCFAddress			[44] 		GsmSCFAddress             	OPTIONAL,
+	serviceKey			[45] 		ServiceKey                 	OPTIONAL,
+	systemType			[46] 		SystemType                 	,
+	rateIndication			[47] 		RateIndication             	OPTIONAL,
+	partialRecordType		[54] 		PartialRecordType          	OPTIONAL,
+	guaranteedBitRate  		[55] 		GuaranteedBitRate          	OPTIONAL,
+	maximumBitRate			[56] 		MaximumBitRate             	OPTIONAL,
+	initialCallAttemptFlag		[137]		InitialCallAttemptFlag     	OPTIONAL,
+	ussdCallBackFlag   		[138]		UssdCallBackFlag           	OPTIONAL,
+	modemType  			[139]		ModemType                  	OPTIONAL,
+	classmark3  			[140]		Classmark3                 	OPTIONAL,
+	chargedParty			[141]		ChargedParty               	,
+	originalCalledNumber  		[142]		OriginalCalledNumber       	OPTIONAL,
+	chargeAreaCode			[145]		ChargeAreaCode             	OPTIONAL,
+	calledChargeAreaCode		[146]		CalledChargeAreaCode       	OPTIONAL,
+	defaultCallHandling  		[150]		DefaultCallHandling        	OPTIONAL,
+	freeFormatData  		[151]		FreeFormatData             	OPTIONAL,
+	freeFormatDataAppend		[152]		FreeFormatDataAppend       	OPTIONAL,
+	numberOfDPEncountered   	[153]		NumberOfDPEncountered      	OPTIONAL,
+	levelOfCAMELService  		[154]		LevelOfCAMELService        	OPTIONAL,
+	roamingNumber   		[160]		RoamingNumber              	,
+	mscIncomingCircuit  		[166]		MscIncomingCircuit         	OPTIONAL,
+	orgRNCorBSCId  			[167]		OrgRNCorBSCId              	,
+	orgMSCId  			[168]		OrgMSCId                   	,
+	callEmlppPriority      		[170]		CallEmlppPriority          	OPTIONAL,
+	calledDefaultEmlppPriority	[171]		CalledDefaultEmlppPriority 	OPTIONAL,
+	eaSubscriberInfo  		[174]		EaSubscriberInfo           	OPTIONAL,
+	selectedCIC     		[175]		SelectedCIC                	OPTIONAL,
+	optimalRoutingFlag   		[177]		OptimalRoutingFlag         	OPTIONAL,
+	portedflag			[180]		Portedflag                 	OPTIONAL,
+	globalAreaID			[188]		GlobalAreaID               	,
+	changeOfglobalAreaID  		[189]		ChangeOfglobalAreaID       	OPTIONAL,
+	subscriberCategory		[190]		SubscriberCategory         	,
+	firstmccmnc			[192]		Firstmccmnc                	,
+	intermediatemccmnc      	[193]		Intermediatemccmnc         	OPTIONAL,
+	lastmccmnc    			[194]		Lastmccmnc                 	OPTIONAL,
+	cUGOutgoingAccessIndicator	[195]		CUGOutgoingAccessIndicator 	OPTIONAL,
+	cUGInterlockCode   		[196]		CUGInterlockCode           	OPTIONAL,
+	cUGIncomingAccessUsed	[197]		CUGIncomingAccessUsed      	OPTIONAL,
+	cUGIndex					[198]		CUGIndex                   	OPTIONAL,
+	hotBillingTag  		[200]		HotBillingTag              	OPTIONAL,
+	redirectingnumber		[201]		Redirectingnumber          	OPTIONAL,
+	redirectingcounter	[202]		Redirectingcounter         	OPTIONAL,
+	calledNumber			[205]		CalledNumber               	OPTIONAL,
+	voiceIndicator			[206]		VoiceIndicator             	OPTIONAL,
+	bCategory				[207]		BCategory                  	,
+	callType    			[208]		CallType                   	,
+	groupCallType			[211]		GroupCallType              	OPTIONAL,
+	groupCallReference	[212]		GroupCallReference         	OPTIONAL,
+	uus1Type					[213]		Uus1Type                   	OPTIONAL,
+	eCategory				[215]		ECategory                  	OPTIONAL,
+	tariffCode				[217]		TariffCode                 	OPTIONAL,
+	disconnectparty		[218]		Disconnectparty            	OPTIONAL,
+	csReference				[220]		CsReference                	OPTIONAL,
+	csaReference			[221]		CsaReference               	OPTIONAL,
+	networkOperatorId		[223]		NetworkOperatorId          	OPTIONAL,
+	typeOfSubscribers		[224]		TypeOfSubscribers          	OPTIONAL,
+	audioDataType			[225]		AudioDataType              	OPTIONAL,
+	usertype					[227]		Usertype                   	OPTIONAL,
+	recordNumber			[232]		RecordNumber               	OPTIONAL,
+	partyRelCause			[237]	PartyRelCause	OPTIONAL,
+	chargeLevel				[238]	ChargeLevel OPTIONAL,
+	locationNum				[239]	LocationNumber OPTIONAL,
+	translatedNumber		[245]		TranslatedNumber           	OPTIONAL,
+	zoneCode					[240]		ZoneCode                   	OPTIONAL,
+	locationNumberNai		[241]		LocationNumberNai OPTIONAL,
+	dtmfIndicator			[242]		DtmfIndicator OPTIONAL,
+	bchNumber				[243]		BchNumber OPTIONAL,
+	translatedNumber		[245]		TranslatedNumber OPTIONAL,
+	cARP						[246] 	CARP OPTIONAL,
+	mapbypassind			[247] 	Mapbypassind OPTIONAL,
+	channelmode				[249]		ChannelMode OPTIONAL,
+	channel					[250]	Channel OPTIONAL,
+	specialBillPrefix		[252]	SpecialBillPrefix OPTIONAL,
+	calledportedflag		[255]	PortedFlag OPTIONAL,
+	locationroutingnumber	[256]	LocationRoutingNumber OPTIONAL,
+	routingcategory			[257]	RoutingCategory OPTIONAL,
+	intermediateChargingInd	[258] IntermediateChargingInd OPTIONAL,
+	mscOutgoingROUTENumber	[261] MscOutgoingROUTENumber OPTIONAL,
+	mscIncomingROUTENumber	[262]	MscIncomingROUTENumber OPTIONAL,
+	roDefaultCallHandling 	[263]	DefaultCallHandling OPTIONAL,
+	roLinkFailureTime			[264]	RoLinkFailureTime OPTIONAL,
+	lastSuccCCRTime			[265]	LastSuccCCRTime OPTIONAL,
+	drcCallId					[266]	DrcCallNumber OPTIONAL,
+	drcCallRN					[267]	DrcCallNumber OPTIONAL,
+	nPDipIndicator				[268]	NPDipIndicator OPTIONAL,
+	aNSIRoutingNumber			[269]	ANSIRoutingNumber OPTIONAL,
+	lRNSource					[270]	LRNOBTAINFROM OPTIONAL,
+	voBBUserFlag				[271]	VoBBUserFlag  OPTIONAL,
+	invokeOfLCLS				[272]	InvokeOfLCLS OPTIONAL,
+	officeName					[279]	OfficeName OPTIONAL,
+	scpConnection				[280]	ScpConnection OPTIONAL,
+	chargeClass					[281]	ChargeClass OPTIONAL,
+	npaNxx						[282]	NPANXX OPTIONAL,
+	globalCallReference		[283]	GlobalCallReference OPTIONAL,
+	calledIPInformation		[285]	IPInformationEvent OPTIONAL
+}
+
+
+
+
+RoamingRecord  ::= SET			
+{
+	recordType 			[0]  		RecordType			,
+	servedIMSI			[1]  		ServedIMSI                	,
+	servedMSISDN			[2]  		ServedMSISDN              	,
+	callingNumber			[3]  		CallingNumber            	OPTIONAL,
+	roamingNumber  			[4]  		RoamingNumber             	,
+	recordingEntity    		[5]  		RecordingEntity           	,
+	mscIncomingROUTE  		[6]  		MscIncomingROUTE          	,
+	mscOutgoingROUTE    		[7]  		MscOutgoingROUTE          	,
+	basicService    		[8]  		BasicService              	,
+	transparencyIndicator  		[9]  		TransparencyIndicator     	OPTIONAL,
+	changeOfService     		[10] 		ChangeOfService           	OPTIONAL,
+	supplServicesUsed      		[11] 		SupplServicesUsed         	OPTIONAL,
+	seizureTime			[12] 		SeizureTime              	,
+	answerTime			[13] 		AnswerTime			,
+	releaseTime			[14] 		ReleaseTime              	,
+	callDuration    		[15] 		CallDuration              	,
+	causeForTerm   			[17] 		CauseForTerm              	,
+	diagnostics   			[18] 		Diagnostics               	,
+	callReference      		[19] 		CallReference             	,
+	sequenceNumber   		[20] 		SequenceNumber            	OPTIONAL,
+	recordExtensions   		[21] 		RecordExtensions          	,
+	networkCallReference		[22] 		NetworkCallReference      	,
+	mSCAddress			[23] 		MSCAddress                	,
+	partialRecordType   		[30] 		PartialRecordType         	OPTIONAL,
+	additionalChgInfo        	[133]		AdditionalChgInfo         	,
+	chargedParty      		[141]		ChargedParty              	,
+	originalCalledNumber  		[142]		OriginalCalledNumber      	OPTIONAL,
+	chargeAreaCode  		[145]		ChargeAreaCode            	OPTIONAL,
+	calledChargeAreaCode		[146]		CalledChargeAreaCode      	,
+	mscOutgoingCircuit		[166]		MscOutgoingCircuit        	OPTIONAL,
+	mscIncomingCircuit  		[167]		MscIncomingCircuit        	OPTIONAL,
+	orgMSCId      			[168]		OrgMSCId                  	,
+	callEmlppPriority  		[170]		CallEmlppPriority         	OPTIONAL,
+	eaSubscriberInfo		[174]		EaSubscriberInfo          	,
+	selectedCIC			[175]		SelectedCIC               	,
+	optimalRoutingFlag  		[177]		OptimalRoutingFlag        	,
+	subscriberCategory   		[190]		SubscriberCategory        	,
+	cUGOutgoingAccessIndicator	[195]		CUGOutgoingAccessIndicator	OPTIONAL,
+	cUGInterlockCode   		[196]		CUGInterlockCode          	OPTIONAL,
+	hotBillingTag			[200]		HotBillingTag             	OPTIONAL,
+	eCategory			[215]		ECategory                 	OPTIONAL,
+	gsmSCFAddress			[216]		GsmSCFAddress            	OPTIONAL,
+	serviceKey			[217]		ServiceKey                	OPTIONAL,
+	levelOfCAMELService		[218]		LevelOfCAMELService       	OPTIONAL,
+	networkOperatorId		[223]		NetworkOperatorId         	OPTIONAL,
+	typeOfSubscribers		[224]		TypeOfSubscribers         	OPTIONAL,
+	recordNumber			[232]		RecordNumber              	OPTIONAL,
+	translatedNumber		[245]		TranslatedNumber          	OPTIONAL
+}
+
+
+IncomingGatewayRecord ::= SET
+{
+	recordType		     [0]     RecordType			,
+	callingNumber		     [1]     CallingNumber		  OPTIONAL ,
+	calledNumber  		     [2]     CalledNumber			,
+	recordingEntity        	     [3]     RecordingEntity			,
+	mscIncomingROUTE	     [4]     MscIncomingROUTE			,
+	mscOutgoingROUTE	     [5]     MscOutgoingROUTE			,
+	setupTime		     [201]   SetupTime		   	  OPTIONAL ,
+	seizureTime		     [6]     SeizureTime		  OPTIONAL ,
+	alertingTime		     [202]   AlertingTime		  OPTIONAL ,
+	answerTime		     [7]     AnswerTime				,
+	releaseTime		     [8]     ReleaseTime			,
+	callDuration     	     [9]     CallDuration			,
+	causeForTerm		     [11]    CauseForTerm			,
+	diagnostics		     [12]    Diagnostics			,
+	callReference		     [13]    CallReference			,
+	sequenceNumber		     [14]    SequenceNumber		  OPTIONAL ,
+	recordExtensions	     [15]    RecordExtensions	   	  OPTIONAL ,
+	partialRecordType  	     [22]    PartialRecordType  	  OPTIONAL ,
+	iSDNBC  		     [23]    ISDNBC  		   	  OPTIONAL ,
+	lLC			     [24]    LLC			  OPTIONAL ,
+	hLC  			     [25]    HLC  			  OPTIONAL ,
+	basicService     	     [130]   BasicService			,
+	additionalChgInfo	     [133]   AdditionalChgInfo			,
+	chargedParty		     [141]   ChargedParty		  OPTIONAL ,
+	originalCalledNumber	     [142]   OriginalCalledNumber	  OPTIONAL ,
+	rateIndication  	     [159]   RateIndication  	   	  OPTIONAL ,
+	chargeAreaCode		     [145]   ChargeAreaCode		  OPTIONAL ,
+	roamingNumber		     [160]   RoamingNumber		  OPTIONAL ,
+	mscIncomingCircuit	     [167]   MscIncomingCircuit	   	  OPTIONAL ,
+	orgMSCId    		     [168]   OrgMSCId				,
+	callEmlppPriority	     [170]   CallEmlppPriority	   	  OPTIONAL ,
+	eaSubscriberInfo	     [174]   EaSubscriberInfo	   	  OPTIONAL ,
+	selectedCIC		     [175]   SelectedCIC		  OPTIONAL ,
+	cUGOutgoingAccessIndicator   [195]   CUGOutgoingAccessIndicator   OPTIONAL ,
+	cUGInterlockCode  	     [196]   CUGInterlockCode  	   	  OPTIONAL ,
+	cUGIncomingAccessUsed  	     [197]   CUGIncomingAccessUsed  	  OPTIONAL ,
+	mscIncomingRouteAttribute    [198]   MscIncomingRouteAttribute    OPTIONAL ,
+	mscOutgoingRouteAttribute    [199]   MscOutgoingRouteAttribute    OPTIONAL ,
+	networkCallReference   	     [200]   NetworkCallReference		,
+	voiceIndicator		     [203]   VoiceIndicator		  OPTIONAL ,
+	bCategory     		     [204]   BCategory     		  OPTIONAL ,
+	callType		     [205]   CallType		   	  OPTIONAL ,
+	disconnectparty		     [218]   Disconnectparty		  OPTIONAL ,
+	networkOperatorId	     [223]   NetworkOperatorId	   	  OPTIONAL ,
+	audioDataType		     [225]   AudioDataType		  OPTIONAL ,
+	recordNumber		     [232]   RecordNumber		  OPTIONAL ,
+	servedIMSI		     [239]   ServedIMSI		   	  OPTIONAL ,
+	translatedNumber	     [245]   TranslatedNumber	   	  OPTIONAL ,
+	location		     [247]   Location		   	  OPTIONAL ,
+	changeOfLocation	     [248]   ChangeOfLocation	   	  OPTIONAL ,
+	firstmccmnc		     [249]   Firstmccmnc		  OPTIONAL ,
+	lastmccmnc		     [250]   Lastmccmnc		   	  OPTIONAL
+}
+
+OutgoingGatewayRecord ::= SET
+{
+	recordType		     [0]      RecordType			,
+	callingNumber		     [1]      CallingNumber		   OPTIONAL ,
+	calledNumber		     [2]      CalledNumber			,
+	recordingEntity		     [3]      RecordingEntity			,
+	mscIncomingROUTE	     [4]      MscIncomingROUTE			,
+	mscOutgoingROUTE	     [5]      MscOutgoingROUTE			,
+	setupTime		     [201]    SetupTime			OPTIONAL ,
+	seizureTime		     [6]      SeizureTime		   OPTIONAL ,
+	alertingTime		     [202]    AlertingTime		   OPTIONAL ,
+	answerTime		     [7]      AnswerTime			,
+	releaseTime		     [8]      ReleaseTime			,
+	callDuration		     [9]      CallDuration			,
+	causeForTerm		     [11]     CauseForTerm			,
+	diagnostics		     [12]     Diagnostics			,
+	callReference		     [13]     CallReference			,
+	sequenceNumber   	     [14]     SequenceNumber   	    	   OPTIONAL ,
+	recordExtensions	     [15]     RecordExtensions	    	   OPTIONAL ,
+	partialRecordType	     [22]     PartialRecordType	    	   OPTIONAL ,
+	basicService     	     [130]    BasicService			,
+	additionalChgInfo	     [133]    AdditionalChgInfo			,
+	chargedParty  		     [141]    ChargedParty  		   OPTIONAL ,
+	originalCalledNumber	     [142]    OriginalCalledNumber	   OPTIONAL ,
+	chargeAreaCode		     [145]    ChargeAreaCode		   OPTIONAL ,
+	rateIndication		     [159]    RateIndication		   OPTIONAL ,
+	roamingNumber   	     [160]    RoamingNumber   	    	   OPTIONAL ,
+	mscOutgoingCircuit	     [166]    MscOutgoingCircuit	   OPTIONAL ,
+	orgMSCId  		     [168]    OrgMSCId				,
+	callEmlppPriority   	     [170]    CallEmlppPriority   	   OPTIONAL ,
+	eaSubscriberInfo  	     [174]    EaSubscriberInfo  	   OPTIONAL ,
+	selectedCIC		     [175]    SelectedCIC		   OPTIONAL ,
+	cUGOutgoingAccessIndicator   [195]    CUGOutgoingAccessIndicator   OPTIONAL ,
+	cUGInterlockCode   	     [196]    CUGInterlockCode   	   OPTIONAL ,
+	cUGIncomingAccessUsed	     [197]    CUGIncomingAccessUsed	   OPTIONAL ,
+	mscIncomingRouteAttribute    [198]    MscIncomingRouteAttribute    OPTIONAL ,
+	mscOutgoingRouteAttribute    [199]    MscOutgoingRouteAttribute    OPTIONAL ,
+	networkCallReference	     [200]    NetworkCallReference		,
+	voiceIndicator		     [203]    VoiceIndicator		   OPTIONAL ,
+	bCategory		     [204]    BCategory		    	   OPTIONAL ,
+	callType  		     [205]    CallType  		   OPTIONAL ,
+	disconnectparty		     [218]    Disconnectparty		   OPTIONAL ,
+	networkOperatorId	     [223]    NetworkOperatorId	    	   OPTIONAL ,
+	audioDataType		     [225]    AudioDataType		   OPTIONAL ,
+	recordNumber		     [232]    RecordNumber		   OPTIONAL ,
+	translatedNumber	     [245]    TranslatedNumber	    	   OPTIONAL ,
+	location		     [247]    Location		    	   OPTIONAL ,
+	changeOfLocation	     [248]    ChangeOfLocation	    	   OPTIONAL ,
+	firstmccmnc		     [249]    Firstmccmnc		   OPTIONAL ,
+	lastmccmnc		     [250]    Lastmccmnc		   OPTIONAL
+}
+
+Transit  ::= SET
+{
+	recordType		      [0]     RecordType			,
+	recordingEntity		      [1]     RecordingEntity			,
+	mscIncomingROUTE	      [2]     MscIncomingROUTE			,
+	mscOutgoingROUTE	      [3]     MscOutgoingROUTE			,
+	callingNumber		      [4]     CallingNumber		     OPTIONAL ,
+	calledNumber		      [5]     CalledNumber			,
+	isdnBasicService	      [6]     IsdnBasicService	   	     OPTIONAL ,
+	setupTime		      [201]   SetupTime		     OPTIONAL ,
+	seizureTime		      [7]     SeizureTime		     OPTIONAL ,
+	alertingTime		      [202]   AlertingTime		     OPTIONAL ,
+	answerTime		      [8]     AnswerTime			,
+	releaseTime		      [9]     ReleaseTime			,
+	callDuration		      [10]    CallDuration			,
+	causeForTerm		      [12]    CauseForTerm			,
+	diagnostics		      [13]    Diagnostics			,
+	callReference  		      [14]    CallReference			,
+	sequenceNumber		      [15]    SequenceNumber		     OPTIONAL ,
+	recordExtensions  	      [16]    RecordExtensions  	     OPTIONAL ,
+	partialRecordType	      [23]    PartialRecordType	   	     OPTIONAL ,
+	basicService		      [130]   BasicService			,
+	additionalChgInfo     	      [133]   AdditionalChgInfo			,
+	originalCalledNumber  	      [142]   OriginalCalledNumber  	     OPTIONAL ,
+	chargeAreaCode		      [145]   ChargeAreaCode		     OPTIONAL ,
+	rateIndication		      [159]   RateIndication		     OPTIONAL ,
+	mscOutgoingCircuit	      [166]   MscOutgoingCircuit	     OPTIONAL ,
+	mscIncomingCircuit  	      [167]   MscIncomingCircuit  	     OPTIONAL ,
+	orgMSCId		      [168]   OrgMSCId				,
+	callEmlppPriority	      [170]   CallEmlppPriority	   	     OPTIONAL ,
+	eaSubscriberInfo  	      [174]   EaSubscriberInfo  	     OPTIONAL ,
+	selectedCIC		      [175]   SelectedCIC		     OPTIONAL ,
+	cUGOutgoingAccessIndicator    [195]   CUGOutgoingAccessIndicator     OPTIONAL ,
+	cUGInterlockCode  	      [196]   CUGInterlockCode  	     OPTIONAL ,
+	cUGIncomingAccessUsed  	      [197]   CUGIncomingAccessUsed  	     OPTIONAL ,
+	mscIncomingRouteAttribute     [198]   MscIncomingRouteAttribute      OPTIONAL ,
+	mscOutgoingRouteAttribute     [199]   MscOutgoingRouteAttribute      OPTIONAL ,
+	networkCallReference	      [200]   NetworkCallReference		,
+	voiceIndicator    	      [203]   VoiceIndicator    	     OPTIONAL ,
+	bCategory		      [204]   BCategory		   	     OPTIONAL ,
+	callType		      [205]   CallType		   	     OPTIONAL ,
+	disconnectparty		      [218]   Disconnectparty		     OPTIONAL ,
+	networkOperatorId	      [223]   NetworkOperatorId	   	     OPTIONAL ,
+	audioDataType		      [225]   AudioDataType		     OPTIONAL ,
+	recordNumber		      [232]   RecordNumber		     OPTIONAL ,
+	translatedNumber	      [245]   TranslatedNumber	   	     OPTIONAL ,
+	cmnFlag			      [251]   CmnFlag			     OPTIONAL
+}
+
+SMSMobileOriginated ::= SET
+{
+	recordType					[0]		RecordType					,
+	servedIMSI					[1]  		ServedIMSI					,
+	servedIMEI   					[2]  		ServedIMEI   					OPTIONAL,
+	servedMSISDN    				[3]  		ServedMSISDN    				,
+	msClassmark					[4]  		MsClassmark					,
+	serviceCentre  					[5]  		ServiceCentre  					,
+	recordingEntity					[6]  		RecordingEntity					,
+	location 					[7]  		Location 					,
+	messageReference    				[8]  		MessageReference    				,
+	originationTime					[9]  		OriginationTime					,
+	smsResult					[10] 		SmsResult					OPTIONAL,
+	recordExtensions				[11] 		RecordExtensions				OPTIONAL,
+	destinationNumber				[12] 		DestinationNumber				,
+	cAMELSMSInformation  				[13] 		CAMELSMSInformation  				OPTIONAL,
+	systemType					[14] 		SystemType					,
+	basicService   					[130]		BasicService   					,
+	additionalChgInfo				[133]		AdditionalChgInfo				,
+	classmark3					[140]		Classmark3					OPTIONAL,
+	chargedParty  					[141]		ChargedParty  					,
+	chargeAreaCode					[145]		ChargeAreaCode					OPTIONAL,
+	orgRNCorBSCId					[167]		OrgRNCorBSCId					,
+	orgMSCId   					[168]		OrgMSCId   					,
+	globalAreaID    				[188]		GlobalAreaID    				,
+	subscriberCategory   				[190]		SubscriberCategory   				,
+	firstmccmnc   					[192]		Firstmccmnc   					,
+	smsUserDataType     				[195]		SmsUserDataType     				,
+	smstext     					[196]		Smstext     					OPTIONAL,
+	maximumNumberOfSMSInTheConcatenatedSMS  	[197]		MaximumNumberOfSMSInTheConcatenatedSMS  	OPTIONAL,
+	concatenatedSMSReferenceNumber			[198]		ConcatenatedSMSReferenceNumber			OPTIONAL,
+	sequenceNumberOfTheCurrentSMS			[199]		SequenceNumberOfTheCurrentSMS			OPTIONAL,
+	hotBillingTag  					[200]		HotBillingTag  					OPTIONAL,
+	callReference					[201]		CallReference					,
+	tariffCode					[202]		TariffCode					OPTIONAL,
+	networkOperatorId				[223]		NetworkOperatorId				OPTIONAL,
+	typeOfSubscribers				[224]		TypeOfSubscribers				OPTIONAL,
+	recordNumber					[232]		RecordNumber					OPTIONAL,
+	chargeLevel					[237]	ChargeLevel	OPTIONAL,
+	zoneCode					[240]		ZoneCode					OPTIONAL
+}
+
+
+SMSMobileTerminated ::= SET			
+{
+	recordType     					[0]  		RecordType					,
+	serviceCentre  					[1]  		ServiceCentre                         		,
+	servedIMSI  					[2]  		ServedIMSI                            		,
+	servedIMEI     					[3]  		ServedIMEI                            		OPTIONAL,
+	servedMSISDN    				[4]  		ServedMSISDN                          		,
+	msClassmark  					[5]  		MsClassmark                           		,
+	recordingEntity					[6]  		RecordingEntity                       		,
+	location   					[7]  		Location                              		,
+	deliveryTime					[8]  		DeliveryTime                          		,
+	smsResult  					[9]  		SmsResult                             		OPTIONAL,
+	recordExtensions   				[10] 		RecordExtensions                      	OPTIONAL,
+	systemType  					[11] 		SystemType                            		,
+	cAMELSMSInformation				[12] 		CAMELSMSInformation                   		OPTIONAL,
+	basicService  					[130]		BasicService                          		,
+	additionalChgInfo  				[133]		AdditionalChgInfo                     		,
+	classmark3      				[140]		Classmark3                            		OPTIONAL,
+	chargedParty  					[141]		ChargedParty                          		,
+	chargeAreaCode					[145]		ChargeAreaCode                        		OPTIONAL,
+	orgRNCorBSCId					[167]		OrgRNCorBSCId                         		,
+	orgMSCId   					[168]		OrgMSCId                              		,
+	globalAreaID    				[188]		GlobalAreaID                          		,
+	subscriberCategory				[190]		SubscriberCategory                    		,
+	firstmccmnc					[192]		Firstmccmnc                           		,
+	smsUserDataType					[195]		SmsUserDataType                       		,
+	smstext  					[196]		Smstext                               		OPTIONAL,
+	maximumNumberOfSMSInTheConcatenatedSMS		[197]		MaximumNumberOfSMSInTheConcatenatedSMS		OPTIONAL,
+	concatenatedSMSReferenceNumber			[198]		ConcatenatedSMSReferenceNumber        		OPTIONAL,
+	sequenceNumberOfTheCurrentSMS			[199]		SequenceNumberOfTheCurrentSMS         		OPTIONAL,
+	hotBillingTag     				[200]		HotBillingTag                         		OPTIONAL,
+	origination      				[201]		Origination                           		,
+	callReference					[202]		CallReference                         		,
+	tariffCode						[203]		TariffCode                            		OPTIONAL,
+	networkOperatorId				[223]		NetworkOperatorId                     		OPTIONAL,
+	typeOfSubscribers				[224]		TypeOfSubscribers                     		OPTIONAL,
+	recordNumber					[232]		RecordNumber                          		OPTIONAL,
+	chargeLevel						[237]		ChargeLevel								OPTIONAL,
+	zoneCode							[240]		ZoneCode                              		OPTIONAL
+}
+
+
+LCSMTRecord ::= SET
+{
+	recordType	       [0]    RecordType		,
+	recordingEntity        [1]    RecordingEntity		,
+	lcsClientType          [2]    LcsClientType		,
+	lcsClientIdentity      [3]    LcsClientIdentity		,
+	servedIMSI	       [4]    ServedIMSI		,
+	servedMSISDN   	       [5]    ServedMSISDN		,
+	locationType	       [6]    LocationType		,
+	lcsQos    	       [7]    LcsQos    	   OPTIONAL ,
+	lcsPriority	       [8]    LcsPriority		,
+	mlcNumber	       [9]    MlcNumber			,
+	eventTimeStamp	       [10]   EventTimeStamp		,
+	measureDuration	       [11]   MeasureDuration		,
+	notificationToMSUser   [12]   NotificationToMSUser	,
+	privacyOverride        [13]   PrivacyOverride      OPTIONAL ,
+	location	       [14]   Location			,
+	locationEstimate       [15]   LocationEstimate		,
+	positioningData	       [16]   PositioningData		,
+	lcsCause    	       [17]   LcsCause    	   OPTIONAL ,
+	diagnostics	       [18]   Diagnostics	   OPTIONAL ,
+	systemType	       [19]   SystemType		,
+	recordExtensions       [20]   RecordExtensions     OPTIONAL ,
+	causeForTerm	       [21]   CauseForTerm		,
+	lcsReferenceNumber     [101]  LcsReferenceNumber   OPTIONAL ,
+	servedIMEI	       [102]  ServedIMEI	   OPTIONAL ,
+	additionalChgInfo      [133]  AdditionalChgInfo		,
+	chargedParty	       [141]  ChargedParty		,
+	chargeAreaCode	       [145]  ChargeAreaCode	   OPTIONAL ,
+	orgRNCorBSCId	       [167]  OrgRNCorBSCId		,
+	orgMSCId  	       [168]  OrgMSCId			,
+	globalAreaID	       [188]  GlobalAreaID		,
+	subscriberCategory     [190]  SubscriberCategory	,
+	firstmccmnc   	       [192]  Firstmccmnc		,
+	hotBillingTag	       [200]  HotBillingTag	   OPTIONAL ,
+	callReference	       [201]  CallReference		,
+	tariffCode	       [217]  TariffCode	   OPTIONAL ,
+	networkOperatorId      [223]  NetworkOperatorId    OPTIONAL ,
+	typeOfSubscribers      [224]  TypeOfSubscribers    OPTIONAL ,
+	recordNumber	       [232]  RecordNumber	   OPTIONAL ,
+	zoneCode	       [240]  ZoneCode	      	   OPTIONAL
+}
+
+
+LCSMORecord ::= SET
+{
+	recordType	      [0]    RecordType,
+	recordingEntity	      [1]    RecordingEntity,
+	lcsClientType         [2]    LcsClientType           OPTIONAL ,
+	lcsClientIdentity     [3]    LcsClientIdentity       OPTIONAL ,
+	servedIMSI    	      [4]    ServedIMSI,
+	servedMSISDN	      [5]    ServedMSISDN,
+	molrType  	      [6]    MolrType,
+	lcsQos  	      [7]    LcsQos  	    	     OPTIONAL ,
+	lcsPriority	      [8]    LcsPriority,
+	mlcNumber  	      [9]    MlcNumber  	     OPTIONAL ,
+	eventTimeStamp	      [10]   EventTimeStamp,
+	measureDuration	      [11]   MeasureDuration,
+	location	      [12]   Location,
+	locationEstimate      [13]   LocationEstimate,
+	positioningData       [14]   PositioningData,
+	lcsCause	      [15]   LcsCause	    	     OPTIONAL ,
+	diagnostics           [16]   Diagnostics             OPTIONAL ,
+	systemType	      [17]   SystemType,
+	recordExtensions      [18]   RecordExtensions        OPTIONAL ,
+	causeForTerm  	      [19]   CauseForTerm,
+	lcsReferenceNumber    [101]  LcsReferenceNumber      OPTIONAL ,
+	servedIMEI	      [102]  ServedIMEI	    	     OPTIONAL ,
+	additionalChgInfo     [133]  AdditionalChgInfo,
+	chargedParty	      [141]  ChargedParty,
+	chargeAreaCode	      [145]  ChargeAreaCode	     OPTIONAL ,
+	orgRNCorBSCId  	      [167]  OrgRNCorBSCId,
+	orgMSCId     	      [168]  OrgMSCId,
+	globalAreaID   	      [188]  GlobalAreaID,
+	subscriberCategory    [190]  SubscriberCategory,
+	firstmccmnc	      [192]  Firstmccmnc,
+	hotBillingTag	      [200]  HotBillingTag	     OPTIONAL ,
+	callReference         [201]  CallReference,
+	tariffCode	      [217]  TariffCode	    	     OPTIONAL ,
+	networkOperatorId     [223]  NetworkOperatorId       OPTIONAL ,
+	typeOfSubscribers     [224]  TypeOfSubscribers       OPTIONAL ,
+	recordNumber	      [232]  RecordNumber	     OPTIONAL ,
+	zoneCode	      [240]  ZoneCode	    	     OPTIONAL
+}
+
+LCSNIRecord ::= SET
+{
+	recordType		[0]   RecordType,
+	recordingEntity		[1]   RecordingEntity,
+	lcsClientType		[2]   LcsClientType		OPTIONAL ,
+	lcsClientIdentity	[3]   LcsClientIdentity		OPTIONAL ,
+	servedIMSI		[4]   ServedIMSI,
+	servedMSISDN		[5]   ServedMSISDN,
+	servedIMEI		[6]   ServedIMEI		OPTIONAL ,
+	emsDigits  		[7]   EmsDigits  		OPTIONAL ,
+	emsKey			[8]   EmsKey			OPTIONAL ,
+	lcsQos			[9]   LcsQos			OPTIONAL ,
+	lcsPriority      	[10]  LcsPriority,
+	mlcNumber		[11]  MlcNumber,
+	eventTimeStamp		[12]  EventTimeStamp,
+	measureDuration   	[13]  MeasureDuration,
+	location		[14]  Location,
+	locationEstimate  	[15]  LocationEstimate  	OPTIONAL ,
+	positioningData   	[16]  PositioningData,
+	lcsCause  		[17]  LcsCause  		OPTIONAL ,
+	diagnostics     	[18]  Diagnostics     		OPTIONAL ,
+	systemType  		[19]  SystemType,
+	recordExtensions	[20]  RecordExtensions		OPTIONAL ,
+	causeForTerm          	[21]  CauseForTerm,
+	lcsReferenceNumber  	[101] LcsReferenceNumber  	OPTIONAL ,
+	additionalChgInfo	[133] AdditionalChgInfo,
+	chargedParty		[141] ChargedParty,
+	chargeAreaCode		[145] ChargeAreaCode		OPTIONAL ,
+	orgRNCorBSCId  		[167] OrgRNCorBSCId,
+	orgMSCId		[168] OrgMSCId,
+	globalAreaID		[188] GlobalAreaID,
+	subscriberCategory	[190] SubscriberCategory,
+	firstmccmnc		[192] Firstmccmnc,
+	hotBillingTag		[200] HotBillingTag		OPTIONAL ,
+	callReference		[201] CallReference,
+	networkOperatorId	[223] NetworkOperatorId		OPTIONAL ,
+	typeOfSubscribers	[224] TypeOfSubscribers		OPTIONAL ,
+	recordNumber		[232] RecordNumber		OPTIONAL
+}
+
+SupplementaryService ::= SET	       -- GRATHI
+{
+	recordType		[0]		RecordType		,
+	servedIMSI		[1]  		ServedIMSI		,
+	servedIMEI  		[2]  		ServedIMEI  		OPTIONAL,
+	servedMSISDN		[3]  		ServedMSISDN		,
+	msClassmark		[4]  		MsClassmark		,
+	recordingEntity		[5]  		RecordingEntity		,
+	location		[6]  		Location		,
+	basicService		[7]  		BasicService		OPTIONAL,
+	supplService		[8]  		SupplService		,
+	ssAction		[9]  		SsAction		,
+	ssActionTime  		[10] 		SsActionTime  		,
+	ssParameters    	[11] 		SsParameters    	OPTIONAL,
+	ssActionResult		[12] 		SsActionResult		OPTIONAL,
+	callReference		[13] 		CallReference		,
+	recordExtensions	[15] 		RecordExtensions	,
+	systemType  		[14] 		SystemType  		,
+	ussdCodingScheme	[126]		UssdCodingScheme	OPTIONAL,
+	ussdString  		[127]		UssdString  		OPTIONAL,
+	ussdNotifyCounter	[128]		UssdNotifyCounter	OPTIONAL,
+	ussdRequestCounter	[129]		UssdRequestCounter	OPTIONAL,
+	additionalChgInfo	[133]		AdditionalChgInfo	,
+	classmark3		[140]		Classmark3		OPTIONAL,
+	chargedParty		[141]		ChargedParty		,
+	chargeAreaCode		[145]		ChargeAreaCode		OPTIONAL,
+	orgRNCorBSCId		[167]		OrgRNCorBSCId		,
+	orgMSCId		[168]		OrgMSCId		,
+	globalAreaID		[188]		GlobalAreaID		,
+	subscriberCategory	[190]		SubscriberCategory	,
+	firstmccmnc		[192]		Firstmccmnc		,
+	hotBillingTag		[200]		HotBillingTag		OPTIONAL,
+	tariffCode		[217]		TariffCode		OPTIONAL,
+	networkOperatorId	[223]		NetworkOperatorId	OPTIONAL,
+	typeOfSubscribers	[224]		TypeOfSubscribers	OPTIONAL,
+	recordNumber		[232]		RecordNumber		OPTIONAL,
+	zoneCode		[240]		ZoneCode		OPTIONAL
+}
+
+HLRInterrogation ::= SET
+{
+	recordType	      [0]    RecordType,
+	servedIMSI	      [1]    ServedIMSI,
+	servedMSISDN	      [2]    ServedMSISDN,
+	recordingEntity	      [3]    RecordingEntity,
+	basicService	      [4]    BasicService	     OPTIONAL ,
+	routingNumber	      [5]    RoutingNumber	     OPTIONAL ,
+	interrogationTime     [6]    InterrogationTime,
+	numberOfForwarding    [7]    NumberOfForwarding      OPTIONAL ,
+	interrogationResult   [8]    InterrogationResult     OPTIONAL ,
+	recordExtensions      [9]    RecordExtensions        OPTIONAL ,
+	chargeAreaCode	      [145]  ChargeAreaCode	     OPTIONAL ,
+	orgMSCId  	      [168]  OrgMSCId,
+	callReference	      [169]  CallReference,
+	eCategory	      [215]  ECategory	    	     OPTIONAL ,
+	networkOperatorId     [223]  NetworkOperatorId       OPTIONAL ,
+	recordNumber	      [232]  RecordNumber	     OPTIONAL
+}
+
+CommonEquipmentUsageRecord ::= 	SET
+{
+	recordType	    [0]     RecordType,
+	equipmentType	    [1]     EquipmentType,
+	equipmentId	    [2]     EquipmentId,
+	servedIMSI	    [3]     ServedIMSI,
+	servedIMEI	    [102]   ServedIMEI	   	 OPTIONAL ,
+	servedMSISDN	    [4]     ServedMSISDN,
+	recordingEntity	    [5]     RecordingEntity,
+	basicService	    [6]     BasicService,
+	changeOfService	    [7]     ChangeOfService	 OPTIONAL ,
+	supplServicesUsed   [8]     SupplServicesUsed,
+	seizureTime	    [9]     SeizureTime,
+	releaseTime	    [10]    ReleaseTime,
+	callDuration	    [11]    CallDuration,
+	callReference	    [12]    CallReference,
+	sequenceNumber	    [13]    SequenceNumber	 OPTIONAL ,
+	recordExtensions    [14]    RecordExtensions   	 OPTIONAL ,
+	systemType	    [15]    SystemType,
+	rateIndication	    [16]    RateIndication	 OPTIONAL ,
+	fnur		    [17]    Fnur		 OPTIONAL ,
+	partialRecordType   [18]    PartialRecordType  	 OPTIONAL ,
+	causeForTerm	    [100]   CauseForTerm,
+	diagnostics	    [101]   Diagnostics,
+	additionalChgInfo   [133]   AdditionalChgInfo,
+	chargeAreaCode	    [145]   ChargeAreaCode	 OPTIONAL ,
+	orgRNCorBSCId	    [167]   OrgRNCorBSCId,
+	orgMSCId	    [168]   OrgMSCId,
+	subscriberCategory  [190]   SubscriberCategory,
+	hotBillingTag	    [200]   HotBillingTag	 OPTIONAL ,
+	networkOperatorId   [223]   NetworkOperatorId  	 OPTIONAL ,
+	typeOfSubscribers   [224]   TypeOfSubscribers  	 OPTIONAL ,
+	recordNumber	    [232]   RecordNumber	 OPTIONAL
+}
+
+
+TerminatingCAMEL ::=  SET
+{
+	recordtype		     [0]   RecordType,
+	servedIMSI		     [1]   ServedIMSI,
+	servedMSISDN		     [2]   ServedMSISDN,
+	recordingEntity		     [3]   RecordingEntity,
+	interrogationTime	     [4]   InterrogationTime,
+	destinationRoutingAddress    [5]   DestinationRoutingAddress  	OPTIONAL ,
+	gsmSCFAddress		     [6]   GsmSCFAddress,
+	serviceKey 		     [7]   ServiceKey,
+	networkCallReference	     [8]   NetworkCallReference,
+	mSCAddress		     [9]   MSCAddress,
+	defaultCallHandling	     [10]  DefaultCallHandling	   	OPTIONAL ,
+	recordExtensions	     [11]  RecordExtensions	   	OPTIONAL ,
+	calledNumber		     [12]  CalledNumber,
+	callingNumber		     [13]  CallingNumber		OPTIONAL ,
+	mscIncomingROUTE	     [14]  MscIncomingROUTE,
+	mscOutgoingROUTE	     [15]  MscOutgoingROUTE,
+	seizureTime		     [16]  SeizureTime		   	OPTIONAL ,
+	answerTime		     [17]  AnswerTime,
+	releaseTime		     [18]  ReleaseTime,
+	callDuration		     [19]  CallDuration,
+	causeForTerm		     [21]  CauseForTerm,
+	diagnostics		     [22]  Diagnostics,
+	callReference		     [23]  CallReference,
+	sequenceNumber		     [24]  SequenceNumber		OPTIONAL ,
+	numberOfDPEncountered	     [25]  NumberOfDPEncountered	OPTIONAL ,
+	levelOfCAMELService	     [26]  LevelOfCAMELService,
+	freeFormatData		     [27]  FreeFormatData		OPTIONAL ,
+	cAMELCallLegInformation	     [28]  CAMELCallLegInformation	OPTIONAL ,
+	freeFormatDataAppend	     [29]  FreeFormatDataAppend	   	OPTIONAL ,
+	mscServerIndication	     [30]  MscServerIndication	   	OPTIONAL ,
+	defaultCallHandling2	     [31]  DefaultCallHandling2	OPTIONAL ,
+	gsmSCFAddress2			[32]  GsmSCFAddress2	   	OPTIONAL ,
+	serviceKey2  		     [33]  ServiceKey2  		OPTIONAL ,
+	freeFormatData2			[34]  FreeFormatData2	   	OPTIONAL ,
+	freeFormatDataAppend2	     [35]  FreeFormatDataAppend2	OPTIONAL ,
+	partialRecordType	     [42]  PartialRecordType	   	OPTIONAL ,
+	basicService		     [130] BasicService,
+	additionalChgInfo  	     [133] AdditionalChgInfo,
+	chargedParty     	     [141] ChargedParty,
+	originalCalledNumber	     [142] OriginalCalledNumber	   	OPTIONAL ,
+	chargeAreaCode		     [145] ChargeAreaCode		OPTIONAL ,
+	orgMSCId  		     [168] OrgMSCId,
+	subscriberCategory	     [190] SubscriberCategory,
+	hotBillingTag		     [200] HotBillingTag		OPTIONAL ,
+	resourceChargeIPnumber	     [207] ResourceChargeIPnumber	OPTIONAL ,
+	csReference		     [220] CsReference		   	OPTIONAL ,
+	csaReference		     [221] CsaReference		   	OPTIONAL ,
+	camelphase		     [222] CAMELVPHASE		   	OPTIONAL ,
+	networkOperatorId	     [223] NetworkOperatorId	   	OPTIONAL ,
+	typeOfSubscribers	     [224] TypeOfSubscribers	   	OPTIONAL ,
+	recordNumber		     [232] RecordNumber		   	OPTIONAL ,
+	translatedNumber	     [245] TranslatedNumber	   	OPTIONAL ,
+	interactionWithIP	     [199] InteractionWithIP	   	OPTIONAL
+}
+
+LocationUpdate ::=  SET
+{
+	recordType	      [0]    RecordType,
+	servedIMSI	      [1]    ServedIMSI,
+	servedMSISDN	      [2]    ServedMSISDN,
+	recordingEntity	      [3]    RecordingEntity,
+	oldLocation	      [4]    OldLocation	  OPTIONAL ,
+	newLocation	      [5]    NewLocation,
+	msClassmark	      [6]    MsClassmark,
+	updateTime	      [7]    UpdateTime,
+	updateResult	      [8]    UpdateResult	  OPTIONAL ,
+	recordExtensions      [9]    RecordExtensions     OPTIONAL ,
+	gsmSCFAddress 	      [10]   GsmSCFAddress 	  OPTIONAL ,
+	serviceKey	      [11]   ServiceKey	   	  OPTIONAL ,
+	callReference	      [12]   CallReference	  OPTIONAL ,
+	locationUpdateType    [13]   LocationUpdateType,
+	chargeAreaCode	      [145]  ChargeAreaCode	  OPTIONAL ,
+	networkOperatorId     [223]  NetworkOperatorId    OPTIONAL ,
+	recordNumber	      [232]  RecordNumber	  OPTIONAL
+}
+
+
+Trailer ::= SET
+{
+	trailerTimeStamp [0] TrailerTimeStamp,
+	recordingEntity [1] RecordingEntity,
+	firstCallDateTime [2] FirstCallDateTime,
+	lastCallDateTime [3] LastCallDateTime,
+	noOfRecords [4] NoOfRecords,
+	extensions [5] Extensions
+}
+
+TrailerTimeStamp ::= TimeStamp
+Extensions ::= NULL
+--RecordingEntity ::= OCTET STRING
+FirstCallDateTime ::= TimeStamp
+LastCallDateTime ::= TimeStamp
+NoOfRecords ::= INTEGER
+
+
+Extension ::=  NULL
+
+
+
+-------------------------------------LEAF NODES-------------------------------------------
+
+CAMELCallLegInformation ::= SEQUENCE OF [UNIVERSAL 17] CAMELInformation
+
+CAMELInformation ::= SET
+{
+	cAMELDestinationNumber		  [1]		CAMELDestinationNumber		OPTIONAL,
+	cAMELconnectedNumber         	  [2] 		CAMELconnectedNumber         	OPTIONAL,
+	cAMELroamingNumber           	  [3] 		CAMELroamingNumber           	OPTIONAL,
+	cAMELmscOutgoingROUTE        	  [4] 		CAMELmscOutgoingROUTE       	OPTIONAL,
+	cAMELseizureTime             	  [5] 		CAMELseizureTime             	OPTIONAL,
+	cAMELanswerTime              	  [6] 		CAMELanswerTime              	OPTIONAL,
+	cAMELreleaseTime             	  [7] 		CAMELreleaseTime             	OPTIONAL,
+	cAMELcallDuration            	  [8] 		CAMELcallDuration            	OPTIONAL,
+	cAMELdataVolume              	  [9] 		CAMELdataVolume              	OPTIONAL,
+	cAMELInitCFIndicator    	 [10] 		CAMELInitCFIndicator    	OPTIONAL,
+	cAMELcauseForTerm            	 [11] 		CAMELcauseForTerm            	OPTIONAL,
+	cAMELModification       	 [12] 		CAMELModification       	OPTIONAL,
+	cAMELfreeFormatData          	 [13] 		CAMELfreeFormatData          	OPTIONAL,
+	cAMELdiagnostics             	 [14] 		CAMELdiagnostics             	OPTIONAL,
+	cAMELfreeFormatDataAppend    	 [15] 		CAMELfreeFormatDataAppend    	OPTIONAL,
+	cAMELfreeFormatData2        		 [16] 		CAMELfreeFormatData2        		OPTIONAL,
+	cAMELfreeFormatDataAppend2  		 [17] 		CAMELfreeFormatData2  		OPTIONAL,
+	cAMELtranslatedNumber        	 [18] 		CAMELtranslatedNumber        	OPTIONAL,
+	cAMELadditionalChgInfo       	 [19] 		CAMELadditionalChgInfo       	OPTIONAL,
+	cAMELdefaultCallHandling2   		 [20] 		CAMELdefaultCallHandling2   		OPTIONAL,
+	cAMELgsmSCFAddress2        		 [21] 		CAMELgsmSCFAddress2        		OPTIONAL,
+	cAMELserviceKey2            		 [22] 		CAMELserviceKey2            		OPTIONAL,
+	legID                   	 [23] 		LegID                   	OPTIONAL,
+	cAMELpartialRecordType       	 [24] 		CAMELpartialRecordType       	OPTIONAL
+}
+
+
+CAMELconnectedNumber ::= ConnectedNumber
+CAMELroamingNumber ::= RoamingNumber
+CAMELmscOutgoingROUTE ::= MscOutgoingROUTE
+CAMELseizureTime ::= SeizureTime
+CAMELanswerTime ::= AnswerTime
+CAMELreleaseTime ::= ReleaseTime
+CAMELcallDuration ::= CallDuration
+CAMELdataVolume ::= DataVolume
+CAMELcauseForTerm ::= CauseForTerm 
+CAMELfreeFormatData ::= FreeFormatData
+CAMELdiagnostics ::= Diagnostics 
+CAMELfreeFormatDataAppend ::= FreeFormatDataAppend 
+CAMELfreeFormatData2 ::= FreeFormatData2 
+--CAMELfreeFormatData2 ::= FreeFormatDataAppend2 
+CAMELtranslatedNumber ::= TranslatedNumber 
+CAMELadditionalChgInfo ::= AdditionalChgInfo
+CAMELdefaultCallHandling2 ::= DefaultCallHandling2
+CAMELgsmSCFAddress2 ::= GsmSCFAddress2
+CAMELserviceKey2 ::= ServiceKey2
+CAMELpartialRecordType ::= PartialRecordType
+
+
+CAMELSMSInformation    ::= SET
+{
+  gsmSCFAddress            [1] GsmSCFAddress     OPTIONAL,
+  serviceKey              [2] ServiceKey            OPTIONAL,
+  defaultSMSHandling           [3] DefaultSMSHandling   OPTIONAL,
+  freeFormatData            [4] FreeFormatData        OPTIONAL,
+  callingPartyNumber           [5] CallingPartyNumber       OPTIONAL,
+  destinationSubscriberNumber      [6] DestinationSubscriberNumber     OPTIONAL,
+  cAMELSMSCAddress          [7] CAMELSMSCAddress        OPTIONAL,
+  smsReferenceNumber          [8] SmsReferenceNumber OPTIONAL
+}
+
+CallingPartyNumber ::= CallingNumber
+DestinationSubscriberNumber ::= CalledNumber
+CAMELSMSCAddress ::= AddressString
+SmsReferenceNumber ::= CallReferenceNumber
+
+Location ::= ChangeOfLocation
+
+ChangeOfLocation ::=  SEQUENCE			    --SEQUENCE OF ( 23 * n )
+{
+  locationAreaCode  [0] LocationAreaCode,
+  cellIdentifier    [1] CellId
+--
+-- For 2G the content of the Cell Identifier is defined by the Cell Id
+-- refer TS 24.008 and for 3G by the Service Area Code refer TS 25.413.
+--
+}
+
+SupplServicesUsed ::= SEQUENCE OF  [UNIVERSAL 16]  TempSupplServicesUsed  
+	
+
+
+TempSupplServicesUsed ::= SEQUENCE				 --SEQUENCE OF (16 * n)
+{
+    ssCode                  [0] SsCode           OPTIONAL,
+    ssTime                  [1] SsTime           OPTIONAL,
+    relatedNumber	    [2] RelatedNumber OPTIONAL
+}
+
+--SsCode ::= SSCode 
+SsTime ::= TimeStamp
+RelatedNumber ::= BCDDirectoryNumber
+
+ChangeOfAOCParms ::= SEQUENCE		   --SEQUENCE OF ( 43 * n)
+{
+  --
+  -- See TS 22.024.
+  --
+  e1          [1] EParameter   OPTIONAL,
+  e2          [2] EParameter   OPTIONAL,
+  e3          [3] EParameter   OPTIONAL,
+  e4          [4] EParameter   OPTIONAL,
+  e5          [5] EParameter   OPTIONAL,
+  e6          [6] EParameter   OPTIONAL,
+  e7          [7] EParameter   OPTIONAL
+}
+
+ChangeOfglobalAreaID ::= SEQUENCE OF [UNIVERSAL 16] TempChangeOfglobalAreaID
+
+
+TempChangeOfglobalAreaID ::= SEQUENCE		--SEQUENCE OF (22 * n)
+{
+  locationGAI          [0] LocationGAI,
+  changeTime		[1] ChangeTime
+}
+
+RecordType     ::= INTEGER
+{
+    moCallRecord        (0),
+    mtCallRecord         (1),
+    roamingRecord        (2),
+    incGatewayRecord    (3),
+    outGatewayRecord    (4),
+    transitCallRecord        (5),
+    moSMSRecord            (6),
+    mtSMSRecord            (7),
+    ssActionRecord           (10),
+    hlrIntRecord                (11),
+    commonEquipRecord    (14),
+    moTraceRecord            (15),
+    mtTraceRecord             (16),
+    termCAMELRecord       (17),
+    mtLCSRecord             (23),
+    moLCSRecord            (24),
+    niLCSRecord              (25),
+    forwardCallRecord     (100)
+}
+
+
+ServedIMSI ::= 			    TBCD(3..8)
+ServedIMEI ::= 			    TBCD(8)
+ServedMSISDN ::= 		    AddressString(2..9)           --  ADRESS
+CallingNumber ::= 		    AddressString (2..17)         -- ADRESS
+CalledNumber ::= 		    AddressString (2..17)         -- ADRESS
+TranslatedNumber ::= 		    AddressString (2..17)         -- ADRESS
+ConnectedNumber ::= 		    AddressString (2..17)          -- ADRESS
+RoamingNumber ::= 		    AddressString (2..17)          -- ADRESS
+RecordingEntity ::= 		    AddressString (2..9)           -- ADRESS
+--MscIncomingROUTE ::= 		    IA5String(1..32)
+--MscOutgoingROUTE ::= 		    IA5String(1..32)
+
+MscIncomingROUTE ::= SEQUENCE 
+{
+incomingRouteNum [0] IncomingRouteNum OPTIONAL,
+incomingRouteName      [1] IncomingRouteName OPTIONAL
+
+}
+
+IncomingRouteNum ::= INTEGER
+IncomingRouteName ::= GraphicString
+
+
+MscOutgoingROUTE ::= SEQUENCE 
+{
+outGoingRouteNum [0] OutGoingRouteNum OPTIONAL,
+outGoingRouteName      [1] OutGoingRouteName OPTIONAL
+
+}
+
+OutGoingRouteNum ::= INTEGER
+OutGoingRouteName ::= GraphicString
+
+--GraphicString ::= OCTET STRING
+
+EParameter ::= 	   OCTET STRING
+LocationAreaCode    ::= OCTET STRING (SIZE(2))
+
+CellId  ::= OCTET STRING (SIZE(2))
+
+
+BasicService ::= 	BasicServiceCode	    --OCTET STRING(3)
+
+TransparencyIndicator ::= INTEGER
+{
+  transparent      (0),
+  nonTransparent    (1)
+}
+
+
+VoBBUserFlag ::= NULL
+
+ChargeLevel          ::= ENUMERATED
+{
+	chargeBySecond	(0),
+	chargeBy10ms	(1),
+	chargeBy100ms  (2)
+}
+
+CallRedirectionFlag  ::=  INTEGER(0..1)
+
+InapFciBillingInfo   ::= SET
+{
+	legID				[1]  CAMELLegID     OPTIONAL,
+	fciAbiData		[2]  FciAbiData     OPTIONAL
+}
+
+VASTYPE 	::= ENUMERATED
+{
+    icc		  (58),    
+    short-code  (61)
+}
+
+ChargePulses	::= INTEGER
+ 
+WPSCallFlag    ::= ENUMERATED
+{ 
+	not-WPS-CALL    	(0),
+	wPs-CALL        	(1)
+}
+
+IMEI ::= TBCD-STRING (SIZE (8)) 
+
+DefaultCallHandling ::= ENUMERATED
+{
+    continueCall     (0),
+    releaseCall      (1)
+}
+
+AccountCode ::= OCTET STRING(SIZE(9))
+
+Cap4UcbNcnpType           ::= ENUMERATED
+{
+   nc-leg         (0),
+   np-leg         (1),
+   nonncnp-leg   (2)
+}
+
+OsssServicesUsed ::= SEQUENCE OF  SSCode
+SSCode ::= OCTET STRING (SIZE (1))
+
+ChargePulseNumber    ::= INTEGER
+
+CAMELDestinationNumber  ::= DestinationRoutingAddress
+
+ChangeOfService ::= 	BasicServiceCode   -- SEQUENCE OF ( (18..27) * n)
+
+
+
+AocParameters ::= 		    OCTET STRING(4..28)
+
+
+
+MsClassmark ::= 		    OCTET STRING(2..3)
+ChangeOfClassmark ::= 		    OCTET STRING (16 )
+SetupTime ::= 			    TimeStamp
+SeizureTime ::= 		    TimeStamp
+AlertingTime ::= 		    TimeStamp
+AnswerTime ::= 			TimeStamp
+ReleaseTime ::= 		   TimeStamp
+CallDuration ::= 		    INTEGER(1..2)
+
+RadioChanRequested ::= INTEGER
+{
+  --
+  -- See Bearer Capability TS 24.008
+  --
+  halfRateChannel      (0),
+  fullRateChannel      (1),
+  dualHalfRatePreferred  (2),
+  dualFullRatePreferred  (3)
+}
+
+RadioChanUsed ::= INTEGER
+{
+  --
+  -- See Bearer Capability TS 24.008
+  --
+  halfRateChannel      (0),
+  fullRateChannel      (1),
+  dualHalfRatePreferred  (2),
+  dualFullRatePreferred  (3)
+}
+
+
+ChangeOfRadioChan ::= 		    OCTET STRING (14..17 )
+CauseForTerm ::= 		    INTEGER (1)
+--Diagnostics ::= 		    INTEGER(4)
+Diagnostics       ::= CHOICE
+{
+	gsm0408Cause				[0] INTEGER,
+	gsm0902MapErrorValue		[1] INTEGER,
+	ccittQ767Cause				[2] INTEGER,
+	networkSpecificCause		[3] ManagementExtension,
+	manufacturerSpecificCause	[4] ManagementExtension
+}
+
+ManagementExtension ::= SEQUENCE
+{
+	identifier    	OBJECT IDENTIFIER,
+	significance      	[1] BOOLEAN DEFAULT FALSE,
+	information       	[2] OCTET STRING
+}
+
+CallReference ::= 		    OCTET STRING(1..8)
+SequenceNumber ::= 		    INTEGER(1)
+RecordExtensions ::= 		    OCTET STRING	--SET OF (11 * n)
+GsmSCFAddress ::= 		    AddressString(2..9)         -- ADRESS
+ServiceKey ::= 			    INTEGER(1..4)
+NetworkCallReference ::= 	    OCTET STRING(1..8)
+MSCAddress ::= 			    AddressString(2..9)          -- ADRESS
+CAMELInitCFIndicator ::= 	    INTEGER(1)        --BOOLEAN
+
+AdditionalChgInfo      ::= SEQUENCE
+{
+    chargeIndicator    [0] ChargeIndicator      OPTIONAL,
+    chargeParameters	  [1] OCTET STRING     OPTIONAL
+}
+
+ChargeIndicator         ::= INTEGER
+{
+	noIndication	(0),
+	noCharge			(1),
+	charge			(2)
+}
+
+
+Fnur ::= INTEGER
+{
+  fnurNotApplicable          (0),
+  fnur9600BitsPerSecond    (1),
+  fnur14400BitsPerSecond    (2),
+  fnur19200BitsPerSecond    (3),
+  fnur28800BitsPerSecond    (4),
+  fnur38400BitsPerSecond    (5),
+  fnur48000BitsPerSecond    (6),
+  fnur56000BitsPerSecond    (7),
+  fnur64000BitsPerSecond    (8),
+  fnur33600BitsPerSecond    (9),
+  fnur32000BitsPerSecond    (10),
+  fnur31200BitsPerSecond    (11)
+}
+
+AiurRequested ::= INTEGER
+{
+  --
+  -- See Bearer Capability TS 24.008
+  -- (note that value "4" is intentionally missing
+  -- because it is not used in TS 24.008)
+  --
+
+  aiur09600BitsPerSecond    (1),
+  aiur14400BitsPerSecond    (2),
+  aiur19200BitsPerSecond    (3),
+  aiur28800BitsPerSecond    (5),
+  aiur38400BitsPerSecond    (6),
+  aiur43200BitsPerSecond    (7),
+  aiur57600BitsPerSecond    (8),
+  aiur38400BitsPerSecond1    (9),
+  aiur38400BitsPerSecond2    (10),
+  aiur38400BitsPerSecond3    (11),
+  aiur38400BitsPerSecond4    (12)
+}
+
+SpeechVersionSupported ::= 	    OCTET STRING(1)
+SpeechVersionUsed ::= 		    OCTET STRING(1)
+NumberOfDPEncountered ::= 	    INTEGER(1)
+
+LevelOfCAMELService ::= 	INTEGER   {
+   basic                (0),
+   callDurationSupervision  (1),
+   onlineCharging         (2),
+   callPartyHandling     (3)
+}
+
+
+FreeFormatData ::= 		    OCTET STRING(1..160)
+--CAMELCallLegInformation ::= 	    OCTET STRING		--SEQUENCE OF((104..124) * n)
+FreeFormatDataAppend ::= 	    INTEGER (1)      --BOOLEAN
+
+DefaultCallHandling2 ::= 	    INTEGER(1)
+
+
+GsmSCFAddress2 ::= 		    AddressString (2..9)      -- ADRESS
+ServiceKey2 ::= 		    INTEGER (1..4)
+FreeFormatData2 ::= 		    OCTET STRING(1..160)
+FreeFormatDataAppend2 ::= 	    INTEGER (1)        --BOOLEAN
+
+SystemType ::= INTEGER
+{
+  unknown        (0),
+  iuUTRAN        (1),
+  gERAN        (2)
+}
+
+IPInformationEvent      ::= SEQUENCE
+{
+    originatingIPAddress [0] OCTET STRING (SIZE (1..32)) OPTIONAL,
+    terminatingIPAddress [1] OCTET STRING (SIZE (1..32)) OPTIONAL,
+    passertedIdentity    [2] BCDDirectoryNumber,
+    usedCodecList        [3] UsedCodeList,
+    originatingPort      [4] INTEGER(0..65535) OPTIONAL,
+    terminatingPort      [5] INTEGER(0..65535) OPTIONAL,
+    qosStatistics        [6] QoSStatistics OPTIONAL
+}
+
+QoSStatistics      ::= SEQUENCE
+{
+    jitter                 [0]   INTEGER(0..4294967295),
+    receivedPackets        [1]   INTEGER(0..4294967295),
+    transmittedPackets     [2]   INTEGER(0..4294967295), 
+    packetLoss             [3]   INTEGER(0..4294967295)
+}
+
+UsedCodeList      ::= SEQUENCE
+{
+    codec1		[1] Codec,                      
+    codec2		[2] Codec		OPTIONAL,
+    codec3		[3] Codec		OPTIONAL,
+    codec4		[4] Codec		OPTIONAL,
+    codec5		[5] Codec		OPTIONAL,
+    codec6		[6] Codec		OPTIONAL,
+    codec7		[7] Codec		OPTIONAL,
+    codec8		[8] Codec		OPTIONAL
+}
+
+Codec ::= OCTET STRING (SIZE (1..4))
+
+
+GlobalCallReference          ::= OCTET STRING (SIZE(1..24))
+
+NPANXX ::= OCTET STRING (SIZE (3))
+
+ChargeClass                 ::=  INTEGER(0..65535)
+
+ScpConnection            ::= ENUMERATED
+{
+    no-connection-to-in					 (0),
+    try-to-connect-to-in-but-failed		 (1),
+    successful-connection-to-in			 (2)
+}
+
+OfficeName ::= OCTET STRING (SIZE (1..32))
+
+InvokeOfLCLS    ::= SEQUENCE
+{
+    invokeoflcls      	[0] LCLSType,
+    invokeTime     	[1] TimeStamp
+}
+
+LCLSType    ::= ENUMERATED
+{
+    lclsactive      (0),
+    lclsdeactive    (1)
+}
+
+LRNOBTAINFROM ::= ENUMERATED
+{
+	lRN-FROM-NPDB(1),
+	lRN-FROM-SWITCHSYSDATA(2),
+	lRN-FROM-INCOMINGSIG(3)
+}
+
+
+ANSIRoutingNumber ::= ISDNAddressString
+
+NPDipIndicator         ::= NULL
+
+DrcCallNumber ::= TBCD-STRING (SIZE (7))
+
+LastSuccCCRTime	::=	OCTET STRING
+
+RoLinkFailureTime ::= OCTET STRING
+
+MscIncomingROUTENumber       ::= INTEGER(0..65535)
+
+MscOutgoingROUTENumber       ::= INTEGER(0..65535)
+
+IntermediateChargingInd  ::=    ENUMERATED
+{
+    sINGLE-BILL  (0),
+    fIRST-BILL   (1), 
+    iNTERMEDIATE-BILL (2),
+    lAST-BILL (3)
+}
+
+RoutingCategory             ::= OCTET STRING(SIZE(1))
+
+LocationRoutingNumber       ::= TBCD-STRING (SIZE (1..8))
+
+PortedFlag       ::=    ENUMERATED
+{
+    numberNotPorted        (0),
+    numberPortedIn         (1),
+    numberPortedOut        (2)
+}
+
+SpecialBillPrefix ::= OCTET STRING(SIZE (1..4))
+
+Channel                 ::= ENUMERATED
+{
+	hscsd-no-chosen-channel	(0),
+	hscsd-chose-sdcch			(1),
+	hscsd-full-rate-tch-1		(8),
+	hscsd-half-rate-tch-1		(9),
+	hscsd-full-rate-tch-2		(10),
+	hscsd-full-rate-tch-3		(11),
+	hscsd-full-rate-tch-4		(12),
+	hscsd-full-rate-tch-5		(13),
+	hscsd-full-rate-tch-6		(14),
+	hscsd-full-rate-tch-7		(15),
+	hscsd-full-rate-tch-8		(4)
+}
+
+ChannelMode                 ::= ENUMERATED
+{
+	hscsd-nochannel-mode		(0),
+	hscsd-speech				(9),
+	hscsd-14500channelmode	(14),
+	hscsd-12000channelmode	(11),
+	hscsd-6000channelmode		(12),
+	hscsd-3600channelmode				(13),
+	hscsd-signalling					(8),
+	hscsd-29000channelmode			(1),
+	hscsd-32000channelmode			(2),
+	hscsd-43500channelmode			(3),
+	hscsd-43500down14500upchannelmode	(4),
+	hscsd-29000down14500upchannelmode	(5),
+	hscsd-43500down29000upchannelmode	(6),
+	hscsd-14500down43500upchannelmode	(7),
+	hscsd-14500down29000upchannelmode	(10),
+	hscsd-29000down43500upchannelmode	(15)    
+}
+
+Mapbypassind			::= BOOLEAN
+
+CARP			    ::=  INTEGER(0..255)
+
+BchNumber                 ::=  INTEGER(0..4294967295)
+
+DtmfIndicator                     ::= BOOLEAN
+
+
+LocationNumberNai ::= ENUMERATED
+{
+	iAddressInfoNull		(0),
+	iUserNumber			(1),
+	iUnknownNumber		(2),
+	iNationalNumber		(3),
+	iInternationalNumber 	(4)
+}
+
+
+LocationNumber ::= TBCD-STRING (SIZE (1..8))
+
+TBCD-STRING ::= OCTET STRING
+
+PartyRelCause ::= SEQUENCE
+{
+     releaseParty  [0]   ReleaseParty OPTIONAL,
+     releaseCause  [1]   INTEGER OPTIONAL
+}
+
+ReleaseParty  ::= ENUMERATED
+{
+ 	bssmap		(0),
+	ranap			(1),
+	dtap			(2), 
+	isup			(3),
+	relbutt		(255)   
+}
+
+
+RateIndication ::= 		    OCTET STRING(1)
+
+PartialRecordType ::= INTEGER
+{
+  timeLimit                                  (0),
+  serviceChange                           (1),
+  locationChange                          (2),
+  classmarkChange                       (3),
+  aocParmChange                         (4),
+  radioChannelChange                   (5),
+  hSCSDParmChange                   (6),
+  changeOfCAMELDestination      (7),
+  firstHotBill                                (20),
+  severalSSOperationBill               (21),
+  iSTalertTimeOut                       (22),
+  bearRedirectStart                      (23),
+  bearRedirectStop                      (24)
+}
+
+GuaranteedBitRate ::= INTEGER
+{
+     gBR14400BitsPerSecond (1),        -- BS20 non-transparent
+     gBR28800BitsPerSecond (2),        -- BS20 non-transparent and transparent,
+			             						 -- BS30 transparent and multimedia
+     gBR32000BitsPerSecond (3),        -- BS30 multimedia
+     gBR33600BitsPerSecond (4),        -- BS30 multimedia
+     gBR56000BitsPerSecond (5),        -- BS30 transparent and multimedia
+     gBR57600BitsPerSecond (6),        -- BS20 non-transparent
+     gBR64000BitsPerSecond (7),        -- BS30 transparent and multimedia
+
+     gBR12200BitsPerSecond (106),      -- AMR speech
+     gBR10200BitsPerSecond (107),      -- AMR speech
+     gBR7950BitsPerSecond (108),        -- AMR speech
+     gBR7400BitsPerSecond (109),        -- AMR speech
+     gBR6700BitsPerSecond (110),        -- AMR speech
+     gBR5900BitsPerSecond (111),        -- AMR speech
+     gBR5150BitsPerSecond (112),        -- AMR speech
+     gBR4750BitsPerSecond (113),         -- AMR speech
+     gBR23850BitsPerSecond (114),       -- AMR speech
+     gBR15850BitsPerSecond (115),       -- AMR speech
+     gBR12650BitsPerSecond (116),       -- AMR speech
+     gBR8850BitsPerSecond  (117),        -- AMR speech
+     gBR6600BitsPerSecond  (118)         -- AMR speech
+}
+
+MaximumBitRate ::= INTEGER
+{
+     mBR14400BitsPerSecond (1),         -- BS20 non-transparent
+     mBR28800BitsPerSecond (2),         -- BS20 non-transparent and transparent,
+				 -- BS30 transparent and multimedia
+     mBR32000BitsPerSecond (3),         -- BS30 multimedia
+     mBR33600BitsPerSecond (4),         -- BS30 multimedia
+     mBR56000BitsPerSecond (5),         -- BS30 transparent and multimedia
+     mBR57600BitsPerSecond (6),         -- BS20 non-transparent
+     mBR64000BitsPerSecond (7),         -- BS30 transparent and multimedia
+
+     mBR12200BitsPerSecond (106),      -- AMR speech
+     mBR10200BitsPerSecond (107),      -- AMR speech
+     mBR7950BitsPerSecond (108),        -- AMR speech
+     mBR7400BitsPerSecond (109),        -- AMR speech
+     mBR6700BitsPerSecond (110),        -- AMR speech
+     mBR5900BitsPerSecond (111),        -- AMR speech
+     mBR5150BitsPerSecond (112),        -- AMR speech
+     mBR4750BitsPerSecond (113),         -- AMR speech
+     mBR23850BitsPerSecond (114),       -- AMR speech
+     mBR15850BitsPerSecond (115),       -- AMR speech
+     mBR12650BitsPerSecond (116),       -- AMR speech
+     mBR8850BitsPerSecond  (117),        -- AMR speech
+     mBR6600BitsPerSecond  (118)         -- AMR speech
+
+}
+
+ModemType ::= INTEGER
+{
+  nonemodem            (0),
+  modemv21             (1),
+  modemv22             (2),
+  modemv22bis          (3),
+  modemv23             (4),
+  modemv26ter          (5),
+  modemv32             (6),
+  modemundefinterface    (7),
+  modemautobauding1     (8),
+  noothermodemtype (31),
+  modemv34            (33)
+}
+
+Classmark3 ::= 			    OCTET STRING(2)
+
+ChargedParty ::= INTEGER
+{
+   callingParty      (0),
+   calledParty      (1)
+}
+
+OriginalCalledNumber ::= 	    BCDDirectoryNumber       
+ChargeAreaCode ::= 		    OCTET STRING(1..3)
+CalledChargeAreaCode ::= 	    OCTET STRING(1..3)
+MscOutgoingCircuit ::= 		    INTEGER(0..65535)
+OrgRNCorBSCId ::= 		    OCTET STRING(3)
+OrgMSCId ::= 			    OCTET STRING(3)
+CallEmlppPriority ::= 		    OCTET STRING(1)
+CallerDefaultEmlppPriority ::= 	    OCTET STRING(1)
+EaSubscriberInfo ::= 		    OCTET STRING(3)
+SelectedCIC ::= 		    OCTET STRING(3)
+OptimalRoutingFlag ::= 		    NULL
+OptimalRoutingLateForwardFlag ::=   NULL
+OptimalRoutingEarlyForwardFlag ::=   NULL
+
+Portedflag ::=  INTEGER
+{
+  numberNotPorted    (0),
+  numberPorted      (1)
+}
+
+CalledIMSI ::= 			    TBCD(3..8)
+GlobalAreaID ::= 		    OCTET STRING(7)
+
+
+
+LocationGAI ::= GAI
+ChangeTime ::= TimeStamp
+
+SubscriberCategory ::= 		    OCTET STRING(1)
+Firstmccmnc ::= 		    OCTET STRING(3)
+Intermediatemccmnc ::= 		    OCTET STRING(3)
+Lastmccmnc ::= 			    OCTET STRING(3)
+
+CUGOutgoingAccessIndicator ::=  INTEGER
+{
+  notCUGCall (0),
+  cUGCall   (1)
+}
+
+CUGInterlockCode ::= 		    OCTET STRING(4)
+
+CUGOutgoingAccessUsed ::= INTEGER
+{
+  callInTheSameCUGGroup   (0),
+  callNotInTheSameCUGGroup  (1)
+}
+
+CUGIndex ::= 			    OCTET STRING(2)
+InteractionWithIP ::= 		    NULL
+HotBillingTag ::= 		    INTEGER(1)
+
+VoiceIndicator ::=    INTEGER
+{
+    sendToneByLocalMsc(0) ,
+    sendToneByOtherMsc(1),
+    voiceNoIndication (3)
+}
+
+BCategory ::=    INTEGER
+{
+    subscriberFree (0) ,
+    subscriberBusy (1),
+    subscriberNoIndication (3)
+}
+
+CallType ::=    INTEGER
+{
+     unknown (0),
+     internal    (1),
+     incoming  (2),
+     outgoing   (3),
+     tandem     (4)
+}
+
+ResourceChargeIPnumber ::= 	    AddressString (2..17)     -- ADRESS
+
+GroupCallType ::=    INTEGER
+{
+    normalCallType(0),
+    vgcsCallType(1),
+    vbsCallType(2)
+}
+
+GroupCallReference ::= 		    OCTET STRING(4)
+
+Uus1Type ::=    INTEGER
+{
+    uus1Implicit(0),
+    uus1ExplicitRequired(1),
+    uus1ExplicitNotRequired(2),
+    uus1SsUnused(3)
+}
+
+ECategory ::= 			    INTEGER(1..2)
+TariffCode ::= 			    INTEGER(1)
+
+Disconnectparty ::=    INTEGER
+{
+  unknown   (0),
+  callingPartyRelease (1),
+  calledPartyRelease (2),
+  networkRelease (3)
+}
+
+CsReference ::= 		    OCTET STRING(1..8)
+CsaReference ::= 		    INTEGER (1..4)
+
+
+--Camelphase ::= 			    INTEGER(1)
+
+CAMELVPHASE      ::= ENUMERATED
+{
+	wininapphase0			(0),
+	wincamelphase1		(1),
+	wincamelphase2		(2),
+	wincamelphase3		(3),
+	wincamelphase4		(4),    
+	wininapphaseM1		(8),
+	wininapphaseM3		(16),
+	wininapphaseM4		(24),
+	wininapphase902        (32),
+	wininapphaseM2		(48),
+	wininapphasechina		(128),
+	wininapphasebrazil	(136),
+	wininapphaserussion	(144),
+	wininapphaseuk		(152),
+	wincamelbutt			(255)
+}
+
+
+NetworkOperatorId ::= 		    OCTET STRING(1)
+
+TypeOfSubscribers ::= INTEGER
+{
+     home                (0),    -- HPLMN subscribers
+    visiting             (1),    -- roaming subscribers
+    all                     (2)
+}
+
+AudioDataType ::=    INTEGER
+{
+    audio  (0) ,
+    fax     (1),
+    audioDataButt(255)
+}
+
+Usertype ::= 			    INTEGER(1)
+
+RecordNumber ::= 		    INTEGER
+ZoneCode ::= 			    OCTET STRING (2)
+
+MCTType ::=  INTEGER
+{
+    mCTI    (0),
+    mCTC    (1)
+}
+
+
+
+GAI                    ::= OCTET STRING(SIZE(7))
+
+
+---------------------------------------------------------------------------------------------
+
+ISDN-BC  ::= OCTET STRING
+LLC  ::= OCTET STRING
+HLC ::= OCTET STRING
+MscIncomingCircuit ::= INTEGER(0..65535)
+
+CUGIncomingAccessUsed ::= INTEGER
+{
+    callInTheSameCUGGroup      (0),
+    callNotInTheSameCUGGroup   (1)
+}
+
+MscIncomingRouteAttribute ::= RouteAttribute
+MscOutgoingRouteAttribute  ::= RouteAttribute
+
+RouteAttribute   ::=  INTEGER
+{
+    cas (0),
+    tup (1),
+    isup (2),
+    pra (3),
+    bicc (4),
+    sip (5),
+    others (255)
+}
+
+---------------------------------------------------------------------------------------------
+
+IsdnBasicService  ::= OCTET STRING (SIZE(1))
+
+CmnFlag ::= INTEGER
+{
+      notCmnCall   (0),
+      isCmnCall    (1)
+}
+
+
+  ---------------------------------------------------------------------------------------------
+
+  LcsClientType  ::= INTEGER
+{  emergencyServices    (0),
+  valueAddedServices    (1),
+  plmnOperatorServices    (2),
+  lawfulInterceptServices    (3)
+}
+
+LcsClientIdentity    ::=  SEQUENCE
+{
+  lcsClientExternalID  [0] LCSClientExternalID   OPTIONAL,
+  lcsClientDialedByMS  [1] LcsClientDialedByMS       OPTIONAL,
+  lcsClientInternalID  [2] LCSClientInternalID    OPTIONAL
+}
+
+LCSClientExternalID ::= SEQUENCE
+{
+      externalAddress		[0] ExternalAddress    OPTIONAL
+--	extensionContainer	[1] ExtensionContainer	OPTIONAL
+}
+
+LocationType  ::= SEQUENCE
+{
+	locationEstimateType		[0] LocationEstimateType,
+        deferredLocationEventType       [1] DeferredLocationEventType   OPTIONAL
+}
+
+LcsQos ::= SEQUENCE
+{
+  horizontalaccuracy		[0] HorizontalAccuracy   OPTIONAL,
+  verticalCoordinateRequest	[1] VerticalCoordinateRequest              OPTIONAL,
+  verticalaccuracy		[2] VerticalAccuracy      OPTIONAL,
+  responseTime			[3] ResponseTime       OPTIONAL
+}
+
+
+HorizontalAccuracy  ::= OCTET STRING
+VerticalCoordinateRequest ::= NULL
+VerticalAccuracy	::= OCTET STRING
+ResponseTime	 ::=   TimeStamp
+
+ExternalAddress ::= AddressString
+LcsClientDialedByMS ::= AddressString
+
+LCSClientInternalID ::= INTEGER
+{
+  broadcastService    (0),
+  oandMHPLMN      (1),
+  oandMVPLMN      (2),
+  anonymousLocation    (3),
+  targetMSsubscribedService  (4)
+}
+
+
+LocationEstimateType ::= INTEGER
+{
+  currentLocation             (0),
+  currentOrLastKnownLocation  (1),
+  initialLocation             (2),
+  activateDeferredLocation    (3),
+  cancelDeferredLocation     (4)
+}
+
+DeferredLocationEventType ::= OCTET STRING
+
+
+LcsPriority  ::= OCTET STRING (SIZE (1))
+
+Mlc-Number   ::= AddressString(2..9)	   -- ADRESS
+
+EventTimeStamp	::= TimeStamp
+
+MeasureDuration	  ::= INTEGER
+
+NotificationToMSUser	  ::= INTEGER
+{
+  notifyLocationAllowed        (0),
+  notifyAndVerifyLocationAllowedIfNoResponse  (1),
+  notifyAndVerifyLocationNotAllowedIfNoResponse  (2),
+  locationNotAllowed         (3)
+}
+
+PrivacyOverride	::= NULL
+
+LocationEstimate   ::= INTEGER
+PositioningData	  ::= OCTET STRING (SIZE(1..33))
+LcsCause  ::= OCTET STRING (SIZE(1))
+LcsReferenceNumber   ::= OCTET STRING (SIZE (1..8))
+
+MolrType    ::= INTEGER
+
+EmsDigits  ::= ISDNAddressString(2..9)
+EmsKey	  ::= ISDNAddressString(2..9)
+
+
+----------------------MTC--------------------------------
+InitialCallAttemptFlag	::=	NULL
+UssdCallBackFlag ::=	OCTET STRING
+
+CalledDefaultEmlppPriority  ::=	OCTET STRING(1)
+
+Redirectingnumber   ::=	AddressString(2..17)	      --ADRESS
+Redirectingcounter  ::=	INTEGER(1)
+
+DefaultSMSHandling ::= 	 OCTET STRING
+CallReferenceNumber ::=     OCTET STRING
+
+-----------------------SMS-MO--------------------------------
+
+ServiceCentre  				::=	AddressString(2..9)	 --ADRESS
+MessageReference    			::=	OCTET STRING (3..8)
+OriginationTime				::=	TimeStamp
+SmsResult				::=	INTEGER (4)
+DestinationNumber			::=	AddressString(2..17)	   --ADRESS
+					
+SmsUserDataType     			::=	OCTET STRING(1)
+Smstext     				::=	OCTET STRING(1..160)
+MaximumNumberOfSMSInTheConcatenatedSMS  ::=	INTEGER(1)
+ConcatenatedSMSReferenceNumber		::=	INTEGER(1..2)
+SequenceNumberOfTheCurrentSMS		::=	INTEGER(1)
+					
+----------------------------SMS-MT ---------------------------
+ DeliveryTime ::= TimeStamp
+-- Origination   ::=  OCTET STRING
+Origination   ::=  AddressString(2..17)
+
+SsActionTime		::=	TimeStamp
+
+SsParameters		::=  TempSsParameters
+
+TempSsParameters ::=  SET {
+ssParameterValue [1]  SsParameterValue  
+}
+
+SsParameterValue ::= TBCD
+
+SsActionResult		::=   OCTET STRING
+UssdCodingScheme	::= OCTET STRING
+
+UssdString		::= TempUssdString
+TempUssdString ::= SET
+{
+  ussdStringValue  [UNIVERSAL 4] UssdStringValue
+}
+
+UssdStringValue ::= TBCD
+
+UssdNotifyCounter	::= INTEGER(0..255)
+UssdRequestCounter	::= INTEGER(0..255)
+
+------------------------------SS--------------------------
+SupplService		::=	OCTET STRING
+SupplServices           ::=	SEQUENCE OF SsCode
+
+SsAction		::=	SSActionType
+
+BasicServices ::= SEQUENCE OF BasicServiceCode
+
+SSActionType        ::= INTEGER
+{
+  registration      (0),
+  erasure          (1),
+  activation        (2),
+  deactivation      (3),
+  interrogation      (4),
+  invocation        (5),
+  passwordRegistration (6),
+  uSSDInvocation     (7)
+}
+
+---------------------------HLR----------------------------
+RoutingNumber	 ::= AddressString(2..17)	   -- ADRESS
+NumberOfForwarding ::= INTEGER (1..5)
+InterrogationResult  ::= INTEGER(4)
+
+------------------------------ CommonEquipmentUsageRecord--------------------------
+EquipmentType  ::= INTEGER(1)
+EquipmentId    ::= INTEGER(1)
+
+
+----------------------CAMEL----------------------------------------
+InterrogationTime  ::= TimeStamp
+DestinationRoutingAddress   ::= AddressString(2..17)	      -- ADRESS
+MscServerIndication  ::= INTEGER         --BOOLEAN
+
+
+-----------------------------------VLR-----------------------------------------------
+BCDDirectoryNumber ::= OCTET STRING
+
+BasicServiceCode ::= SEQUENCE
+{
+  	bearerService  [2] BearerServiceCode OPTIONAL,
+  	teleservice  	[3] TeleserviceCode OPTIONAL,
+ 	isdnService   	[4] IsdnServiceCode OPTIONAL
+}
+
+TeleserviceCode ::= OCTET STRING (SIZE (1))
+BearerServiceCode ::= OCTET STRING (SIZE (1))
+IsdnServiceCode ::= OCTET STRING (SIZE(1)) 
+
+OldLocation    ::= OCTET STRING(16)
+NewLocation    ::= OCTET STRING(16)
+UpdateTime     ::= TimeStamp
+UpdateResult   ::= INTEGER(4)
+LocationUpdateType   ::= INTEGER(1)
+
+TimeStamp          ::= OCTET STRING (SIZE(9))
+SsCode ::= OCTET STRING (SIZE (1))
+--BitString ::= OCTET STRING
+TBCD ::= OCTET STRING
+AddressString ::=    OCTET STRING
+
+ISDNAddressString ::= 	OCTET STRING
+
+END

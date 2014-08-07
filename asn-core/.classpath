@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src-core"/>
+	<classpathentry kind="src" path="src-util"/>
+	<classpathentry kind="src" path="src-test"/>
+	<classpathentry kind="src" path="src-data"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/eamitmo/development/project/ran-project/ran-workspace/ran-lib/ext-lib/antlr-runtime-3.3.jar"/>
+	<classpathentry kind="lib" path="/home/eamitmo/development/project/ran-project/ran-workspace/ran-lib/ext-lib/antlrworks-1.1.5.jar"/>
+	<classpathentry kind="lib" path="/home/eamitmo/development/project/ran-project/ran-workspace/ran-lib/ext-lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/home/eamitmo/development/project/ran-project/ran-workspace/ran-lib/ext-lib/mysql-connector-java-5.1.23-bin.jar"/>
+	<classpathentry kind="lib" path="/home/eamitmo/development/project/ran-project/ran-workspace/ran-lib/ext-lib/ojdbc6.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ran-etl"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.0/notation" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:id="_yykn8DMXEd6G-YPB3VK3nA" type="Class" name="classdiagram.dnx">
+  <children xmi:id="_zbGnlDMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zbGnlzMXEd6G-YPB3VK3nA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_zbGnmDMXEd6G-YPB3VK3nA" width="530" height="530"/>
+    </children>
+    <children xmi:id="_zbGnmTMXEd6G-YPB3VK3nA" type="Stereotype"/>
+    <children xmi:id="_zbGnmjMXEd6G-YPB3VK3nA" type="Kind"/>
+    <children xmi:id="_zbGnmzMXEd6G-YPB3VK3nA" type="Name"/>
+    <children xmi:id="_zbGnnDMXEd6G-YPB3VK3nA" type="Parent"/>
+    <children xmi:id="_zbGnnTMXEd6G-YPB3VK3nA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbGnnjMXEd6G-YPB3VK3nA"/>
+    </children>
+    <children xmi:id="_zbGnnzMXEd6G-YPB3VK3nA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbGnoDMXEd6G-YPB3VK3nA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_zbGnlTMXEd6G-YPB3VK3nA" showStereotype="Label" useClassifierShape="true"/>
+    <element xmi:type="uml:Interface" href="mmi:///#jsrctype%5Ename=Specifier%5Bjcu%5Ename=Specifier.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Interface"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbGnljMXEd6G-YPB3VK3nA" x="634" y="5389"/>
+  </children>
+  <children xmi:id="_zbGnoTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zbGnpDMXEd6G-YPB3VK3nA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_zbGnpTMXEd6G-YPB3VK3nA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_zbGnpjMXEd6G-YPB3VK3nA" type="Stereotype"/>
+    <children xmi:id="_zbGnpzMXEd6G-YPB3VK3nA" type="Name"/>
+    <children xmi:id="_zbGnqDMXEd6G-YPB3VK3nA" type="Parent"/>
+    <children xmi:id="_zbGnqTMXEd6G-YPB3VK3nA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbGnqjMXEd6G-YPB3VK3nA"/>
+    </children>
+    <children xmi:id="_zbGnqzMXEd6G-YPB3VK3nA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbGnrDMXEd6G-YPB3VK3nA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_zbGnojMXEd6G-YPB3VK3nA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=Marker%5Bjcu%5Ename=Marker.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbGnozMXEd6G-YPB3VK3nA" x="20605" y="5389"/>
+  </children>
+  <children xmi:id="_zbGnrTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zbGnsDMXEd6G-YPB3VK3nA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_zbGnsTMXEd6G-YPB3VK3nA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_zbGnsjMXEd6G-YPB3VK3nA" type="Stereotype"/>
+    <children xmi:id="_zbGnszMXEd6G-YPB3VK3nA" type="Name"/>
+    <children xmi:id="_zbGntDMXEd6G-YPB3VK3nA" type="Parent"/>
+    <children xmi:id="_zbGntTMXEd6G-YPB3VK3nA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbGntjMXEd6G-YPB3VK3nA"/>
+    </children>
+    <children xmi:id="_zbGntzMXEd6G-YPB3VK3nA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbGnuDMXEd6G-YPB3VK3nA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_zbGnrjMXEd6G-YPB3VK3nA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=DataFrame%5Bjcu%5Ename=DataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbGnrzMXEd6G-YPB3VK3nA" x="10118" y="11306"/>
+  </children>
+  <children xmi:id="_zbGnuTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zbGnvDMXEd6G-YPB3VK3nA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_zbGnvTMXEd6G-YPB3VK3nA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_zbGnvjMXEd6G-YPB3VK3nA" type="Stereotype"/>
+    <children xmi:id="_zbGnvzMXEd6G-YPB3VK3nA" type="Name"/>
+    <children xmi:id="_zbQYkDMXEd6G-YPB3VK3nA" type="Parent"/>
+    <children xmi:id="_zbQYkTMXEd6G-YPB3VK3nA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQYkjMXEd6G-YPB3VK3nA"/>
+    </children>
+    <children xmi:id="_zbQYkzMXEd6G-YPB3VK3nA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQYlDMXEd6G-YPB3VK3nA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_zbGnujMXEd6G-YPB3VK3nA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=Data%5Bjcu%5Ename=Data.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbGnuzMXEd6G-YPB3VK3nA" x="19971" y="15533"/>
+  </children>
+  <children xmi:id="_zbQYlTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zbQYmDMXEd6G-YPB3VK3nA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_zbQYmTMXEd6G-YPB3VK3nA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_zbQYmjMXEd6G-YPB3VK3nA" type="Stereotype"/>
+    <children xmi:id="_zbQYmzMXEd6G-YPB3VK3nA" type="Name"/>
+    <children xmi:id="_zbQYnDMXEd6G-YPB3VK3nA" type="Parent"/>
+    <children xmi:id="_zbQYnTMXEd6G-YPB3VK3nA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQYnjMXEd6G-YPB3VK3nA"/>
+    </children>
+    <children xmi:id="_zbQYnzMXEd6G-YPB3VK3nA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQYoDMXEd6G-YPB3VK3nA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_zbQYljMXEd6G-YPB3VK3nA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=AsciiDataFrame%5Bjcu%5Ename=AsciiDataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbQYlzMXEd6G-YPB3VK3nA" x="634" y="18069"/>
+  </children>
+  <children xmi:id="_zbQYoTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zbQYpDMXEd6G-YPB3VK3nA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_zbQYpTMXEd6G-YPB3VK3nA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_zbQYpjMXEd6G-YPB3VK3nA" type="Stereotype"/>
+    <children xmi:id="_zbQYpzMXEd6G-YPB3VK3nA" type="Name"/>
+    <children xmi:id="_zbQYqDMXEd6G-YPB3VK3nA" type="Parent"/>
+    <children xmi:id="_zbQYqTMXEd6G-YPB3VK3nA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQYqjMXEd6G-YPB3VK3nA"/>
+    </children>
+    <children xmi:id="_zbQYqzMXEd6G-YPB3VK3nA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQYrDMXEd6G-YPB3VK3nA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_zbQYojMXEd6G-YPB3VK3nA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=DataFrameChannel%5Bjcu%5Ename=DataFrameChannel.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbQYozMXEd6G-YPB3VK3nA" x="9193" y="5389"/>
+  </children>
+  <children xmi:id="_zbQYrTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zbQYsDMXEd6G-YPB3VK3nA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_zbQYsTMXEd6G-YPB3VK3nA" width="530" height="530"/>
+    </children>
+    <children xmi:id="_zbQYsjMXEd6G-YPB3VK3nA" type="Stereotype"/>
+    <children xmi:id="_zbQYszMXEd6G-YPB3VK3nA" type="Kind"/>
+    <children xmi:id="_zbQYtDMXEd6G-YPB3VK3nA" type="Name"/>
+    <children xmi:id="_zbQYtTMXEd6G-YPB3VK3nA" type="Parent"/>
+    <children xmi:id="_zbQYtjMXEd6G-YPB3VK3nA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQYtzMXEd6G-YPB3VK3nA"/>
+    </children>
+    <children xmi:id="_zbQYuDMXEd6G-YPB3VK3nA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQYuTMXEd6G-YPB3VK3nA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_zbQYrjMXEd6G-YPB3VK3nA" showStereotype="Label" useClassifierShape="true"/>
+    <element xmi:type="uml:Interface" href="mmi:///#jsrctype%5Ename=Slider%5Bjcu%5Ename=Slider.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Interface"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbQYrzMXEd6G-YPB3VK3nA" x="4438" y="5072"/>
+  </children>
+  <children xmi:id="_zbQYujMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zbQYvTMXEd6G-YPB3VK3nA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_zbQYvjMXEd6G-YPB3VK3nA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_zbQYvzMXEd6G-YPB3VK3nA" type="Stereotype"/>
+    <children xmi:id="_zbQYwDMXEd6G-YPB3VK3nA" type="Name"/>
+    <children xmi:id="_zbQYwTMXEd6G-YPB3VK3nA" type="Parent"/>
+    <children xmi:id="_zbQYwjMXEd6G-YPB3VK3nA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQYwzMXEd6G-YPB3VK3nA"/>
+    </children>
+    <children xmi:id="_zbQYxDMXEd6G-YPB3VK3nA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQYxTMXEd6G-YPB3VK3nA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_zbQYuzMXEd6G-YPB3VK3nA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=BinaryDataFrame%5Bjcu%5Ename=BinaryDataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbQYvDMXEd6G-YPB3VK3nA" x="581" y="10961"/>
+  </children>
+  <children xmi:id="_zbQYxjMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zbQYyTMXEd6G-YPB3VK3nA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_zbQYyjMXEd6G-YPB3VK3nA" width="530" height="530"/>
+    </children>
+    <children xmi:id="_zbQYyzMXEd6G-YPB3VK3nA" type="Stereotype"/>
+    <children xmi:id="_zbQYzDMXEd6G-YPB3VK3nA" type="Kind"/>
+    <children xmi:id="_zbQYzTMXEd6G-YPB3VK3nA" type="Name"/>
+    <children xmi:id="_zbQYzjMXEd6G-YPB3VK3nA" type="Parent"/>
+    <children xmi:id="_zbQYzzMXEd6G-YPB3VK3nA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQY0DMXEd6G-YPB3VK3nA"/>
+    </children>
+    <children xmi:id="_zbQY0TMXEd6G-YPB3VK3nA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQY0jMXEd6G-YPB3VK3nA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_zbQYxzMXEd6G-YPB3VK3nA" showStereotype="Label" useClassifierShape="true"/>
+    <element xmi:type="uml:Interface" href="mmi:///#jsrctype%5Ename=Operational%5Bjcu%5Ename=Operational.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Interface"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbQYyDMXEd6G-YPB3VK3nA" x="19971" y="12046"/>
+  </children>
+  <children xmi:id="_zbQY0zMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zbQY1jMXEd6G-YPB3VK3nA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_zbQY1zMXEd6G-YPB3VK3nA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_zbQY2DMXEd6G-YPB3VK3nA" type="Stereotype"/>
+    <children xmi:id="_zbQY2TMXEd6G-YPB3VK3nA" type="Name"/>
+    <children xmi:id="_zbQY2jMXEd6G-YPB3VK3nA" type="Parent"/>
+    <children xmi:id="_zbQY2zMXEd6G-YPB3VK3nA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQY3DMXEd6G-YPB3VK3nA"/>
+    </children>
+    <children xmi:id="_zbQY3TMXEd6G-YPB3VK3nA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_zbQY3jMXEd6G-YPB3VK3nA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_zbQY1DMXEd6G-YPB3VK3nA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ASNDataFrame%5Bjcu%5Ename=ASNDataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zbQY1TMXEd6G-YPB3VK3nA" x="607" y="14052"/>
+  </children>
+  <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_yykn8TMXEd6G-YPB3VK3nA"/>
+  <element xsi:nil="true"/>
+  <edges xmi:id="_zp21QTMXEd6G-YPB3VK3nA" source="_zbGnoTMXEd6G-YPB3VK3nA" target="_zbQYxjMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zp21RDMXEd6G-YPB3VK3nA" type="NameLabel">
+      <children xmi:id="_zp21RjMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zp21RzMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zp21RTMXEd6G-YPB3VK3nA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zp21QjMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:InterfaceRealization" href="mmi:///#jimpl%5Bjsrctype%5Ename=Marker%5Bjcu%5Ename=Marker.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Operational%5Bjcu%5Ename=Operational.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.InterfaceRealization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zp21QzMXEd6G-YPB3VK3nA" points="[-53, 741, 291, -5874]$[-370, 4472, -26, -2143]$[-370, 5980, -26, -635]"/>
+  </edges>
+  <edges xmi:id="_zp21SDMXEd6G-YPB3VK3nA" source="_zbGnoTMXEd6G-YPB3VK3nA" target="_zbGnoTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zp21SzMXEd6G-YPB3VK3nA" type="KindLabel">
+      <children xmi:id="_zp21TTMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zp21TzMXEd6G-YPB3VK3nA" type="Kind"/>
+      <children xmi:id="_zp21TjMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zp21TDMXEd6G-YPB3VK3nA" x="77" y="-101"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zp21STMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=Marker%5Bjcu%5Ename=Marker.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Marker%5Bjcu%5Ename=Marker.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zp21SjMXEd6G-YPB3VK3nA" points="[-1217, 264, -1217, 264]$[-5583, 1270, -5583, 1270]$[-5583, -503, -5583, -503]$[-1217, -106, -1217, -106]"/>
+  </edges>
+  <edges xmi:id="_zp21UDMXEd6G-YPB3VK3nA" source="_zbGnrTMXEd6G-YPB3VK3nA" target="_zbGnrTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zp21UzMXEd6G-YPB3VK3nA" type="KindLabel">
+      <children xmi:id="_zp21VTMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zp21VzMXEd6G-YPB3VK3nA" type="Kind"/>
+      <children xmi:id="_zp21VjMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zp21VDMXEd6G-YPB3VK3nA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zp21UTMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=DataFrame%5Bjcu%5Ename=DataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DataFrame%5Bjcu%5Ename=DataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zp21UjMXEd6G-YPB3VK3nA" points="[2063, -1376, 2063, -1376]$[6006, -4022, 6006, -4022]$[6006, -1376, 6006, -1376]$[2063, -477, 2063, -477]"/>
+  </edges>
+  <edges xmi:id="_zp21WDMXEd6G-YPB3VK3nA" source="_zbGnrTMXEd6G-YPB3VK3nA" target="_zbGnuTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zp21WzMXEd6G-YPB3VK3nA" type="KindLabel">
+      <children xmi:id="_zp21XTMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zp21XzMXEd6G-YPB3VK3nA" type="Kind"/>
+      <children xmi:id="_zp21XjMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zp21XDMXEd6G-YPB3VK3nA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zp21WTMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=DataFrame%5Bjcu%5Ename=DataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Data%5Bjcu%5Ename=Data.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zp21WjMXEd6G-YPB3VK3nA" points="[0, 3902, -10280, -3573]$[10266, 5490, -14, -1985]"/>
+  </edges>
+  <edges xmi:id="_zp21YDMXEd6G-YPB3VK3nA" source="_zbGnrTMXEd6G-YPB3VK3nA" target="_zbGnoTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zp21YzMXEd6G-YPB3VK3nA" type="KindLabel">
+      <children xmi:id="_zp21ZTMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zp21ZzMXEd6G-YPB3VK3nA" type="Kind"/>
+      <children xmi:id="_zp21ZjMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zp21ZDMXEd6G-YPB3VK3nA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zp21YTMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=DataFrame%5Bjcu%5Ename=DataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Marker%5Bjcu%5Ename=Marker.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zp21YjMXEd6G-YPB3VK3nA" points="[0, 3902, -14711, -3573]$[14711, 5490, 0, -1985]"/>
+  </edges>
+  <edges xmi:id="_zp21aDMXEd6G-YPB3VK3nA" source="_zbGnrTMXEd6G-YPB3VK3nA" target="_zbGnlDMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zp21azMXEd6G-YPB3VK3nA" type="KindLabel">
+      <children xmi:id="_zp21bTMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zp21bzMXEd6G-YPB3VK3nA" type="Kind"/>
+      <children xmi:id="_zp21bjMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zp21bDMXEd6G-YPB3VK3nA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zp21aTMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=DataFrame%5Bjcu%5Ename=DataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Specifier%5Bjcu%5Ename=Specifier.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zp21ajMXEd6G-YPB3VK3nA" points="[0, 3902, 16272, -3573]$[-16272, 5490, 0, -1985]"/>
+  </edges>
+  <edges xmi:id="_zp21cDMXEd6G-YPB3VK3nA" source="_zbGnuTMXEd6G-YPB3VK3nA" target="_zbQYxjMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zp21czMXEd6G-YPB3VK3nA" type="NameLabel">
+      <children xmi:id="_zp21dTMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zp21djMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zp21dDMXEd6G-YPB3VK3nA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zp21cTMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:InterfaceRealization" href="mmi:///#jimpl%5Bjsrctype%5Ename=Data%5Bjcu%5Ename=Data.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Operational%5Bjcu%5Ename=Operational.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.InterfaceRealization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zp21cjMXEd6G-YPB3VK3nA" points="[-14, -1985, -2236, 5490]$[2209, -3573, -13, 3902]"/>
+  </edges>
+  <edges xmi:id="_zp21dzMXEd6G-YPB3VK3nA" source="_zbGnuTMXEd6G-YPB3VK3nA" target="_zbGnuTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zp21ejMXEd6G-YPB3VK3nA" type="KindLabel">
+      <children xmi:id="_zp21fDMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zp21fjMXEd6G-YPB3VK3nA" type="Kind"/>
+      <children xmi:id="_zp21fTMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zp21ezMXEd6G-YPB3VK3nA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zp21eDMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=Data%5Bjcu%5Ename=Data.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Data%5Bjcu%5Ename=Data.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zp21eTMXEd6G-YPB3VK3nA" points="[-1297, 450, -1297, 450]$[-4736, 1641, -4736, 1641]$[-5107, 238, -5107, 238]$[-1297, 238, -1297, 238]"/>
+  </edges>
+  <edges xmi:id="_zp21fzMXEd6G-YPB3VK3nA" source="_zbQYlTMXEd6G-YPB3VK3nA" target="_zbGnrTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zqAmQDMXEd6G-YPB3VK3nA" type="NameLabel">
+      <children xmi:id="_zqAmQjMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zqAmQzMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zqAmQTMXEd6G-YPB3VK3nA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zp21gDMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:Generalization" href="mmi:///#jgen%5Bjsrctype%5Ename=AsciiDataFrame%5Bjcu%5Ename=AsciiDataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DataFrame%5Bjcu%5Ename=DataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Generalization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zp21gTMXEd6G-YPB3VK3nA" points="[-14, -1985, -10266, 5490]$[10252, -3573, 0, 3902]"/>
+  </edges>
+  <edges xmi:id="_zqAmRDMXEd6G-YPB3VK3nA" source="_zbQYoTMXEd6G-YPB3VK3nA" target="_zbQYrTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zqAmRzMXEd6G-YPB3VK3nA" type="NameLabel">
+      <children xmi:id="_zqAmSTMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zqAmSjMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zqAmSDMXEd6G-YPB3VK3nA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zqAmRTMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:InterfaceRealization" href="mmi:///#jimpl%5Bjsrctype%5Ename=DataFrameChannel%5Bjcu%5Ename=DataFrameChannel.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Slider%5Bjcu%5Ename=Slider.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.InterfaceRealization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zqAmRjMXEd6G-YPB3VK3nA" points="[-1, -2461, 0, 2672]$[-1, -4048, 0, 1085]"/>
+  </edges>
+  <edges xmi:id="_zqAmSzMXEd6G-YPB3VK3nA" source="_zbQYoTMXEd6G-YPB3VK3nA" target="_zbGnrTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zqAmTjMXEd6G-YPB3VK3nA" type="KindLabel">
+      <children xmi:id="_zqAmUDMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zqAmUjMXEd6G-YPB3VK3nA" type="Kind"/>
+      <children xmi:id="_zqAmUTMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zqAmTzMXEd6G-YPB3VK3nA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zqAmTDMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=DataFrameChannel%5Bjcu%5Ename=DataFrameChannel.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DataFrame%5Bjcu%5Ename=DataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zqAmTTMXEd6G-YPB3VK3nA" points="[-1, 2461, 0, -5490]$[-1, 4048, 0, -3903]"/>
+  </edges>
+  <edges xmi:id="_zqAmUzMXEd6G-YPB3VK3nA" source="_zbQYujMXEd6G-YPB3VK3nA" target="_zbGnrTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zqAmVjMXEd6G-YPB3VK3nA" type="NameLabel">
+      <children xmi:id="_zqAmWDMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zqAmWTMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zqAmVzMXEd6G-YPB3VK3nA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zqAmVDMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:Generalization" href="mmi:///#jgen%5Bjsrctype%5Ename=BinaryDataFrame%5Bjcu%5Ename=BinaryDataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DataFrame%5Bjcu%5Ename=DataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Generalization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zqAmVTMXEd6G-YPB3VK3nA" points="[-14, -1985, -2937, 5490]$[2923, -3573, 0, 3902]"/>
+  </edges>
+  <edges xmi:id="_zqAmWjMXEd6G-YPB3VK3nA" source="_zbQY0zMXEd6G-YPB3VK3nA" target="_zbGnrTMXEd6G-YPB3VK3nA">
+    <children xmi:id="_zqAmXTMXEd6G-YPB3VK3nA" type="NameLabel">
+      <children xmi:id="_zqAmXzMXEd6G-YPB3VK3nA" type="Stereotype"/>
+      <children xmi:id="_zqAmYDMXEd6G-YPB3VK3nA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zqAmXjMXEd6G-YPB3VK3nA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_zqAmWzMXEd6G-YPB3VK3nA" showStereotype="Text"/>
+    <element xmi:type="uml:Generalization" href="mmi:///#jgen%5Bjsrctype%5Ename=ASNDataFrame%5Bjcu%5Ename=ASNDataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DataFrame%5Bjcu%5Ename=DataFrame.java%5Bjpack%5Ename=com.connectiva.pgf.datadefinition.common%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Generalization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zqAmXDMXEd6G-YPB3VK3nA" points="[-14, -1985, 4392, 5490]$[-4406, -3573, 0, 3902]"/>
+  </edges>
+</notation:Diagram>

@@ -1,0 +1,12 @@
+/bin/
+/backupDir/
+/build/
+/data/
+/inputDir/
+/log/
+/outputDir/
+/outputDir (copy)/
+/ModelSytaxTreeF.TXT
+/ModelValueTreeF.TXT
+/t.xml
+/.settings/

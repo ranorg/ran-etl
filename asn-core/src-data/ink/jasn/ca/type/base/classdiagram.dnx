@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.0/notation" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:id="_Elh4cH2kEd6mGbDDEDXKGA" type="Class" name="classdiagram.dnx">
+  <children xmi:id="_IvEgsH2kEd6mGbDDEDXKGA">
+    <children xmi:id="_IvNqoH2kEd6mGbDDEDXKGA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_IvNqoX2kEd6mGbDDEDXKGA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_IvXboH2kEd6mGbDDEDXKGA" type="Stereotype"/>
+    <children xmi:id="_IvXboX2kEd6mGbDDEDXKGA" type="Name"/>
+    <children xmi:id="_IvXbon2kEd6mGbDDEDXKGA" type="Parent"/>
+    <children xmi:id="_IvXbo32kEd6mGbDDEDXKGA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvXbpH2kEd6mGbDDEDXKGA"/>
+    </children>
+    <children xmi:id="_IvXbpX2kEd6mGbDDEDXKGA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvXbpn2kEd6mGbDDEDXKGA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IvEgsX2kEd6mGbDDEDXKGA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ASNCharacterString%5Bjcu%5Ename=ASNCharacterString.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvEgsn2kEd6mGbDDEDXKGA" x="7963" y="25028"/>
+  </children>
+  <children xmi:id="_IvXbp32kEd6mGbDDEDXKGA">
+    <children xmi:id="_IvXbqn2kEd6mGbDDEDXKGA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_IvXbq32kEd6mGbDDEDXKGA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_IvXbrH2kEd6mGbDDEDXKGA" type="Stereotype"/>
+    <children xmi:id="_IvXbrX2kEd6mGbDDEDXKGA" type="Name"/>
+    <children xmi:id="_IvXbrn2kEd6mGbDDEDXKGA" type="Parent"/>
+    <children xmi:id="_IvXbr32kEd6mGbDDEDXKGA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvXbsH2kEd6mGbDDEDXKGA"/>
+    </children>
+    <children xmi:id="_IvXbsX2kEd6mGbDDEDXKGA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvXbsn2kEd6mGbDDEDXKGA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IvXbqH2kEd6mGbDDEDXKGA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ASNPrimitive%5Bjcu%5Ename=ASNPrimitive.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvXbqX2kEd6mGbDDEDXKGA" x="19020" y="19020"/>
+  </children>
+  <children xmi:id="_IvXbs32kEd6mGbDDEDXKGA">
+    <children xmi:id="_IvhMoH2kEd6mGbDDEDXKGA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_IvhMoX2kEd6mGbDDEDXKGA" width="530" height="530"/>
+    </children>
+    <children xmi:id="_IvhMon2kEd6mGbDDEDXKGA" type="Stereotype"/>
+    <children xmi:id="_IvhMo32kEd6mGbDDEDXKGA" type="Kind"/>
+    <children xmi:id="_IvhMpH2kEd6mGbDDEDXKGA" type="Name"/>
+    <children xmi:id="_IvhMpX2kEd6mGbDDEDXKGA" type="Parent"/>
+    <children xmi:id="_IvhMpn2kEd6mGbDDEDXKGA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvhMp32kEd6mGbDDEDXKGA"/>
+    </children>
+    <children xmi:id="_IvhMqH2kEd6mGbDDEDXKGA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvhMqX2kEd6mGbDDEDXKGA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_IvXbtH2kEd6mGbDDEDXKGA" showStereotype="Label" useClassifierShape="true"/>
+    <element xmi:type="uml:Interface" href="mmi:///#jsrctype%5Ename=ASNTypeConstant%5Bjcu%5Ename=ASNTypeConstant.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Interface"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvXbtX2kEd6mGbDDEDXKGA" x="8565" y="3670"/>
+  </children>
+  <children xmi:id="_IvhMqn2kEd6mGbDDEDXKGA">
+    <children xmi:id="_IvhMrX2kEd6mGbDDEDXKGA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_IvhMrn2kEd6mGbDDEDXKGA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_IvhMr32kEd6mGbDDEDXKGA" type="Stereotype"/>
+    <children xmi:id="_IvhMsH2kEd6mGbDDEDXKGA" type="Name"/>
+    <children xmi:id="_IvhMsX2kEd6mGbDDEDXKGA" type="Parent"/>
+    <children xmi:id="_IvhMsn2kEd6mGbDDEDXKGA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvhMs32kEd6mGbDDEDXKGA"/>
+    </children>
+    <children xmi:id="_IvhMtH2kEd6mGbDDEDXKGA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvhMtX2kEd6mGbDDEDXKGA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IvhMq32kEd6mGbDDEDXKGA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ASNCollection%5Bjcu%5Ename=ASNCollection.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvhMrH2kEd6mGbDDEDXKGA" x="29481" y="20288"/>
+  </children>
+  <children xmi:id="_IvhMtn2kEd6mGbDDEDXKGA">
+    <children xmi:id="_IvhMuX2kEd6mGbDDEDXKGA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_IvhMun2kEd6mGbDDEDXKGA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_IvhMu32kEd6mGbDDEDXKGA" type="Stereotype"/>
+    <children xmi:id="_IvhMvH2kEd6mGbDDEDXKGA" type="Name"/>
+    <children xmi:id="_IvhMvX2kEd6mGbDDEDXKGA" type="Parent"/>
+    <children xmi:id="_IvhMvn2kEd6mGbDDEDXKGA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvhMv32kEd6mGbDDEDXKGA"/>
+    </children>
+    <children xmi:id="_IvhMwH2kEd6mGbDDEDXKGA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvhMwX2kEd6mGbDDEDXKGA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IvhMt32kEd6mGbDDEDXKGA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ASNType%5Bjcu%5Ename=ASNType.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvhMuH2kEd6mGbDDEDXKGA" x="23110" y="3664"/>
+  </children>
+  <children xmi:id="_IvhMwn2kEd6mGbDDEDXKGA">
+    <children xmi:id="_IvqWkH2kEd6mGbDDEDXKGA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_IvqWkX2kEd6mGbDDEDXKGA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_IvqWkn2kEd6mGbDDEDXKGA" type="Stereotype"/>
+    <children xmi:id="_IvqWk32kEd6mGbDDEDXKGA" type="Name"/>
+    <children xmi:id="_IvqWlH2kEd6mGbDDEDXKGA" type="Parent"/>
+    <children xmi:id="_IvqWlX2kEd6mGbDDEDXKGA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvqWln2kEd6mGbDDEDXKGA"/>
+    </children>
+    <children xmi:id="_IvqWl32kEd6mGbDDEDXKGA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvqWmH2kEd6mGbDDEDXKGA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IvhMw32kEd6mGbDDEDXKGA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ASNSelection%5Bjcu%5Ename=ASNSelection.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvhMxH2kEd6mGbDDEDXKGA" x="36101" y="21380"/>
+  </children>
+  <children xmi:id="_IvqWmX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_IvqWnH2kEd6mGbDDEDXKGA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_IvqWnX2kEd6mGbDDEDXKGA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_IvqWnn2kEd6mGbDDEDXKGA" type="Stereotype"/>
+    <children xmi:id="_IvqWn32kEd6mGbDDEDXKGA" type="Name"/>
+    <children xmi:id="_IvqWoH2kEd6mGbDDEDXKGA" type="Parent"/>
+    <children xmi:id="_IvqWoX2kEd6mGbDDEDXKGA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvqWon2kEd6mGbDDEDXKGA"/>
+    </children>
+    <children xmi:id="_IvqWo32kEd6mGbDDEDXKGA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvqWpH2kEd6mGbDDEDXKGA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IvqWmn2kEd6mGbDDEDXKGA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ASNContainer%5Bjcu%5Ename=ASNContainer.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvqWm32kEd6mGbDDEDXKGA" x="40893" y="21239"/>
+  </children>
+  <children xmi:id="_IvqWpX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_IvqWqH2kEd6mGbDDEDXKGA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_IvqWqX2kEd6mGbDDEDXKGA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_IvqWqn2kEd6mGbDDEDXKGA" type="Stereotype"/>
+    <children xmi:id="_IvqWq32kEd6mGbDDEDXKGA" type="Name"/>
+    <children xmi:id="_IvqWrH2kEd6mGbDDEDXKGA" type="Parent"/>
+    <children xmi:id="_IvqWrX2kEd6mGbDDEDXKGA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvqWrn2kEd6mGbDDEDXKGA"/>
+    </children>
+    <children xmi:id="_IvqWr32kEd6mGbDDEDXKGA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvqWsH2kEd6mGbDDEDXKGA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IvqWpn2kEd6mGbDDEDXKGA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ASNUserDefinedType%5Bjcu%5Ename=ASNUserDefinedType.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvqWp32kEd6mGbDDEDXKGA" x="23458" y="13631"/>
+  </children>
+  <children xmi:id="_IvqWsX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_IvqWtH2kEd6mGbDDEDXKGA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_IvqWtX2kEd6mGbDDEDXKGA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_IvqWtn2kEd6mGbDDEDXKGA" type="Stereotype"/>
+    <children xmi:id="_IvqWt32kEd6mGbDDEDXKGA" type="Name"/>
+    <children xmi:id="_IvqWuH2kEd6mGbDDEDXKGA" type="Parent"/>
+    <children xmi:id="_IvqWuX2kEd6mGbDDEDXKGA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvqWun2kEd6mGbDDEDXKGA"/>
+    </children>
+    <children xmi:id="_IvqWu32kEd6mGbDDEDXKGA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvqWvH2kEd6mGbDDEDXKGA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IvqWsn2kEd6mGbDDEDXKGA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=Tag%5Bjcu%5Ename=Tag.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvqWs32kEd6mGbDDEDXKGA" x="22507" y="-17752"/>
+  </children>
+  <children xmi:id="_IvqWvX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_IvqWwH2kEd6mGbDDEDXKGA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_IvqWwX2kEd6mGbDDEDXKGA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_IvqWwn2kEd6mGbDDEDXKGA" type="Stereotype"/>
+    <children xmi:id="_IvqWw32kEd6mGbDDEDXKGA" type="Name"/>
+    <children xmi:id="_IvqWxH2kEd6mGbDDEDXKGA" type="Parent"/>
+    <children xmi:id="_IvqWxX2kEd6mGbDDEDXKGA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvqWxn2kEd6mGbDDEDXKGA"/>
+    </children>
+    <children xmi:id="_IvqWx32kEd6mGbDDEDXKGA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvqWyH2kEd6mGbDDEDXKGA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IvqWvn2kEd6mGbDDEDXKGA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ASNMaster%5Bjcu%5Ename=ASNMaster.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvqWv32kEd6mGbDDEDXKGA" x="5222" y="19774"/>
+  </children>
+  <children xmi:id="_IvqWyX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_IvqWzH2kEd6mGbDDEDXKGA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_IvqWzX2kEd6mGbDDEDXKGA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_IvqWzn2kEd6mGbDDEDXKGA" type="Stereotype"/>
+    <children xmi:id="_IvqWz32kEd6mGbDDEDXKGA" type="Name"/>
+    <children xmi:id="_IvqW0H2kEd6mGbDDEDXKGA" type="Parent"/>
+    <children xmi:id="_IvqW0X2kEd6mGbDDEDXKGA" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_IvqW0n2kEd6mGbDDEDXKGA"/>
+    </children>
+    <children xmi:id="_Iv0HkH2kEd6mGbDDEDXKGA" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_Iv0HkX2kEd6mGbDDEDXKGA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_IvqWyn2kEd6mGbDDEDXKGA" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ASNConstructed%5Bjcu%5Ename=ASNConstructed.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IvqWy32kEd6mGbDDEDXKGA" x="35821" y="13631"/>
+  </children>
+  <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_El0zYH2kEd6mGbDDEDXKGA"/>
+  <element xsi:nil="true"/>
+  <edges xmi:id="_JO86oH2kEd6mGbDDEDXKGA" source="_IvEgsH2kEd6mGbDDEDXKGA" target="_IvXbp32kEd6mGbDDEDXKGA">
+    <children xmi:id="_JO86o32kEd6mGbDDEDXKGA" type="NameLabel">
+      <children xmi:id="_JO86pX2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JO86pn2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JO86pH2kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JO86oX2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Generalization" href="mmi:///#jgen%5Bjsrctype%5Ename=ASNCharacterString%5Bjcu%5Ename=ASNCharacterString.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ASNPrimitive%5Bjcu%5Ename=ASNPrimitive.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Generalization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JO86on2kEd6mGbDDEDXKGA" points="[-13, -2051, -4379, 3413]$[4353, -3638, -13, 1826]"/>
+  </edges>
+  <edges xmi:id="_JO86p32kEd6mGbDDEDXKGA" source="_IvEgsH2kEd6mGbDDEDXKGA" target="_IvqWsX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JO86qn2kEd6mGbDDEDXKGA" type="KindLabel">
+      <children xmi:id="_JO86rH2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JO86rn2kEd6mGbDDEDXKGA" type="Kind"/>
+      <children xmi:id="_JO86rX2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JO86q32kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JO86qH2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ASNCharacterString%5Bjcu%5Ename=ASNCharacterString.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Tag%5Bjcu%5Ename=Tag.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JO86qX2kEd6mGbDDEDXKGA" points="[-13, 2050, -15373, -11034]$[15359, 3638, -1, -9446]"/>
+  </edges>
+  <edges xmi:id="_JO86r32kEd6mGbDDEDXKGA" source="_IvXbp32kEd6mGbDDEDXKGA" target="_IvqWsX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JO86sn2kEd6mGbDDEDXKGA" type="KindLabel">
+      <children xmi:id="_JO86tH2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPGroX2kEd6mGbDDEDXKGA" type="Kind"/>
+      <children xmi:id="_JPGroH2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JO86s32kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JO86sH2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ASNPrimitive%5Bjcu%5Ename=ASNPrimitive.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Tag%5Bjcu%5Ename=Tag.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JO86sX2kEd6mGbDDEDXKGA" points="[-13, 1826, -11007, -16722]$[0, 5464, -10994, -13084]$[10993, 9102, -1, -9446]"/>
+  </edges>
+  <edges xmi:id="_JPGron2kEd6mGbDDEDXKGA" source="_IvXbp32kEd6mGbDDEDXKGA" target="_IvhMtn2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPGrpX2kEd6mGbDDEDXKGA" type="NameLabel">
+      <children xmi:id="_JPGrp32kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPGrqH2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPGrpn2kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPGro32kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Generalization" href="mmi:///#jgen%5Bjsrctype%5Ename=ASNPrimitive%5Bjcu%5Ename=ASNPrimitive.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ASNType%5Bjcu%5Ename=ASNType.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Generalization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPGrpH2kEd6mGbDDEDXKGA" points="[-13, -1826, -10715, 8850]$[10702, -3413, 0, 7263]"/>
+  </edges>
+  <edges xmi:id="_JPGrqX2kEd6mGbDDEDXKGA" source="_IvhMqn2kEd6mGbDDEDXKGA" target="_IvqWsX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPGrrH2kEd6mGbDDEDXKGA" type="KindLabel">
+      <children xmi:id="_JPGrrn2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPGrsH2kEd6mGbDDEDXKGA" type="Kind"/>
+      <children xmi:id="_JPGrr32kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPGrrX2kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPGrqn2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ASNCollection%5Bjcu%5Ename=ASNCollection.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Tag%5Bjcu%5Ename=Tag.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPGrq32kEd6mGbDDEDXKGA" points="[-14, 2050, -4102, -11034]$[4087, 3638, -1, -9446]"/>
+  </edges>
+  <edges xmi:id="_JPGrsX2kEd6mGbDDEDXKGA" source="_IvhMqn2kEd6mGbDDEDXKGA" target="_IvqWyX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPGrtH2kEd6mGbDDEDXKGA" type="NameLabel">
+      <children xmi:id="_JPGrtn2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPGrt32kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPGrtX2kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPGrsn2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Generalization" href="mmi:///#jgen%5Bjsrctype%5Ename=ASNCollection%5Bjcu%5Ename=ASNCollection.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ASNConstructed%5Bjcu%5Ename=ASNConstructed.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Generalization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPGrs32kEd6mGbDDEDXKGA" points="[-14, -2051, -8533, 3413]$[8506, -3638, -13, 1826]"/>
+  </edges>
+  <edges xmi:id="_JPGruH2kEd6mGbDDEDXKGA" source="_IvhMtn2kEd6mGbDDEDXKGA" target="_IvqWsX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPGru32kEd6mGbDDEDXKGA" type="KindLabel">
+      <children xmi:id="_JPGrvX2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPGrv32kEd6mGbDDEDXKGA" type="Kind"/>
+      <children xmi:id="_JPGrvn2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPGrvH2kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPGruX2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ASNType%5Bjcu%5Ename=ASNType.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Tag%5Bjcu%5Ename=Tag.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPGrun2kEd6mGbDDEDXKGA" points="[0, 7263, -292, -21961]$[13984, 10676, 13692, -18548]$[13984, 16140, 13692, -13084]$[291, 19778, -1, -9446]"/>
+  </edges>
+  <edges xmi:id="_JPGrwH2kEd6mGbDDEDXKGA" source="_IvhMwn2kEd6mGbDDEDXKGA" target="_IvqWyX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPGrw32kEd6mGbDDEDXKGA" type="NameLabel">
+      <children xmi:id="_JPGrxX2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPGrxn2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPGrxH2kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPGrwX2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Generalization" href="mmi:///#jgen%5Bjsrctype%5Ename=ASNSelection%5Bjcu%5Ename=ASNSelection.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ASNConstructed%5Bjcu%5Ename=ASNConstructed.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Generalization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPGrwn2kEd6mGbDDEDXKGA" points="[-13, -2051, -2738, 3413]$[2712, -3638, -13, 1826]"/>
+  </edges>
+  <edges xmi:id="_JPGrx32kEd6mGbDDEDXKGA" source="_IvhMwn2kEd6mGbDDEDXKGA" target="_IvqWsX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPGryn2kEd6mGbDDEDXKGA" type="KindLabel">
+      <children xmi:id="_JPGrzH2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPGrzn2kEd6mGbDDEDXKGA" type="Kind"/>
+      <children xmi:id="_JPGrzX2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPGry32kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPGryH2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ASNSelection%5Bjcu%5Ename=ASNSelection.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Tag%5Bjcu%5Ename=Tag.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPGryX2kEd6mGbDDEDXKGA" points="[-13, 2050, 1693, -11034]$[-1707, 3638, -1, -9446]"/>
+  </edges>
+  <edges xmi:id="_JPGrz32kEd6mGbDDEDXKGA" source="_IvqWmX2kEd6mGbDDEDXKGA" target="_IvqWsX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPGr0n2kEd6mGbDDEDXKGA" type="KindLabel">
+      <children xmi:id="_JPGr1H2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPGr1n2kEd6mGbDDEDXKGA" type="Kind"/>
+      <children xmi:id="_JPGr1X2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPGr032kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPGr0H2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ASNContainer%5Bjcu%5Ename=ASNContainer.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Tag%5Bjcu%5Ename=Tag.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPGr0X2kEd6mGbDDEDXKGA" points="[0, 2050, 7143, -11034]$[-7144, 3638, -1, -9446]"/>
+  </edges>
+  <edges xmi:id="_JPGr132kEd6mGbDDEDXKGA" source="_IvqWmX2kEd6mGbDDEDXKGA" target="_IvqWyX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPGr2n2kEd6mGbDDEDXKGA" type="NameLabel">
+      <children xmi:id="_JPGr3H2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPGr3X2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPGr232kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPGr2H2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Generalization" href="mmi:///#jgen%5Bjsrctype%5Ename=ASNContainer%5Bjcu%5Ename=ASNContainer.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ASNConstructed%5Bjcu%5Ename=ASNConstructed.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Generalization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPGr2X2kEd6mGbDDEDXKGA" points="[0, -2051, 2712, 3413]$[-2725, -3638, -13, 1826]"/>
+  </edges>
+  <edges xmi:id="_JPGr3n2kEd6mGbDDEDXKGA" source="_IvqWpX2kEd6mGbDDEDXKGA" target="_IvqWsX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPGr4X2kEd6mGbDDEDXKGA" type="KindLabel">
+      <children xmi:id="_JPQcoH2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPQcon2kEd6mGbDDEDXKGA" type="Kind"/>
+      <children xmi:id="_JPQcoX2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPGr4n2kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPGr332kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ASNUserDefinedType%5Bjcu%5Ename=ASNUserDefinedType.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Tag%5Bjcu%5Ename=Tag.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPGr4H2kEd6mGbDDEDXKGA" points="[0, 1826, -5001, -16722]$[-3321, 5464, -8322, -13084]$[5000, 9102, -1, -9446]"/>
+  </edges>
+  <edges xmi:id="_JPQco32kEd6mGbDDEDXKGA" source="_IvqWpX2kEd6mGbDDEDXKGA" target="_IvhMtn2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPQcpn2kEd6mGbDDEDXKGA" type="NameLabel">
+      <children xmi:id="_JPQcqH2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPQcqX2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPQcp32kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPQcpH2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Generalization" href="mmi:///#jgen%5Bjsrctype%5Ename=ASNUserDefinedType%5Bjcu%5Ename=ASNUserDefinedType.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ASNType%5Bjcu%5Ename=ASNType.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Generalization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPQcpX2kEd6mGbDDEDXKGA" points="[0, -1826, -4709, 8850]$[4709, -3413, 0, 7263]"/>
+  </edges>
+  <edges xmi:id="_JPQcqn2kEd6mGbDDEDXKGA" source="_IvqWvX2kEd6mGbDDEDXKGA" target="_IvhMtn2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPQcrX2kEd6mGbDDEDXKGA" type="NameLabel">
+      <children xmi:id="_JPQcr32kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPQcsH2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPQcrn2kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPQcq32kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Generalization" href="mmi:///#jgen%5Bjsrctype%5Ename=ASNMaster%5Bjcu%5Ename=ASNMaster.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ASNType%5Bjcu%5Ename=ASNType.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Generalization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPQcrH2kEd6mGbDDEDXKGA" points="[-13, -1826, -17224, 8850]$[17211, -3413, 0, 7263]"/>
+  </edges>
+  <edges xmi:id="_JPQcsX2kEd6mGbDDEDXKGA" source="_IvqWyX2kEd6mGbDDEDXKGA" target="_IvhMtn2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPQctH2kEd6mGbDDEDXKGA" type="NameLabel">
+      <children xmi:id="_JPQctn2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPQct32kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPQctX2kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPQcsn2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Generalization" href="mmi:///#jgen%5Bjsrctype%5Ename=ASNConstructed%5Bjcu%5Ename=ASNConstructed.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ASNType%5Bjcu%5Ename=ASNType.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Generalization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPQcs32kEd6mGbDDEDXKGA" points="[-13, -1826, 4710, 8850]$[-4723, -3413, 0, 7263]"/>
+  </edges>
+  <edges xmi:id="_JPQcuH2kEd6mGbDDEDXKGA" source="_IvqWyX2kEd6mGbDDEDXKGA" target="_IvqWsX2kEd6mGbDDEDXKGA">
+    <children xmi:id="_JPQcu32kEd6mGbDDEDXKGA" type="KindLabel">
+      <children xmi:id="_JPQcvX2kEd6mGbDDEDXKGA" type="Stereotype"/>
+      <children xmi:id="_JPQcv32kEd6mGbDDEDXKGA" type="Kind"/>
+      <children xmi:id="_JPQcvn2kEd6mGbDDEDXKGA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JPQcvH2kEd6mGbDDEDXKGA" y="-530"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_JPQcuX2kEd6mGbDDEDXKGA" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ASNConstructed%5Bjcu%5Ename=ASNConstructed.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Tag%5Bjcu%5Ename=Tag.java%5Bjpack%5Ename=com.connectiva.gpf.datadef.asn.media%5Bjsrcroot%5Esrcfolder=DataDefinition/src%5Bproject%5Eid=ParserGenX%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JPQcun2kEd6mGbDDEDXKGA" points="[-13, 1826, 4418, -16722]$[6588, 5464, 11019, -13084]$[-4432, 9102, -1, -9446]"/>
+  </edges>
+</notation:Diagram>

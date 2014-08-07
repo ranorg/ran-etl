@@ -1,0 +1,1158 @@
+ZTE-SGSN DEFINITIONS IMPLICIT TAGS ::=
+BEGIN
+	
+CallEventRecord ::= CHOICE
+{
+	sgsnPDPRecord [20] SGSNPDPRecord,
+	ggsnPDPRecord [21] GGSNPDPRecord,
+	sgsnMMRecord [22] SGSNMMRecord,
+	sgsnSMORecord [23] SGSNSMORecord,
+	sgsnSMTRecord [24] SGSNSMTRecord,
+	sgsnMtLCSRecord [25] SGSNMTLCSRecord,
+	sgsnMoLCSRecord [26] SGSNMOLCSRecord,
+	sgsnNiLCSRecord [27] SGSNNILCSRecord,
+	sgsnMBMSRecord [29] SGSNMBMSRecord,
+	ggsnMBMSRecord [30] GGSNMBMSRecord,
+	sGWRecord [78] SGWRecord,
+	pGWRecord [79] PGWRecord,
+	wLANRecord [80] WLANRecord,
+	hSGWRecord [100] HSGWRecord 
+}	
+
+SGSNPDPRecord ::= SET
+{
+	recordType [0] CallEventRecordType,
+	networkInitiation [1] NetworkInitiatedPDPContext OPTIONAL,
+	servedIMSI [3] IMSI,
+	servedIMEI [4] IMEI OPTIONAL,
+	sgsnAddressList [5] SEQUENCE OF GSNAddress,
+	msNetworkCapability [6] MSNetworkCapability OPTIONAL,
+	routingArea [7] RoutingAreaCode OPTIONAL,
+	locationAreaCode [8] LocationAreaCode OPTIONAL,
+	cellIdentifier [9] CellID OPTIONAL,
+	chargingID [10] ChargingID,
+	ggsnAddressUsed [11] GSNAddress,
+	accessPointNameNI [12] AccessPointNameNI,
+	pdpType [13] PDPType,
+	servedPDPAddress [14] PDPAddress OPTIONAL,
+	listOfTrafficVolumes [15] SEQUENCE OF ChangeOfCharCondition,
+	recordOpeningTime [16] TimeStamp,
+	duration [17] CallDuration,
+	sgsnChange [18] SGSNChange OPTIONAL,
+	causeForRecClosing [19] CauseForRecClosing,
+	diagnostics [20] Diagnostics OPTIONAL,
+	listOfRecordSequenceNumber  [21] SEQUENCE OF AddressSequenceNumberList OPTIONAL,
+	nodeID [22] NodeID OPTIONAL,
+	recordExtensions [23] ManagementExtensions OPTIONAL,
+	localSequenceNumber [24] RecordSeqNumber OPTIONAL,
+	apnSelectionMode [25] APNSelectionMode OPTIONAL,
+	accessPointNameOI [26] AccessPointNameOI,
+	servedMSISDN [27] MSISDN OPTIONAL,
+	chargingCharacteristics [28] ChargingCharacteristics,
+	systemType [29] SystemType OPTIONAL,
+	cAMELInformationPDP [30] CAMELInformationPDP OPTIONAL,
+	rNCUnsentDownlinkVolume [31] DataVolumeGPRS OPTIONAL,
+	consolidationResult [32] ConsolidationResult OPTIONAL,
+	chgLocalSeqNoList [33] SEQUENCE OF AddressSequenceNumberList OPTIONAL,
+	chChSelectionMode [34] ChChSelectionMode OPTIONAL,
+	dynamicAddressFlag [35] DynamicAddressFlag OPTIONAL,
+	sgsnPLMNIdentifier [36] PlmnId OPTIONAL,
+	servedPDPPDNAddressExt [37] PDPAddress OPTIONAL
+}
+
+
+GGSNPDPRecord ::= SET
+{
+	recordType [0] CallEventRecordType,
+	networkInitiation [1] NetworkInitiatedPDPContext OPTIONAL,
+	servedIMSI	[3] IMSI,
+	ggsnAddress	[4] GSNAddress,
+	chargingID	[5] ChargingID,
+	sgsnAddress	[6] SEQUENCE OF GSNAddress,
+	accessPointNameNI	[7] AccessPointNameNI,
+	pdpType	[8] PDPType,
+	servedPDPAddress	[9] PDPAddress OPTIONAL,
+	dynamicAddressFlag	[11] DynamicAddressFlag OPTIONAL,
+	listOfTrafficVolumes	[12] SEQUENCE OF ChangeOfCharCondition,
+	recordOpeningTime	[13] TimeStamp,
+	duration	[14] CallDuration,
+	causeForRecClosing	[15] CauseForRecClosing,
+	diagnostics	[16] Diagnostics OPTIONAL,
+	listOfRecordSequenceNumber	[17] SEQUENCE OF AddressSequenceNumberList OPTIONAL,
+	nodeID	[18] NodeID OPTIONAL,
+	recordExtensions	[19] ContentExtensions OPTIONAL,
+	localSequenceNumber	[20] RecordSeqNumber OPTIONAL,
+	apnSelectionMode	[21] APNSelectionMode OPTIONAL,
+	servedMSISDN	[22] MSISDN OPTIONAL,
+	chargingCharacteristics	[23] ChargingCharacteristics OPTIONAL,
+	localSeqNoList	[26] AddressSequenceNumberList OPTIONAL,
+	sgsnPLMNIdentifier	[27] PlmnId OPTIONAL,
+	chChSelectionMode	[28] ChChSelectionMode OPTIONAL,
+	rATType	[29] RATType OPTIONAL,
+	consolidationResult	[30] ConsolidationResult OPTIONAL,
+	iMSsignalingContext	[32] NULL OPTIONAL,
+	externalChargingID	[33] OCTET STRING OPTIONAL,
+	userLocationInformation	[34] UmtsUserLocationInformation OPTIONAL,
+	servedIMEISV	[35] IMEI OPTIONAL,
+	mSTimeZone	[36] MSTimeZone OPTIONAL,
+	url	[37] IA5String (SIZE(1..64)) OPTIONAL,
+	iMSIunauthenticatedFlag	[38] NULL OPTIONAL,
+	roamingIndicator	[101] INTEGER OPTIONAL,
+	diameterSessionID	[102] IA5String (SIZE(1..128)) OPTIONAL,
+	servedPDPPDNAddressExt	[103] PDPAddress OPTIONAL,
+	pSFurnishChargingInformation	[104] PSFurnishChargingInformation OPTIONAL
+}
+
+SGSNMMRecord ::= SET	
+{	
+	recordType	[0] CallEventRecordType,
+	servedIMSI	[1] IMSI,
+	servedIMEI	[2] IMEI OPTIONAL,
+	sgsnAddress	[3] GSNAddress,
+	msNetworkCapability	[4] MSNetworkCapability OPTIONAL,
+	routingArea	[5] RoutingAreaCode OPTIONAL,
+	locationAreaCode	[6] LocationAreaCode OPTIONAL,
+	cellIdentifier	[7] CellID OPTIONAL,
+	changeLocation	[8] SEQUENCE OF ChangeLocation OPTIONAL,
+	recordOpeningTime	[9] TimeStamp,
+	duration	[10] CallDuration OPTIONAL,
+	sgsnChange	[11] SGSNChange OPTIONAL,
+	causeForRecClosing	[12] CauseForRecClosing,
+	diagnostics	[13] Diagnostics OPTIONAL,
+	recordSequenceNumber	[14] INTEGER OPTIONAL,
+	nodeID	[15] NodeID OPTIONAL,
+	recordExtensions	[16] ManagementExtensions OPTIONAL,
+	localSequenceNumber	[17] RecordSeqNumber OPTIONAL,
+	servedMSISDN	[18] MSISDN OPTIONAL,
+	chargingCharacteristics	[19] ChargingCharacteristics OPTIONAL,
+	cAMELInformationMM	[20] CAMELInformationMM OPTIONAL,
+	systemType	[21] SystemType OPTIONAL,
+	chChSelectionMode	[22] ChChSelectionMode OPTIONAL
+}	
+
+SGSNSMORecord ::= SET
+{
+	recordType	[0] CallEventRecordType,
+	servedIMSI	[1] IMSI,
+	servedIMEI	[2] IMEI OPTIONAL,
+	servedMSISDN	[3] MSISDN OPTIONAL,
+	msNetworkCapability	[4] MSNetworkCapability,
+	serviceCentre	[5] AddressString,
+	recordingEntity	[6] RecordingEntity,
+	locationArea	[7] LocationAreaCode OPTIONAL,
+	routingArea	[8] RoutingAreaCode OPTIONAL,
+	cellIdentifier	[9] CellID OPTIONAL,
+	messageReference	[10] MessageReference,
+	originationTime	[11] TimeStamp,
+	smsResult	[12] SMSResult OPTIONAL,
+	recordExtensions	[13] ManagementExtensions OPTIONAL,
+	nodeID	[14] NodeID OPTIONAL,
+	localSequenceNumber	[15] RecordSeqNumber OPTIONAL,
+	chargingCharacteristics	[16] ChargingCharacteristics OPTIONAL,
+	systemType	[17] SystemType OPTIONAL,
+	destinationNumber	[18] BCDDirectoryNumber OPTIONAL,
+	cAMELInformationSMS	[19] CAMELInformationSMS OPTIONAL,
+	chChSelectionMode	[20] ChChSelectionMode OPTIONAL
+}	
+
+SGSNSMTRecord ::= SET	
+{	
+	recordType	[0] CallEventRecordType,
+	servedIMSI	[1] IMSI,
+	servedIMEI	[2] IMEI OPTIONAL,
+	servedMSISDN	[3] MSISDN OPTIONAL,
+	msNetworkCapability	[4] MSNetworkCapability,
+	serviceCentre	[5] AddressString,
+	recordingEntity	[6] RecordingEntity,
+	locationArea	[7] LocationAreaCode OPTIONAL,
+	routingArea	[8] RoutingAreaCode OPTIONAL,
+	cellIdentifier	[9] CellID OPTIONAL,
+	originationTime	[10] TimeStamp,
+	smsResult	[11] SMSResult OPTIONAL,
+	recordExtensions	[12] ManagementExtensions OPTIONAL,
+	nodeID	[13] NodeID OPTIONAL,
+	localSequenceNumber	[14] RecordSeqNumber OPTIONAL,
+	chargingCharacteristics	[15] ChargingCharacteristics OPTIONAL,
+	systemType	[16] SystemType OPTIONAL,
+	cAMELInformationSMS	[17] CAMELInformationSMS OPTIONAL,
+	chChSelectionMode	[18] ChChSelectionMode OPTIONAL,
+	originationNumber	[19] BCDDirectoryNumber OPTIONAL
+}	
+
+SGSNMOLCSRecord ::= SET	
+{	
+	recordType	[0] CallEventRecordType,
+	recordingEntity	[1] RecordingEntity,
+	lcsClientType	[2] LCSClientType OPTIONAL,
+	lcsClientIdentity	[3] LCSClientIdentity OPTIONAL,
+	servedIMSI	[4] IMSI,
+	servedMSISDN	[5] MSISDN OPTIONAL,
+	sgsnAddress	[6] GSNAddress OPTIONAL,
+	locationMethod	[7] LocationMethod,
+	lcsQos	[8] LCSQoSInfo OPTIONAL,
+	lcsPriority	[9] LCS-Priority OPTIONAL,
+	mlcNumber	[10] ISDN-AddressString OPTIONAL,
+	eventTimeStamp	[11] TimeStamp,
+	measurementDuration	[12] CallDuration OPTIONAL,
+	location	[13] LocationAreaAndCell OPTIONAL,
+	routingArea	[14] RoutingAreaCode OPTIONAL,
+	locationEstimate	[15] Ext-GeographicalInformation OPTIONAL,
+	positioningData	[16] PositioningData OPTIONAL,
+	lcsCause	[17] LCSCause OPTIONAL,
+	diagnostics	[18] Diagnostics OPTIONAL,
+	nodeID	[19] NodeID OPTIONAL,
+	localSequenceNumber	[20] RecordSeqNumber OPTIONAL,
+	chargingCharacteristics	[21] ChargingCharacteristics,
+	chChSelectionMode	[22] ChChSelectionMode OPTIONAL,
+	systemType	[23] SystemType OPTIONAL,
+	recordExtensions	[24] ManagementExtensions OPTIONAL,
+	causeForRecClosing	[25] CauseForRecClosing
+}	
+
+SGSNMTLCSRecord ::= SET	
+{	
+	recordType	[0] CallEventRecordType,
+	recordingEntity	[1] RecordingEntity,
+	lcsClientType	[2] LCSClientType,
+	lcsClientIdentity	[3] LCSClientIdentity,
+	servedIMSI	[4] IMSI,
+	servedMSISDN	[5] MSISDN OPTIONAL,
+	sgsnAddress	[6] GSNAddress OPTIONAL,
+	locationType	[7] LocationType,
+	lcsQos	[8] LCSQoSInfo OPTIONAL,
+	lcsPriority	[9] LCS-Priority OPTIONAL,
+	mlcNumber	[10] ISDN-AddressString,
+	eventTimeStamp	[11] TimeStamp,
+	measurementDuration	[12] CallDuration OPTIONAL,
+	notificationToMSUser	[13] NotificationToMSUser OPTIONAL,
+	privacyOverride	[14] NULL OPTIONAL,
+	location	[15] LocationAreaAndCell OPTIONAL,
+	routingArea	[16] RoutingAreaCode OPTIONAL,
+	locationEstimate	[17] Ext-GeographicalInformation OPTIONAL,
+	positioningData	[18] PositioningData OPTIONAL,
+	lcsCause	[19] LCSCause OPTIONAL,
+	diagnostics	[20] Diagnostics OPTIONAL,
+	nodeID	[21] NodeID OPTIONAL,
+	localSequenceNumber	[22] RecordSeqNumber OPTIONAL,
+	chargingCharacteristics	[23] ChargingCharacteristics,
+	chChSelectionMode	[24] ChChSelectionMode OPTIONAL,
+	systemType	[25] SystemType OPTIONAL,
+	recordExtensions	[26] ManagementExtensions OPTIONAL,
+	causeForRecClosing	[27] CauseForRecClosing
+}	
+
+
+SGSNNILCSRecord ::= SET	
+{	
+	recordType	[0] CallEventRecordType,
+	recordingEntity	[1] RecordingEntity,
+	lcsClientType	[2] LCSClientType OPTIONAL,
+	lcsClientIdentity	[3] LCSClientIdentity OPTIONAL,
+	servedIMSI	[4] IMSI OPTIONAL,
+	servedMSISDN	[5] MSISDN OPTIONAL,
+	sgsnAddress	[6] GSNAddress OPTIONAL,
+	servedIMEI	[7] IMEI OPTIONAL,
+	lcsQos	[8] LCSQoSInfo OPTIONAL,
+	lcsPriority	[9] LCS-Priority OPTIONAL,
+	mlcNumber	[10] ISDN-AddressString OPTIONAL,
+	eventTimeStamp	[11] TimeStamp,
+	measurementDuration	[12] CallDuration OPTIONAL,
+	location	[13] LocationAreaAndCell OPTIONAL,
+	routingArea	[14] RoutingAreaCode OPTIONAL,
+	locationEstimate	[15] Ext-GeographicalInformation OPTIONAL,
+	positioningData	[16] PositioningData OPTIONAL,
+	lcsCause	[17] LCSCause OPTIONAL,
+	diagnostics	[18] Diagnostics OPTIONAL,
+	nodeID	[19] NodeID OPTIONAL,
+	localSequenceNumber	[20] RecordSeqNumber OPTIONAL,
+	chargingCharacteristics	[21] ChargingCharacteristics,
+	chChSelectionMode	[22] ChChSelectionMode OPTIONAL,
+	systemType	[23] SystemType OPTIONAL,
+	recordExtensions	[24] ManagementExtensions OPTIONAL,
+	causeForRecClosing	[25] CauseForRecClosing
+}	
+	
+	
+	
+	
+SGSNMBMSRecord	::= SET	
+{	
+	recordType	[0] CallEventRecordType,	
+	ggsnAddress	[1] GSNAddress,	
+	chargingID	[2] ChargingID,	
+	listofRAs	[3] SEQUENCE OF RAIdentity OPTIONAL,	
+	accessPointNameNI	[4] AccessPointNameNI OPTIONAL,	
+	servedPDPAddress	[5] PDPAddress OPTIONAL,	
+	listOfTrafficVolumes	[6] SEQUENCE OF ChangeOfCharCondition OPTIONAL,	
+	recordOpeningTime	[7] TimeStamp,	
+	duration	[8] CallDuration,	
+	causeForRecClosing	[9] CauseForRecClosing,	
+	diagnostics	[10] Diagnostics OPTIONAL,	
+	recordSequenceNumber	[11] INTEGER OPTIONAL,	
+	nodeID	[12] NodeID OPTIONAL,	
+	recordExtensions	[13] ManagementExtensions OPTIONAL,	
+	localSequenceNumber	[14] RecordSeqNumber OPTIONAL,	
+	sgsnPLMNIdentifier	[15] PlmnId OPTIONAL,	
+	numberofReceivingUE	[16] INTEGER OPTIONAL,	
+	mbmsInformation	[17] MBMSInformation OPTIONAL	
+}
+
+GGSNMBMSRecord	::= SET	
+{	
+	recordType	[0] CallEventRecordType,	
+	ggsnAddress	[1] GSNAddress,	
+	chargingID	[2] ChargingID,	
+	listofDownstreamNodes	[3] SEQUENCE OF GSNAddress,	
+	accessPointNameNI	[4] AccessPointNameNI OPTIONAL,	
+	servedPDPAddress	[5] PDPAddress OPTIONAL,	
+	listOfTrafficVolumes	[6] SEQUENCE OF ChangeOfCharCondition OPTIONAL,	
+	recordOpeningTime	[7] TimeStamp,	
+	duration	[8] CallDuration,	
+	causeForRecClosing	[9] CauseForRecClosing,	
+	diagnostics	[10] Diagnostics OPTIONAL,	
+	recordSequenceNumber	[11] INTEGER OPTIONAL,	
+	nodeID	[12] NodeID OPTIONAL,	
+	recordExtensions	[13] ManagementExtensions OPTIONAL,	
+	localSequenceNumber	[14] RecordSeqNumber OPTIONAL,	
+	mbmsInformation	[15] MBMSInformation OPTIONAL	
+}	
+SGWRecord	::= SET	
+{	
+	recordType	[0] CallEventRecordType,	
+	servedIMSI	[3] IMSI,	
+	s-GWAddress	[4] GSNAddress,	
+	chargingID	[5] ChargingID,	
+	servingNodeAddress	[6] SEQUENCE OF GSNAddress,	
+	accessPointNameNI	[7] AccessPointNameNI OPTIONAL,	
+	pdpPDNType	[8] PDPType OPTIONAL,	
+	servedPDPPDNAddress	[9] PDPAddress OPTIONAL,	
+	dynamicAddressFlag	[11] DynamicAddressFlag OPTIONAL,	
+	listOfTrafficVolumes	[12] SEQUENCE OF ChangeOfCharCondition OPTIONAL,	
+	recordOpeningTime	[13] TimeStamp,	
+	duration	[14] CallDuration,	
+	causeForRecClosing	[15] CauseForRecClosing,	
+	diagnostics	[16] Diagnostics OPTIONAL,	
+	listOfRecordSequenceNumber [17] SEQUENCE OF AddressSequenceNumberList OPTIONAL,	
+	nodeID	[18] NodeID OPTIONAL,	
+	recordExtensions	[19] ManagementExtensions OPTIONAL,	
+	localSequenceNumber	[20] RecordSeqNumber OPTIONAL,	
+	apnSelectionMode	[21] APNSelectionMode OPTIONAL,
+	servedMSISDN	[22] MSISDN OPTIONAL,
+	chargingCharacteristics	[23] ChargingCharacteristics,
+	chChSelectionMode	[24] ChChSelectionMode OPTIONAL,
+	iMSsignalingContext	[25] NULL OPTIONAL,
+	servingNodePLMNIdentifier	[27] PlmnId OPTIONAL,
+	servedIMEISV	[29] IMEI OPTIONAL,
+	rATType	[30] RATType OPTIONAL,
+	mSTimeZone	[31] MSTimeZone OPTIONAL,
+	userLocationInformation	[32] UserLocationInformation OPTIONAL,
+	sGWChange	[34] SGWChange OPTIONAL,
+	servingNodeType	[35] SEQUENCE OF ServingNodeType,
+	p-GWAddressUsed	[36] GSNAddress OPTIONAL,
+	p-GWPLMNIdentifier	[37] PlmnId OPTIONAL,
+	startTime	[38] TimeStamp OPTIONAL,
+	stopTime	[39] TimeStamp OPTIONAL,
+	pDNConnectionID	[40] ChargingID OPTIONAL,
+	chgLocalSeqNoList	[41] SEQUENCE OF AddressSequenceNumberList OPTIONAL,
+	consolidationResult	[42] ConsolidationResult,
+	iMSIunauthenticatedFlag	[43] NULL OPTIONAL,
+	servedPDPPDNAddressExt	[100] PDPAddress OPTIONAL
+}	
+	
+PGWRecord	::= SET	
+{	
+	recordType	[0] CallEventRecordType,
+	servedIMSI	[3] IMSI,
+	p-GWAddress	[4] GSNAddress,
+	chargingID	[5] ChargingID,
+	servingNodeAddress	[6] SEQUENCE OF GSNAddress,
+	accessPointNameNI	[7] AccessPointNameNI OPTIONAL,
+	pdpPDNType	[8] PDPType OPTIONAL,
+	servedPDPPDNAddress	[9] PDPAddress OPTIONAL,
+	dynamicAddressFlag	[11] DynamicAddressFlag OPTIONAL,
+	recordOpeningTime	[13] TimeStamp,
+	duration	[14] CallDuration,
+	causeForRecClosing	[15] CauseForRecClosing,
+	diagnostics	[16] Diagnostics OPTIONAL,
+	listOfRecordSequenceNumber	[17] SEQUENCE OF AddressSequenceNumberList OPTIONAL,
+	nodeID	[18] NodeID OPTIONAL,
+	recordExtensions	[19] ManagementExtensions OPTIONAL,
+	localSequenceNumber	[20] RecordSeqNumber OPTIONAL,
+	apnSelectionMode	[21] APNSelectionMode OPTIONAL,
+	servedMSISDN	[22] MSISDN OPTIONAL,
+	chargingCharacteristics	[23] ChargingCharacteristics,
+	chChSelectionMode	[24] ChChSelectionMode OPTIONAL,
+	iMSsignalingContext	[25] NULL OPTIONAL,
+	externalChargingID	[26] OCTET STRING OPTIONAL,
+	servinggNodePLMNIdentifier	[27] PlmnId OPTIONAL,
+	servedIMEISV	[29] IMEI OPTIONAL,
+	rATType	[30] RATType OPTIONAL,
+	mSTimeZone	[31] MSTimeZone OPTIONAL,
+	userLocationInformation	[32] UserLocationInformation OPTIONAL,
+	listOfServiceData	[34] SEQUENCE OF ChangeOfServiceCondition OPTIONAL,
+	servingNodeType	[35] SEQUENCE OF ServingNodeType,
+	servedMNNAI	[36] SubscriptionID OPTIONAL,
+	p-GWPLMNIdentifier	[37] PlmnId OPTIONAL,
+	startTime	[38] TimeStamp OPTIONAL,
+	stopTime	[39] TimeStamp OPTIONAL,
+	pDNConnectionID	[41] ChargingID OPTIONAL,
+	chgLocalSeqNoList	[42] SEQUENCE OF AddressSequenceNumberList OPTIONAL,
+	consolidationResult	[43] ConsolidationResult,
+	iMSIunauthenticatedFlag	[44] NULL OPTIONAL,
+	roamingIndicator	[101] INTEGER OPTIONAL,
+	diameterSessionID	[102] IA5String (SIZE(1..128)) OPTIONAL,
+	servedPDPPDNAddressExt	[103] PDPAddress OPTIONAL
+}	
+
+WLANRecord ::= SET
+{
+	recordType [0] CallEventRecordType,
+	servedIMSI [1] IMSI,
+	servedMSISDN [2] MSISDN OPTIONAL,
+	servedIMEI [3] IMEI OPTIONAL,
+	pDGAddress [4] GSNAddress,
+	nodeID [5] NodeID OPTIONAL,
+	servingProxyAddress [6] SEQUENCE OF GSNAddress,
+	pdpType [7] PDPType,
+	remoteIPAddress [8] PDPAddress OPTIONAL,
+	chargingID [9] ChargingID,
+	wLanSessionID [10] INTEGER (0..4294967295),
+	accessPointNameNI [11] AccessPointNameNI,
+	chargingCharacteristics [12] ChargingCharacteristics OPTIONAL,
+	chChSelectionMode [13] ChChSelectionMode OPTIONAL,
+	recordOpeningTime [14] TimeStamp,
+	duration [15] CallDuration,
+	causeForRecClosing [16] CauseForRecClosing,
+	listOfRecordSequenceNumber  [17] SEQUENCE OF AddressSequenceNumberList,
+	localSequenceNumber [18] RecordSeqNumber OPTIONAL,
+	diagnostics [19] Diagnostics OPTIONAL,
+	listOfTrafficVolumes [20] SEQUENCE OF ChangeOfCharCondition,
+	recordExtensions [21] ContentExtensions OPTIONAL
+}
+
+HSGWRecord ::= SET
+{
+	recordType [0] CallEventRecordType,
+	servedIMSI [3] IMSI,
+	hSGWAddressUsed [4] GSNAddress,
+	servingNodeAddress [6] SEQUENCE OF GSNAddress,
+	accessPointNameNI [7] AccessPointNameNI OPTIONAL,
+	pdpPDNType [8] PDPType OPTIONAL,
+	servedPDPPDNAddress [9] PDPAddress OPTIONAL,
+	dynamicAddressFlag [11] DynamicAddressFlag OPTIONAL,
+	listOfTrafficVolumes [12] SEQUENCE OF ChangeOfCharCondition OPTIONAL,
+	recordOpeningTime [13] TimeStamp,
+	duration [14] CallDuration,
+	causeForRecClosing [15] CauseForRecClosing,
+	diagnostics [16] Diagnostics OPTIONAL,
+	listOfRecordSequenceNumber  [17] SEQUENCE OF AddressSequenceNumberList OPTIONAL,
+	nodeID [18] NodeID OPTIONAL,
+	recordExtensions [19] ManagementExtensions OPTIONAL,
+	localSequenceNumber [20] RecordSeqNumber,
+	rATType [30] RATType OPTIONAL,
+	threePPTwoUserLocationInformation  [32] ThreePPTwoUserLocationInformation OPTIONAL,
+	hSGWChange [34] HSGWChange OPTIONAL,
+	servingNodeType [35] SEQUENCE OF ServingNodeType,
+	pGWAddressUsed [36] GSNAddress,
+	startTime [38] TimeStamp OPTIONAL,
+	stopTime [39] TimeStamp OPTIONAL,
+	charingID [40] ChargingID,
+	iMSIunauthenticatedFlag [41] NULL OPTIONAL,
+	servedPDPPDNAddressExt  [43] PDPAddress OPTIONAL,
+	dynamicAddressFlagExt [47] DynamicAddressFlag OPTIONAL,
+	servedHardwareID [100] HardwareID OPTIONAL,
+	pDNConnectionID [101] PDNConnectionID OPTIONAL
+}
+
+AccessPointNameNI ::= IA5String (SIZE(1..100))
+
+AccessPointNameOI ::= IA5String (SIZE(1..37))
+
+AddressSequenceNumberList ::= SEQUENCE
+{
+	gsnAddress 		[0] GSNAddress,
+	sequenceNumberList	[1] SEQUENCE OF INTEGER
+}
+
+AddressString ::= OCTET STRING (SIZE (1..maxAddressLength))
+
+maxAddressLength INTEGER ::= 20
+
+APNSelectionMode::= ENUMERATED
+{
+	mSorNetworkProvidedSubscriptionVerified(0),
+	mSProvidedSubscriptionNotVerified(1),
+	networkProvidedSubscriptionNotVerfied(2)
+}
+
+BCDDirectoryNumber ::= OCTET STRING
+
+BSID ::= OCTET STRING (SIZE(12))
+
+CallDuration ::= INTEGER
+
+CallEventRecordType ::= INTEGER
+{
+	sgsnPDPRecord(18),
+	ggsnPDPRecord(19),
+	sgsnMMRecord(20),
+	sgsnSMORecord(21),
+	sgsnSMTRecord(22),
+	sgsnMtLCSRecord(26),
+	sgsnMoLCSRecord(27),
+	sgsnNiLCSRecord(28),
+	sgsnMBMSRecord(45),
+	ggsnMBMSRecord(46),
+	sGWRecord(84),
+	pGWRecord(85),
+	wLanRecord(201),
+	hSGWRecord(100)
+}
+
+CallingNumber ::= BCDDirectoryNumber
+
+CallReferenceNumber ::= OCTET STRING (SIZE (1..8))
+
+CAMELAccessPointNameNI ::= AccessPointNameNI
+
+CAMELAccessPointNameOI ::= AccessPointNameOI
+
+CAMELInformationMM ::= SET
+{
+	sCFAddress [1] SCFAddress OPTIONAL,
+	serviceKey [2] ServiceKey OPTIONAL,
+	defaultTransactionHandling [3] DefaultGPRS-Handling OPTIONAL,
+	numberOfDPEncountered [4] NumberOfDPEncountered OPTIONAL,
+	levelOfCAMELService [5] LevelOfCAMELService OPTIONAL,
+	freeFormatData [6] FreeFormatData OPTIONAL,
+	fFDAppendIndicator [7] FFDAppendIndicator OPTIONAL
+}
+CAMELInformationPDP ::= SET
+{
+	sCFAddress [1] SCFAddress OPTIONAL,
+	serviceKey [2] ServiceKey OPTIONAL,
+	defaultTransactionHandling [3] DefaultGPRS-Handling OPTIONAL,
+	cAMELAccessPointNameNI [4] CAMELAccessPointNameNI OPTIONAL,
+	cAMELAccessPointNameOI [5] CAMELAccessPointNameOI OPTIONAL,
+	numberOfDPEncountered [6] NumberOfDPEncountered OPTIONAL,
+	levelOfCAMELService [7] LevelOfCAMELService OPTIONAL,
+	freeFormatData [8] FreeFormatData OPTIONAL,
+	fFDAppendIndicator [9] FFDAppendIndicator OPTIONAL
+}
+
+CAMELInformationSMS ::= SET
+{
+	sCFAddress [1] SCFAddress OPTIONAL,
+	serviceKey [2] ServiceKey OPTIONAL,
+	defaultSMSHandling [3] DefaultSMS-Handling OPTIONAL,
+	cAMELCallingPartyNumber [4] CallingNumber OPTIONAL,
+	cAMELDestinationSubscriberNumber  [5] SmsTpDestinationNumber OPTIONAL,
+	cAMELSMSCAddress [6] AddressString OPTIONAL,
+	freeFormatData [7] FreeFormatData OPTIONAL,
+	sMSReferenceNumber [8] CallReferenceNumber OPTIONAL
+}
+
+CauseForRecClosing ::= INTEGER
+{
+	normalRelease(0),
+	abnormalRelease(4),
+	cAMELInitCallRelease	(5),
+	volumeLimit	(16),
+	timeLimit	(17),
+	servingNodeChange	(18),
+	maxChangeCond	(19),
+	managementIntervention	(20),
+	intraSGSNIntersystemChange	(21),
+	rATChange	(22),
+	mSTimeZoneChange	(23),
+	sGSNPLMNIDChange	(24),
+	unauthorizedRequestingNetwork	(52),
+	unauthorizedLCSClient	(53),
+	positionMethodFailure	(54),
+	unknownOrUnreachableLCSClient	(58),
+	listofDownstreamNodeChange	(59)
+}
+
+CellID ::= OCTET STRING (SIZE(2))
+
+ChangeCondition ::= ENUMERATED
+{
+	qoSChange(0),
+	tariffTime(1),
+	recordClosure(2),
+	failureHandlingContinueOngoing(3),
+	failureHandlingRetryandTerminateOngoing(4),
+	failureHandlingTerminateOngoing(5),
+	cGI-SAICHange(6),
+	rAIChange(7),
+	dT-Establishment(8),
+	dT-Removal(9),
+	eCGIChange(10),
+	tAIChange(11),
+	userLocationChange(12)
+}
+
+ChangeOfCharCondition ::= SEQUENCE
+{
+	qosRequested [1] QoSInformation OPTIONAL,
+	qosNegotiated [2] QoSInformation OPTIONAL,
+	dataVolumeGPRSUplink [3] DataVolumeGPRS OPTIONAL,
+	dataVolumeGPRSDownlink [4] DataVolumeGPRS OPTIONAL,
+	changeCondition [5] ChangeCondition,
+	changeTime [6] TimeStamp,
+	tariffLevel [7] INTEGER OPTIONAL,
+	userLocationInformation [8] UserLocationInformation OPTIONAL,
+	ePCQoSInformation [9] EPCQoSInformation OPTIONAL
+}
+
+ChangeOfServiceCondition::= SEQUENCE
+{
+	ratingGroup [1] RatingGroupId,
+	resultCode [3] ResultCode OPTIONAL,
+	localSequenceNumber [4] INTEGER OPTIONAL,
+	timeOfFirstUsage [5] TimeStamp OPTIONAL,
+	timeOfLastUsage [6] TimeStamp OPTIONAL,
+	timeUsage [7] CallDuration OPTIONAL,
+	serviceConditionChange [8] ServiceConditionChange,
+	qoSInformationNeg [9] QoSInformation OPTIONAL,
+	servingNodeAddress [10] GSNAddress OPTIONAL,
+	datavolumeFBCUplink [12] INTEGER OPTIONAL,
+	datavolumeFBCDownlink [13] INTEGER OPTIONAL,
+	timeOfReport [14] TimeStamp,
+	failureHandlingContinue	[16]FailureHandlingContinue OPTIONAL,
+	serviceIdentifier	[17] INTEGER OPTIONAL,
+	userLocationInformation	[20] UserLocationInformation OPTIONAL,
+	eventCounter	[24] INTEGER OPTIONAL,
+	l7UpVolume	[25] INTEGER OPTIONAL,
+	l7DownVolume	[26] INTEGER OPTIONAL,
+	attemptCounter	[27] INTEGER OPTIONAL,
+	serviceChargeType	[28] ServiceChargeType OPTIONAL
+}
+
+ChangeLocation ::= SEQUENCE
+{
+	locationAreaCode [0] LocationAreaCode,
+	routingAreaCode [1] RoutingAreaCode,
+	cellID [2] CellID OPTIONAL,
+	changeTime [3] TimeStamp,
+	mCC-MNC [4] PlmnId OPTIONAL
+}
+
+ChargingCharacteristics ::= OCTET STRING(SIZE(2))
+
+ChargingID ::= INTEGER (0..4294967295)
+
+ChChSelectionMode::= ENUMERATED
+{
+	servingNodeSupplied(0),
+	-- For S-GW/P-GW
+	subscriptionSpecific(1),
+	-- For SGSN only
+	aPNSpecific(2),
+	-- For SGSN only
+	homeDefault(3),
+	-- For SGSN, S-GW and P-GW
+	roamingDefault(4),
+	-- For SGSN, S-GW and P-GW
+	visitingDefault(5)
+	-- For SGSN, S-GW and P-GW
+}
+
+
+ConsolidationResult::= ENUMERATED
+{
+	normal(0),
+	notNormal (1),
+	forInterSGSNConSolidation (2),
+	reachLimit (3),
+	onlyOneCDRGenerated (4)
+}
+
+ContentChargeInformation ::= SEQUENCE
+{
+	serviceCode [0] INTEGER,
+	upVolume [1] INTEGER,
+	downVolume [2] INTEGER,
+	qosNegotiated [3] QoSInformation OPTIONAL,
+	usageDuration [4] INTEGER OPTIONAL,
+	ratingGroup [5] RatingGroupId OPTIONAL,
+	rusultCode [6] ResultCode OPTIONAL,
+	timeOfFirstUsage [7] TimeStamp OPTIONAL,
+	timeOfLastUsage [8] TimeStamp OPTIONAL,
+	serviceConditionChange [9] ServiceConditionChange OPTIONAL,
+	timeOfReport [10] TimeStamp OPTIONAL,
+	failureHandlingContinue [11] FailureHandlingContinue OPTIONAL,
+	eventCounter [12] INTEGER OPTIONAL,
+	l7UpVolume [13] INTEGER OPTIONAL,
+	l7DownVolume[14] INTEGER OPTIONAL,
+	attemptCounter [15] INTEGER OPTIONAL,
+	serviceChargeType [16] ServiceChargeType OPTIONAL,
+	userLocationInformation [17] UmtsUserLocationInformation OPTIONAL
+}
+
+ContentExtensions::= SEQUENCE
+{
+	extensionType[0] ExtensionType,
+	extensionInformation[1] ExtensionInformation
+}
+
+DataVolumeGPRS ::= INTEGER
+
+DefaultGPRS-Handling ::= ENUMERATED
+{
+	continueTransaction(0),
+	releaseTransaction(1)
+}
+
+DefaultSMS-Handling ::= ENUMERATED
+{
+	continueTransaction(0),
+	releaseTransaction(1)
+}
+
+DeferredLocationEventType ::= BIT STRING
+{
+	msAvailable(0)
+} (SIZE (1..16))
+
+Diagnostics ::= CHOICE
+{
+	gsm0408Cause [0] INTEGER,
+	gsm0902MapErrorValue [1] INTEGER,
+	ccittQ767Cause [2] INTEGER,
+	networkSpecificCause [3] ManagementExtensions,
+	manufacturerSpecificCause [4] ManagementExtensions
+}
+
+DynamicAddressFlag ::= BOOLEAN
+
+EPCQoSInformation ::= SEQUENCE
+{
+	qCI[1] INTEGER OPTIONAL,
+	maxRequestedBandwithUL[2] INTEGER OPTIONAL,
+	maxRequestedBandwithDL[3] INTEGER OPTIONAL,
+	guaranteedBitrateUL[4] INTEGER OPTIONAL,
+	guaranteedBitrateDL[5] INTEGER OPTIONAL,
+	aRP[6] INTEGER OPTIONAL
+}
+
+ESN ::= OCTET STRING (SIZE(15))
+
+ETSIAddress ::= AddressString
+
+Ext-GeographicalInformation ::= OCTET STRING (SIZE (1..maxExt-GeographicalInformation))
+
+maxExt-GeographicalInformation INTEGER ::= 91
+
+ExtensionInformation ::= CHOICE
+{
+	contentCharge [0] SEQUENCE OF ContentChargeInformation
+}
+
+ExtensionType ::= ENUMERATED
+{
+	contentCharge (1)
+}
+
+FailureHandlingContinue ::= BOOLEAN
+
+FFDAppendIndicator ::= BOOLEAN
+
+FreeFormatData ::= OCTET STRING (SIZE(1..160))
+
+GSMQoSInformation ::=SEQUENCE
+{
+	reliability [0] QoSReliability,
+	delay [1] QoSDelay,
+	precedence [2] QoSPrecedence,
+	peakThroughput [3] QoSPeakThroughput,
+	meanThroughput [4] QoSMeanThroughput
+}
+
+GSNAddress::= IPAddress
+
+HardwareID::= CHOICE
+{
+	eSN[1] ESN,
+	mEID[2] MEID
+}
+
+HSGWChange::= BOOLEAN
+
+IMEI ::= TBCD-STRING --(SIZE (8))
+
+IMSI ::= TBCD-STRING --(SIZE (3..8))
+
+IPAddress ::= CHOICE
+{
+	iPBinaryAddress IPBinaryAddress,
+	iPTextRepresentedAddress IPTextRepresentedAddress
+}
+
+IPBinaryAddress ::= CHOICE
+{
+	iPBinV4Address[0] OCTET STRING (SIZE(4)),
+	iPBinV6Address[1] OCTET STRING (SIZE(16))
+}
+
+IPTextRepresentedAddress ::= CHOICE
+{
+	iPTextV4Address[2] IA5String (SIZE(7..15)),
+	iPTextV6Address[3] IA5String (SIZE(15..45))
+}
+
+ISDN-AddressString ::= AddressString (SIZE (1..maxISDN-AddressLength))
+
+maxISDN-AddressLength INTEGER ::= 9
+
+LCSCause ::= OCTET STRING (SIZE(1))
+
+LCSClientExternalID ::= AddressString
+
+LCSClientInternalID ::= ENUMERATED
+{
+	broadcastService(0),
+	o-andM-HPLMN(1),
+	o-andM-VPLMN(2),
+	anonymousLocation(3),
+	targetMSsubscribedService(4)
+}
+
+LCSClientIdentity ::= SEQUENCE
+{
+	lcsClientExternalID [0] LCSClientExternalID OPTIONAL,
+	lcsClientDialedByMS [1] AddressString OPTIONAL,
+	lcsClientInternalID [2] LCSClientInternalID OPTIONAL
+}
+
+LCSClientType ::= ENUMERATED
+{
+	emergencyServices(0),
+	valueAddedServices(1),
+	plmnOperatorServices(2),
+	lawfulInterceptServices(3)
+}
+
+LCSLocationAreaCode ::= OCTET STRING (SIZE(9))
+
+LCS-Priority ::= OCTET STRING (SIZE (1))
+-- 0 = highest priority
+-- 1 = normal priority
+-- all other values treated as 1
+
+LCSQoSInfo ::= OCTET STRING (SIZE(4))
+
+LevelOfCAMELService ::= BIT STRING
+{
+	basic (0),
+	callDurationSupervision (1),
+	onlineCharging (2)
+}
+
+LocationAreaAndCell ::= SEQUENCE
+{
+	locationAreaCode [0] LCSLocationAreaCode
+}
+
+LocationAreaCode ::= OCTET STRING (SIZE(2))
+
+LocationEstimateType ::= ENUMERATED
+{
+	currentLocation(0),
+	currentOrLastKnownLocation(1),
+	initialLocation(2),
+	activateDeferredLocation(3),
+	cancelDeferredLocation(4)
+}
+
+LocationMethod::= ENUMERATED
+{
+	msBasedEOTD(0),
+	msAssistedEOTD(1),
+	assistedGPS(2),
+	msBasedOTDOA(3)
+}
+
+LocationType ::= SEQUENCE
+{
+	locationEstimateType [0] LocationEstimateType,
+	deferredLocationEventType [1] DeferredLocationEventType OPTIONAL
+}
+
+MBMSInformation ::= SET
+{
+	tmgi [1] TMGI,
+	mbmsSessionIdentity [2] MBMSSessionIdentity OPTIONAL,
+	mbmsServiceType [3] MBMSServiceType,
+	mbmsUserServiceType [4] MBMSUserServiceType,
+	mbms2G3Gindicator [5] MBMS2G3Gindicator OPTIONAL,
+	fileRepairSupported [6] BOOLEAN OPTIONAL,
+	rAI [7] RoutingAreaCode OPTIONAL,
+	mbmsServiceArea [8] MBMSServiceArea OPTIONAL,
+	requiredMBMSBearerCaps [9] RequiredMBMSBearerCapabilities OPTIONAL
+}
+
+MBMS2G3Gindicator ::= ENUMERATED
+{
+	mbmInd2G (0),
+	mbmInd3G (1),
+	mbmInd2GAND3G (2)
+}
+
+MBMSServiceType::= ENUMERATED
+{
+	multicast(0),
+	broadcast(1)
+}
+
+MBMSUserServiceType::= ENUMERATED
+{
+	download(0),
+	streaming(1)
+}
+
+RequiredMBMSBearerCapabilities ::= OCTET STRING (SIZE (3..14))
+
+MBMSSessionIdentity::= OCTET STRING (SIZE (1))
+
+TMGI::= OCTET STRING (SIZE(6))
+
+MBMSServiceArea::= OCTET STRING(SIZE (1..513))
+
+ManagementExtensions ::=INTEGER
+
+MEID ::= OCTET STRING (SIZE(14))
+
+MessageReference ::= OCTET STRING(SIZE(1))
+
+MSISDN ::= ISDN-AddressString
+
+MSNetworkCapability ::= OCTET STRING (SIZE(1..8))
+
+MSTimeZone::= OCTET STRING (SIZE (2))
+
+NetworkInitiatedPDPContext ::= BOOLEAN
+
+NodeID ::= IA5String (SIZE(1..20))
+
+NotificationToMSUser ::= ENUMERATED
+{
+	notifyLocationAllowed(0),
+	notifyAndVerify-LocationAllowedIfNoResponse(1),
+	notifyAndVerify-LocationNotAllowedIfNoResponse(2),
+	locationNotAllowed(3)
+}
+
+PDNConnectionID ::= INTEGER (0..14)
+
+NumberOfDPEncountered ::= INTEGER
+
+PDPAddress ::= CHOICE
+{
+	iPAddress [0] IPAddress,
+	eTSIAddress [1] ETSIAddress
+}
+
+PDPType ::= OCTET STRING (SIZE(2))
+
+PlmnId::= OCTET STRING (SIZE(3))
+
+PositioningData ::= OCTET STRING (SIZE (1..32))
+
+QoSDelay ::= ENUMERATED
+{
+	subscribedDelayClass (0),
+	delayClass1	(1),
+	delayClass2	(2),
+	delayClass3	(3),
+	delayClass4	(4)
+}
+
+QoSInformation ::= CHOICE
+{
+	--
+	-- gsmQosInformation and umtsQosInformation used in S-CDR,G-CDR,S-MB-CDR,G-MB-CDR only
+	-- ePCQoSInformation used in SGW-CDR,PGW-CDR only
+	--
+	gsmQosInformation[0] GSMQoSInformation,
+	umtsQosInformation[1] UmtsQosInformation,
+	ePCQoSInformation[2] EPCQoSInformation
+}
+
+QoSMeanThroughput ::= ENUMERATED
+{
+	subscribedMeanThroughput(0),
+	mean100octetPh(1),
+	mean200octetPh(2),
+	mean500octetPh(3),
+	mean1000octetPh(4),
+	mean2000octetPh(5),
+	mean5000octetPh(6),
+	mean10000octetPh(7),
+	mean20000octetPh(8),
+	mean50000octetPh(9),
+	mean100000octetPh(10),
+	mean200000octetPh(11),
+	mean500000octetPh(12),
+	mean1000000octetPh(13),
+	mean2000000octetPh(14),
+	mean5000000octetPh(15),
+	mean10000000octetPh(16),
+	mean20000000octetPh(17),
+	mean50000000octetPh(18),
+	bestEffort(31)
+}
+
+QoSPeakThroughput ::= ENUMERATED
+{
+	subscribedPeakThroughput(0),
+	upTo1000octetPs(1),
+	upTo2000octetPs(2),
+	upTo4000octetPs(3),
+	upTo8000octetPs(4),
+	upTo16000octetPs(5),
+	upTo32000octetPs(6),
+	upTo64000octetPs(7),
+	upTo128000octetPs(8),
+	upTo256000octetPs(9)
+}
+
+QoSPrecedence ::= ENUMERATED
+{
+	subscribedPrecedence(0),
+	highPriority(1),
+	normalPriority(2),
+	lowPriority(3)
+}
+
+QoSReliability ::= ENUMERATED
+{
+	subscribedReliabilityClass (0),
+	acknowledgedGTP (1),
+	unackGTPAcknowLLC (2),
+	unackGTPLLCAcknowRLC (3),
+	unackGTPLLCRLC (4),
+	unacknowUnprotectedData (5)
+}
+
+PSFurnishChargingInformation ::= SEQUENCE
+{
+	pSFreeFormatData [1] FreeFormatData,
+	pSFFDAppendIndicator [2] FFDAppendIndicator OPTIONAL
+}
+
+RAIdentity ::= OCTET STRING (SIZE (6))
+
+
+RatingGroupId ::= INTEGER
+-- IP service flow identity (DCCA)
+-- range of 4 byte (0..2147483647 / negative numbers not used)
+
+RATType ::= INTEGER
+{
+	reserved (0),
+	uTRAN (1),
+	gERAN (2),
+	wLAN (3),
+	gAN (4),
+	hSPAEvolution(5),
+	eUTRAN(6)
+}
+
+RecordingEntity ::= AddressString
+
+RecordSeqNumber ::= OCTET STRING(SIZE(3))
+
+ResultCode ::= INTEGER
+-- online charging protocol return value (DCCA)
+-- range of 4 byte (0..4294967259)
+-- = 2001 – Diameter success
+-- = 4010 – Diameter end user service denied (terminate category)
+-- = 4011 – Diameter credit control not applicable
+-- = 4012 – Diameter credit limit reached
+-- = 5003 – Diameter authorization rejected (terminate PDP context)
+-- = 5003 – Diameter authorization rejected (blacklist category)
+-- = 5030 – Diameter user unknown
+-- = 5031 – Diameter rating failed (category not recognized)
+RncID ::= SEQUENCE
+{
+	plmnId [0] PlmnId,
+	rncId [1] INTEGER (0..4095)
+}
+
+RoutingAreaCode ::= OCTET STRING (SIZE(1..2))
+
+SCFAddress ::= ISDN-AddressString
+
+ServiceChargeType ::= ENUMERATED
+{
+	volume (0),
+	time (1),
+	volumeAndTime (2)
+}
+
+ServiceConditionChange ::= OCTET STRING (SIZE(4))
+
+ServiceKey ::= OCTET STRING(SIZE(1..4))
+
+ServingNodeType ::= ENUMERATED
+{
+	sGSN (0),
+	pMIPSGW (1),
+	gTPSGW (2),
+	ePDG (3),
+	hSGW (4),
+	mME (5)
+}
+
+SGSNChange ::= BOOLEAN
+
+SGWChange ::= BOOLEAN
+
+SMSResult ::= Diagnostics
+
+SmsTpDestinationNumber ::= BCDDirectoryNumber
+
+SUBNET ::= OCTET STRING (SIZE(37))
+
+SubscriptionID ::= SET
+{
+	subscriptionIDType [1] SubscriptionIDType,
+	subscriptionIDData [2] SubscriptionIDData OPTIONAL
+}
+
+SubscriptionIDData ::= OCTET STRING (SIZE(1))
+
+SubscriptionIDType ::= ENUMERATED
+{
+	eNDUSERE164 (0),
+	eNDUSERIMSI (1),
+	eNDUSERSIPURI (2),
+	eNDUSERNAI (3),
+	eNDUSERPRIVATE (4)
+}
+
+SystemType ::= ENUMERATED
+{
+	unknown (0),
+	iuUTRAN (1),
+	gERAN (2)
+}
+
+TBCD-STRING ::= OCTET STRING
+
+ThreePPTwoUserLocationInformation ::= CHOICE
+{
+	subnet [1] SUBNET,
+	bsid [2] BSID
+}
+
+TimeStamp ::= OCTET STRING (SIZE(9))
+
+UmtsQosInformation ::= OCTET STRING(SIZE(4..17))
+
+UmtsUserLocationInformation ::= OCTET STRING (SIZE(8))
+
+UserLocationInformation ::= OCTET STRING (SIZE(6..34))
+
+END
