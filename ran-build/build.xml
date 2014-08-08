@@ -1,0 +1,452 @@
+<project name="RAN-ETL" default="help">
+
+	<property file="./build.properties" />
+	<!--property name="deploy-dir" value="${DEPLOY_DIR}"/ -->
+	<property name="lib" value="${BASE_DIR}/ran-lib/ext-lib" />
+
+	<property name="etl.version"
+		value="${etl.major.version}.${etl.minor.version}.${etl.micro.version}" />
+	<property name="asn-core.version"
+		value="${asn-core.major.version}.${asn-core.minor.version}.${asn-core.micro.version}" />
+	<property name="huawei-sgsn.version"
+		value="${huawei-sgsn.major.version}.${huawei-sgsn.minor.version}.${huawei-sgsn.micro.version}" />
+	<property name="huawei-msc.version"
+		value="${huawei-msc.major.version}.${huawei-msc.minor.version}.${huawei-msc.micro.version}" />
+	<property name="zte-msc.version"
+		value="${zte-msc.major.version}.${zte-msc.minor.version}.${zte-msc.micro.version}" />
+	<property name="zte-sgsn.version"
+		value="${zte-sgsn.major.version}.${zte-sgsn.minor.version}.${zte-sgsn.micro.version}" />
+	<target name="help">
+		<echo>You can use the following targets:</echo>
+		<echo>
+		</echo>
+		<echo> To print this message: help (Default) </echo>
+		<echo> To clean, compile, and package application :
+			build-all,build-etl,build-huawei-sgsn,build-asn-core,build-huawei-msc,build-zte-msc,build-zte-sgsn
+		</echo>
+		<echo> To delete working directories:
+			clean-all,clean-etl,clean-huawei-sgsn,clean-asn-core,clean-huawei-msc,clean-zte-msc,build-zte-sgsn
+		</echo>
+		<echo></echo>
+		<echo>For example, to clean, compile, and package all at once, run:
+		</echo>
+		<echo>prompt> ant build-all </echo>
+		<echo></echo>
+		<echo>Environment Information:</echo>
+		<echo>JAVA_HOME : ${JAVA_HOME}</echo>
+		<echo>ANT_HOME : ${ANT_HOME}</echo>
+	</target>
+
+	<!-- ETL Start -->
+	<property name="home-etl" value="${BASE_DIR}/ran-etl" />
+	<target name="clean-etl">
+		<delete includeEmptyDirs="true" failonerror="false">
+			<fileset dir="${home-etl}/build" />
+		</delete>
+	</target>
+	<target name="prepare-etl" depends="clean-etl">
+		<mkdir dir="${home-etl}/build" />
+		<mkdir dir="${home-etl}/build/classes" />
+		<mkdir dir="${home-etl}/build/jar" />
+	</target>
+	<target depends="prepare-etl" name="compile-etl">
+		<javac srcdir="${home-etl}/src" includeantruntime="${ANT_HOME}"
+			executable="${JAVA_HOME}/bin/javac" destdir="${home-etl}/build/classes"
+			optimize="off" debug="true" deprecation="true">
+			<classpath path="${lib}/log4j-1.2.16.jar" />
+		</javac>
+	</target>
+	<target depends="compile-etl" name="build-etl">
+
+		<tstamp>
+			<format property="TODAY" pattern="dd-MMMM-yyyy" locale="en" />
+		</tstamp>
+
+		<manifest file="${home-etl}/build/classes/MANIFEST.MF">
+			<attribute name="Built-By" value="${user.name}" />
+		</manifest>
+
+		<jar jarfile="${home-etl}/build/jar/etl-${etl.version}.jar"
+			manifest="${home-etl}/build/classes/MANIFEST.MF">
+			<fileset dir="${home-etl}/build/classes">
+				<patternset>
+					<include name="**/*" />
+				</patternset>
+			</fileset>
+		</jar>
+	</target>
+	<target name="prepare-deploy">
+		<mkdir dir="${deploy-dir}" />
+		<mkdir dir="${deploy-dir}/conf" />
+		<mkdir dir="${deploy-dir}/lib" />
+		<copy todir="${deploy-dir}/lib">
+			<fileset dir="${lib}" />
+		</copy>
+	</target>
+	<target depends="build-etl,prepare-deploy" name="deploy-etl">
+		<copy todir="${deploy-dir}/conf">
+			<fileset dir="${home-etl}/src">
+				<patternset>
+					<include name="*.properties" />
+				</patternset>
+			</fileset>
+		</copy>
+		<copy file="${home-etl}/build/jar/etl-${etl.version}.jar" todir="${deploy-dir}/lib" />
+	</target>
+	<!-- ETL end -->
+
+	<!-- ASN-CORE Start -->
+	<property name="home-asn-core" value="${BASE_DIR}/asn-core" />
+	<target name="clean-asn-core">
+		<delete includeEmptyDirs="true" failonerror="false">
+			<fileset dir="${home-asn-core}/build" />
+		</delete>
+	</target>
+	<target name="prepare-asn-core" depends="clean-asn-core">
+		<mkdir dir="${home-asn-core}/build" />
+		<mkdir dir="${home-asn-core}/build/classes" />
+		<mkdir dir="${home-asn-core}/build/jar" />
+	</target>
+	<target depends="prepare-asn-core" name="compile-asn-core">
+		<javac
+			srcdir="${home-asn-core}/src-core:${home-asn-core}/src-data:${home-asn-core}/src-test:${home-asn-core}/src-util"
+			includeantruntime="${ANT_HOME}" executable="${JAVA_HOME}/bin/javac"
+			destdir="${home-asn-core}/build/classes" optimize="off" debug="true"
+			deprecation="true">
+			<classpath path="${home-etl}/build/jar/etl-${etl.version}.jar" />
+			<classpath path="${lib}/antlr-runtime-3.3.jar" />
+			<classpath path="${lib}/antlrworks-1.1.5.jar" />
+			<classpath path="${lib}/log4j-1.2.16.jar" />
+		</javac>		
+		<copy file="${home-asn-core}/src-core/ink/jasn/com/exception/ASNErrorCodes.properties" tofile="${home-asn-core}/build/classes/ink/jasn/com/exception/ASNErrorCodes.properties" />
+	</target>
+	<target depends="compile-asn-core" name="build-asn-core">
+
+		<tstamp>
+			<format property="TODAY" pattern="dd-MMMM-yyyy" locale="en" />
+		</tstamp>
+
+		<manifest file="${home-asn-core}/build/classes/MANIFEST.MF">
+			<attribute name="Built-By" value="${user.name}" />
+		</manifest>
+
+		<jar jarfile="${home-asn-core}/build/jar/asn-core-${asn-core.version}.jar"
+			manifest="${home-asn-core}/build/classes/MANIFEST.MF">
+			<fileset dir="${home-asn-core}/build/classes">
+				<patternset>
+					<include name="**/*" />
+				</patternset>
+			</fileset>
+		</jar>
+	</target>
+
+	<target depends="build-asn-core" name="deploy-asn-core">
+		<copy file="${home-asn-core}/build/jar/asn-core-${asn-core.version}.jar"
+			todir="${deploy-dir}/lib" />
+	</target>
+	<!-- ASN-CORE end -->
+
+	<!-- SGSN Start -->
+	<property name="home-huawei-sgsn" value="${BASE_DIR}/huawei-sgsn" />
+	<target name="clean-huawei-sgsn">
+		<delete includeEmptyDirs="true" failonerror="false">
+			<fileset dir="${home-huawei-sgsn}/build" />
+		</delete>
+	</target>
+	<target name="prepare-huawei-sgsn" depends="clean-huawei-sgsn">
+		<mkdir dir="${home-huawei-sgsn}/build" />
+		<mkdir dir="${home-huawei-sgsn}/build/classes" />
+		<mkdir dir="${home-huawei-sgsn}/build/jar" />
+	</target>
+	<target depends="prepare-huawei-sgsn,build-etl,build-asn-core"
+		name="compile-huawei-sgsn">
+		<javac srcdir="${home-huawei-sgsn}/src" includeantruntime="${ANT_HOME}"
+			executable="${JAVA_HOME}/bin/javac" destdir="${home-huawei-sgsn}/build/classes"
+			optimize="off" debug="true" deprecation="true">
+			<classpath path="${home-etl}/build/jar/etl-${etl.version}.jar" />
+			<classpath
+				path="${home-asn-core}/build/jar/asn-core-${asn-core.version}.jar" />
+			<classpath path="${lib}/log4j-1.2.16.jar" />
+		</javac>
+	</target>
+	<target depends="compile-huawei-sgsn" name="build-huawei-sgsn">
+
+		<tstamp>
+			<format property="TODAY" pattern="dd-MMMM-yyyy" locale="en" />
+		</tstamp>
+
+		<manifest file="${home-huawei-sgsn}/build/classes/MANIFEST.MF">
+			<attribute name="Built-By" value="${user.name}" />
+		</manifest>
+
+		<jar
+			jarfile="${home-huawei-sgsn}/build/jar/huawei-sgsn-${huawei-sgsn.version}.jar"
+			manifest="${home-huawei-sgsn}/build/classes/MANIFEST.MF">
+			<fileset dir="${home-huawei-sgsn}/build/classes">
+				<patternset>
+					<include name="**/*" />
+				</patternset>
+			</fileset>
+		</jar>
+	</target>
+	<target depends="build-huawei-sgsn" name="deploy-huawei-sgsn">
+		<copy todir="${deploy-dir}/conf">
+			<fileset dir="${home-huawei-sgsn}/src">
+				<patternset>
+					<include name="*.asn" />
+					<include name="*.properties" />
+				</patternset>
+			</fileset>
+		</copy>
+		<copy
+			file="${home-huawei-sgsn}/build/jar/huawei-sgsn-${huawei-sgsn.version}.jar"
+			todir="${deploy-dir}/lib" />
+	</target>
+	<!-- SGSN end -->
+	<!-- MSC Start -->
+	<property name="home-huawei-msc" value="${BASE_DIR}/huawei-msc" />
+	<target name="clean-huawei-msc">
+		<delete includeEmptyDirs="true" failonerror="false">
+			<fileset dir="${home-huawei-msc}/build" />
+		</delete>
+	</target>
+	<target name="prepare-huawei-msc" depends="clean-huawei-msc">
+		<mkdir dir="${home-huawei-msc}/build" />
+		<mkdir dir="${home-huawei-msc}/build/classes" />
+		<mkdir dir="${home-huawei-msc}/build/jar" />
+	</target>
+	<target depends="prepare-huawei-msc" name="compile-huawei-msc">
+		<javac srcdir="${home-huawei-msc}/src" includeantruntime="${ANT_HOME}"
+			executable="${JAVA_HOME}/bin/javac" destdir="${home-huawei-msc}/build/classes"
+			optimize="off" debug="true" deprecation="true">
+			<classpath path="${home-etl}/build/jar/etl-${etl.version}.jar" />
+			<classpath
+				path="${home-asn-core}/build/jar/asn-core-${asn-core.version}.jar" />
+			<classpath path="${lib}/log4j-1.2.16.jar" />
+		</javac>
+	</target>
+	<target depends="compile-huawei-msc" name="build-huawei-msc">
+		<tstamp>
+			<format property="TODAY" pattern="dd-MMMM-yyyy" locale="en" />
+		</tstamp>
+		<manifest file="${home-huawei-msc}/build/classes/MANIFEST.MF">
+			<attribute name="Built-By" value="${user.name}" />
+		</manifest>
+		<jar
+			jarfile="${home-huawei-msc}/build/jar/huawei-msc-${huawei-msc.version}.jar"
+			manifest="${home-huawei-msc}/build/classes/MANIFEST.MF">
+			<fileset dir="${home-huawei-msc}/build/classes">
+				<patternset>
+					<include name="**/*" />
+				</patternset>
+			</fileset>
+		</jar>
+	</target>
+
+	<target depends="build-huawei-msc" name="deploy-huawei-msc">
+		<copy todir="${deploy-dir}/conf">
+			<fileset dir="${home-huawei-msc}/src">
+				<patternset>
+					<include name="*.ASN" />
+					<include name="*.properties" />
+				</patternset>
+			</fileset>
+		</copy>
+		<copy
+			file="${home-huawei-msc}/build/jar/huawei-msc-${huawei-msc.version}.jar"
+			todir="${deploy-dir}/lib" />
+	</target>
+	<!-- MSC end -->
+
+	<!-- ZTE MSC Start -->
+	<property name="home-zte-msc" value="${BASE_DIR}/zte-msc" />
+	<target name="clean-zte-msc">
+		<delete includeEmptyDirs="true" failonerror="false">
+			<fileset dir="${home-zte-msc}/build" />
+		</delete>
+	</target>
+	<target name="prepare-zte-msc" depends="clean-zte-msc">
+		<mkdir dir="${home-zte-msc}/build" />
+		<mkdir dir="${home-zte-msc}/build/classes" />
+		<mkdir dir="${home-zte-msc}/build/jar" />
+	</target>
+	<target depends="prepare-zte-msc" name="compile-zte-msc">
+		<javac srcdir="${home-zte-msc}/src" includeantruntime="${ANT_HOME}"
+			executable="${JAVA_HOME}/bin/javac" destdir="${home-zte-msc}/build/classes"
+			optimize="off" debug="true" deprecation="true">
+			<classpath path="${home-etl}/build/jar/etl-${etl.version}.jar" />
+			<classpath
+				path="${home-asn-core}/build/jar/asn-core-${asn-core.version}.jar" />
+			<classpath path="${lib}/log4j-1.2.16.jar" />
+		</javac>
+	</target>
+	<target depends="compile-zte-msc" name="build-zte-msc">
+		<tstamp>
+			<format property="TODAY" pattern="dd-MMMM-yyyy" locale="en" />
+		</tstamp>
+		<manifest file="${home-zte-msc}/build/classes/MANIFEST.MF">
+			<attribute name="Built-By" value="${user.name}" />
+		</manifest>
+		<jar
+			jarfile="${home-zte-msc}/build/jar/zte-msc-${zte-msc.version}.jar"
+			manifest="${home-zte-msc}/build/classes/MANIFEST.MF">
+			<fileset dir="${home-zte-msc}/build/classes">
+				<patternset>
+					<include name="**/*" />
+				</patternset>
+			</fileset>
+		</jar>
+	</target>
+
+	<target depends="build-zte-msc" name="deploy-zte-msc">
+		<copy todir="${deploy-dir}/conf">
+			<fileset dir="${home-zte-msc}/src">
+				<patternset>
+					<include name="*.asn" />
+					<include name="*.properties" />
+				</patternset>
+			</fileset>
+		</copy>
+		<copy
+			file="${home-zte-msc}/build/jar/zte-msc-${zte-msc.version}.jar"
+			todir="${deploy-dir}/lib" />
+	</target>
+	<!-- ZTE MSC end -->
+
+	<!-- ZTE SGSN Start -->
+	<property name="home-zte-sgsn" value="${BASE_DIR}/zte-sgsn" />
+	<target name="clean-zte-sgsn">
+		<delete includeEmptyDirs="true" failonerror="false">
+			<fileset dir="${home-zte-sgsn}/build" />
+		</delete>
+	</target>
+	<target name="prepare-zte-sgsn" depends="clean-zte-sgsn">
+		<mkdir dir="${home-zte-sgsn}/build" />
+		<mkdir dir="${home-zte-sgsn}/build/classes" />
+		<mkdir dir="${home-zte-sgsn}/build/jar" />
+	</target>
+	<target depends="prepare-zte-sgsn" name="compile-zte-sgsn">
+		<javac srcdir="${home-zte-sgsn}/src" includeantruntime="${ANT_HOME}"
+			executable="${JAVA_HOME}/bin/javac" destdir="${home-zte-sgsn}/build/classes"
+			optimize="off" debug="true" deprecation="true">
+			<classpath path="${home-etl}/build/jar/etl-${etl.version}.jar" />
+			<classpath
+				path="${home-asn-core}/build/jar/asn-core-${asn-core.version}.jar" />
+			<classpath path="${lib}/log4j-1.2.16.jar" />
+		</javac>
+	</target>
+	<target depends="compile-zte-sgsn" name="build-zte-sgsn">
+		<tstamp>
+			<format property="TODAY" pattern="dd-MMMM-yyyy" locale="en" />
+		</tstamp>
+		<manifest file="${home-zte-sgsn}/build/classes/MANIFEST.MF">
+			<attribute name="Built-By" value="${user.name}" />
+		</manifest>
+		<jar
+			jarfile="${home-zte-sgsn}/build/jar/zte-sgsn-${zte-sgsn.version}.jar"
+			manifest="${home-zte-sgsn}/build/classes/MANIFEST.MF">
+			<fileset dir="${home-zte-sgsn}/build/classes">
+				<patternset>
+					<include name="**/*" />
+				</patternset>
+			</fileset>
+		</jar>
+	</target>
+
+	<target depends="build-zte-sgsn" name="deploy-zte-sgsn">
+		<copy todir="${deploy-dir}/conf">
+			<fileset dir="${home-zte-sgsn}/src">
+				<patternset>
+					<include name="*.asn" />
+					<include name="*.properties" />
+				</patternset>
+			</fileset>
+		</copy>
+		<copy
+			file="${home-zte-sgsn}/build/jar/zte-sgsn-${zte-sgsn.version}.jar"
+			todir="${deploy-dir}/lib" />
+	</target>
+	<!-- ZTE SGSN end -->
+
+	<!-- SGSN install start -->
+	<target name="prepare-install-huawei-sgsn">
+		<property name="deploy-dir" value="${DEPLOY_DIR}/huawei-sgsn" />
+		<delete includeEmptyDirs="true" failonerror="false">
+			<fileset dir="${deploy-dir}" />
+		</delete>
+		<mkdir dir="${deploy-dir}" />
+		<copy file="${BASE_DIR}/ran-build/run.sh" tofile="${deploy-dir}/run.sh" />
+		<copy file="${BASE_DIR}/ran-build/readme.txt" tofile="${deploy-dir}/readme.txt" />
+	</target>
+	<target
+		depends="prepare-install-huawei-sgsn,deploy-etl,deploy-asn-core,deploy-huawei-sgsn"
+		name="install-huawei-sgsn">
+	</target>
+	<!-- SGSN install end -->
+
+	<!-- MSC install start -->
+	<target name="prepare-install-huawei-msc">
+		<property name="deploy-dir" value="${DEPLOY_DIR}/huawei-msc" />
+		<delete includeEmptyDirs="true" failonerror="false">
+			<fileset dir="${deploy-dir}" />
+		</delete>
+		<mkdir dir="${deploy-dir}" />
+		<copy file="${BASE_DIR}/ran-build/run.sh" tofile="${deploy-dir}/run.sh" />
+		<copy file="${BASE_DIR}/ran-build/readme.txt" tofile="${deploy-dir}/readme.txt" />
+	</target>
+	<target
+		depends="prepare-install-huawei-msc,deploy-etl,deploy-asn-core,deploy-huawei-msc"
+		name="install-huawei-msc">
+	</target>
+	<!-- MSC install end -->
+	
+	<!-- ZTE MSC install start -->
+	<target name="prepare-install-zte-msc">
+		<property name="deploy-dir" value="${DEPLOY_DIR}/zte-msc" />
+		<delete includeEmptyDirs="true" failonerror="false">
+			<fileset dir="${deploy-dir}" />
+		</delete>
+		<mkdir dir="${deploy-dir}" />
+		<copy file="${BASE_DIR}/ran-build/run.sh" tofile="${deploy-dir}/run.sh" />
+		<copy file="${BASE_DIR}/ran-build/readme.txt" tofile="${deploy-dir}/readme.txt" />
+	</target>
+	<target
+		depends="prepare-install-zte-msc,deploy-etl,deploy-asn-core,deploy-zte-msc"
+		name="install-zte-msc">
+	</target>
+	<!-- ZTE MSC install end -->
+	
+	<!-- ZTE SGSN install start -->
+	<target name="prepare-install-zte-sgsn">
+		<property name="deploy-dir" value="${DEPLOY_DIR}/zte-sgsn" />
+		<delete includeEmptyDirs="true" failonerror="false">
+			<fileset dir="${deploy-dir}" />
+		</delete>
+		<mkdir dir="${deploy-dir}" />
+		<copy file="${BASE_DIR}/ran-build/run.sh" tofile="${deploy-dir}/run.sh" />
+		<copy file="${BASE_DIR}/ran-build/readme.txt" tofile="${deploy-dir}/readme.txt" />
+	</target>
+	<target
+		depends="prepare-install-zte-sgsn,deploy-etl,deploy-asn-core,deploy-zte-sgsn"
+		name="install-zte-sgsn">
+	</target>
+	<!-- ZTE SGSN install end -->
+
+	<target
+		depends="prepare-etl,prepare-asn-core,prepare-huawei-sgsn,prepare-huawei-msc,prepare-zte-msc,prepare-zte-sgsn"
+		name="prepare-all"></target>
+	<target depends="clean-etl,clean-asn-core,clean-huawei-sgsn,clean-huawei-msc,clean-zte-msc,clean-zte-sgsn"
+		name="clean-all"></target>
+	<target
+		depends="compile-etl,compile-asn-core,compile-huawei-sgsn,compile-huawei-msc,compile-zte-msc,compile-zte-sgsn"
+		name="compile-all"></target>
+	<target depends="build-etl,build-asn-core,build-huawei-sgsn,build-huawei-msc,build-zte-msc,build-zte-sgsn"
+		name="build-all"></target>
+	<target depends="install-huawei-sgsn,install-huawei-msc,install-zte-msc,install-zte-sgsn" name="install-all"></target>
+
+</project>
+
+	  
+		             
+                
+       
